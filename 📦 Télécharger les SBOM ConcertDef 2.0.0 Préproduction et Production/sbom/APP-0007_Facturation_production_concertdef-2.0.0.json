@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Facturation-production:2.1.7-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 2,
+  "revenue": 10000.0,
+  "metadata": {
+    "timestamp": "2026-01-20T00:00:00Z",
+    "type": "application",
+    "application-name": "Facturation-production",
+    "application-version": "2.1.7-production",
+    "description": "Synthetic production definition for Facturation",
+    "build-number": "build-prod-2026007",
+    "build-timestamp": "2026-02-19T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Data",
+      "email": "data@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Data"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Facturation-api-production",
+      "type": "component",
+      "name": "Facturation-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0007-go-production",
+          "type": "code",
+          "name": "app-0007-go-production",
+          "purl": "https://git.example.local/data/app-0007",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/data/app-0007-go:2.1.7-production-production",
+          "type": "image",
+          "name": "registry.example.local/data/app-0007-go:2.1.7-production-production"
+        },
+        {
+          "bom-ref": "library:mysql-1.19.7-1",
+          "type": "library",
+          "name": "mysql-1.19.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:zap-9.11.1-2",
+          "type": "library",
+          "name": "zap-9.11.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:crypto-3.11.8-3",
+          "type": "library",
+          "name": "crypto-3.11.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:viper-1.19.5-4",
+          "type": "library",
+          "name": "viper-1.19.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:client_golang-1.5.4-5",
+          "type": "library",
+          "name": "client_golang-1.5.4",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Facturation-worker-production",
+      "type": "component",
+      "name": "Facturation-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0007-go-worker-production",
+          "type": "code",
+          "name": "app-0007-go-worker-production",
+          "purl": "https://git.example.local/data/app-0007-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/data/app-0007-go-worker:2.1.7-production-production",
+          "type": "image",
+          "name": "registry.example.local/data/app-0007-go-worker:2.1.7-production-production"
+        },
+        {
+          "bom-ref": "library:grpc-5.13.1-6",
+          "type": "library",
+          "name": "grpc-5.13.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mysql-4.13.4-7",
+          "type": "library",
+          "name": "mysql-4.13.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:grpc-8.3.1-8",
+          "type": "library",
+          "name": "grpc-8.3.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:gin-8.14.5-9",
+          "type": "library",
+          "name": "gin-8.14.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:grpc-7.16.2-10",
+          "type": "library",
+          "name": "grpc-7.16.2",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Facturation-api-production",
+      "name": "Facturation-api-production",
+      "endpoints": [
+        "https://facturation-prod.apps.example.invalid/api/v1",
+        "https://facturation-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "public",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Facturation-worker-production",
+      "name": "Facturation-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/facturation.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/data/app-0007-go:2.1.7-production-production",
+      "dependsOn": [
+        "service:Facturation-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/data/app-0007-go-worker:2.1.7-production-production",
+      "dependsOn": [
+        "service:Facturation-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0007"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Facturation"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Go"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "high",
+    "data"
+  ]
+}

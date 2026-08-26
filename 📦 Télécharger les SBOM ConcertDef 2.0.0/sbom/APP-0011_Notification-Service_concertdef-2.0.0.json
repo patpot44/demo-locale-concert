@@ -1,0 +1,216 @@
+{
+  "bom-ref": "application:Notification-Service:2.5.1",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 5,
+  "revenue": 10000.0,
+  "metadata": {
+    "timestamp": "2026-01-16T00:00:00Z",
+    "type": "application",
+    "application-name": "Notification-Service",
+    "application-version": "2.5.1",
+    "description": "Synthetic application definition for Notification Service",
+    "build-number": "build-2026011",
+    "build-timestamp": "2026-02-15T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Data",
+      "email": "data@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Data"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Notification-Service-api",
+      "type": "component",
+      "name": "Notification-Service-api",
+      "components": [
+        {
+          "bom-ref": "code:app-0011-python",
+          "type": "code",
+          "name": "app-0011-python",
+          "purl": "https://git.example.local/data/app-0011",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/data/app-0011-python:2.5.1",
+          "type": "image",
+          "name": "registry.example.local/data/app-0011-python:2.5.1"
+        },
+        {
+          "bom-ref": "library:numpy-3.4.4",
+          "type": "library",
+          "name": "numpy",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-1.1.6",
+          "type": "library",
+          "name": "pyyaml",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-3.2.9",
+          "type": "library",
+          "name": "urllib3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-4.18.10",
+          "type": "library",
+          "name": "urllib3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-5.12.8",
+          "type": "library",
+          "name": "numpy",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Notification-Service-worker",
+      "type": "component",
+      "name": "Notification-Service-worker",
+      "components": [
+        {
+          "bom-ref": "code:app-0011-python-worker",
+          "type": "code",
+          "name": "app-0011-python-worker",
+          "purl": "https://git.example.local/data/app-0011-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/data/app-0011-python:2.5.1-worker",
+          "type": "image",
+          "name": "registry.example.local/data/app-0011-python:2.5.1-worker"
+        },
+        {
+          "bom-ref": "library:numpy-4.12.11",
+          "type": "library",
+          "name": "numpy",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-9.9.12",
+          "type": "library",
+          "name": "numpy",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-2.9.1",
+          "type": "library",
+          "name": "flask",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-3.2.9",
+          "type": "library",
+          "name": "pyyaml",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-9.19.4",
+          "type": "library",
+          "name": "jinja2",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Notification-Service-api",
+      "name": "Notification-Service-api",
+      "endpoints": [
+        "https://notification-service.apps.example.invalid/api/v1",
+        "https://notification-service.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Notification-Service-worker",
+      "name": "Notification-Service-worker",
+      "endpoints": [
+        "amqps://mq.example.invalid/notification-service.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/data/app-0011-python:2.5.1",
+      "dependsOn": [
+        "service:Notification-Service-api"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/data/app-0011-python:2.5.1-worker",
+      "dependsOn": [
+        "service:Notification-Service-worker"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0011"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "production-environment",
+      "value": "Notification-Service-production"
+    },
+    {
+      "name": "preproduction-environment",
+      "value": "Notification-Service-preproduction"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "high",
+    "data"
+  ]
+}

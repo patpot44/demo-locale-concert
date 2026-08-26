@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Data-Hub-preproduction:2.2.8-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 2,
+  "revenue": 4000.0,
+  "metadata": {
+    "timestamp": "2026-01-21T00:00:00Z",
+    "type": "application",
+    "application-name": "Data-Hub-preproduction",
+    "application-version": "2.2.8-preproduction",
+    "description": "Synthetic preproduction definition for Data Hub",
+    "build-number": "build-prep-2026008",
+    "build-timestamp": "2026-02-20T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Security",
+      "email": "security@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Security"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Data-Hub-api-preproduction",
+      "type": "component",
+      "name": "Data-Hub-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0008-java",
+          "type": "code",
+          "name": "app-0008-java",
+          "purl": "https://git.example.local/security/app-0008",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0008-java:2.2.8-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/security/app-0008-java:2.2.8-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:snakeyaml-3.8.3-1",
+          "type": "library",
+          "name": "snakeyaml-3.8.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-2.5.8-2",
+          "type": "library",
+          "name": "commons-text-2.5.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-4.14.1-3",
+          "type": "library",
+          "name": "spring-core-4.14.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-3.19.11-4",
+          "type": "library",
+          "name": "netty-handler-3.19.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-1.5.8-5",
+          "type": "library",
+          "name": "jackson-databind-1.5.8",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Data-Hub-worker-preproduction",
+      "type": "component",
+      "name": "Data-Hub-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0008-java-worker",
+          "type": "code",
+          "name": "app-0008-java-worker",
+          "purl": "https://git.example.local/security/app-0008-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0008-java-worker:2.2.8-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/security/app-0008-java-worker:2.2.8-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:log4j-core-9.18.5-6",
+          "type": "library",
+          "name": "log4j-core-9.18.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-3.9.4-7",
+          "type": "library",
+          "name": "jackson-databind-3.9.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-7.3.11-8",
+          "type": "library",
+          "name": "hibernate-core-7.3.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-3.1.5-9",
+          "type": "library",
+          "name": "spring-core-3.1.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-1.4.11-10",
+          "type": "library",
+          "name": "postgresql-1.4.11",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Data-Hub-api-preproduction",
+      "name": "Data-Hub-api-preproduction",
+      "endpoints": [
+        "https://data-hub-preprod.apps.example.invalid/api/v1",
+        "https://data-hub-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Data-Hub-worker-preproduction",
+      "name": "Data-Hub-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/data-hub.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/security/app-0008-java:2.2.8-preproduction-preproduction",
+      "dependsOn": [
+        "service:Data-Hub-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/security/app-0008-java-worker:2.2.8-preproduction-preproduction",
+      "dependsOn": [
+        "service:Data-Hub-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0008"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Data-Hub"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "high",
+    "security"
+  ]
+}

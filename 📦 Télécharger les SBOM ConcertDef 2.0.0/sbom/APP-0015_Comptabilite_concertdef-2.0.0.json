@@ -1,0 +1,216 @@
+{
+  "bom-ref": "application:Comptabilite:2.3.5",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 5,
+  "revenue": 12500.0,
+  "metadata": {
+    "timestamp": "2026-01-20T00:00:00Z",
+    "type": "application",
+    "application-name": "Comptabilite",
+    "application-version": "2.3.5",
+    "description": "Synthetic application definition for Comptabilite",
+    "build-number": "build-2026015",
+    "build-timestamp": "2026-02-19T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Payments",
+      "email": "payments@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Payments"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Comptabilite-api",
+      "type": "component",
+      "name": "Comptabilite-api",
+      "components": [
+        {
+          "bom-ref": "code:app-0015-python",
+          "type": "code",
+          "name": "app-0015-python",
+          "purl": "https://git.example.local/payments/app-0015",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/payments/app-0015-python:2.3.5",
+          "type": "image",
+          "name": "registry.example.local/payments/app-0015-python:2.3.5"
+        },
+        {
+          "bom-ref": "library:flask-7.13.0",
+          "type": "library",
+          "name": "flask",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-1.7.5",
+          "type": "library",
+          "name": "requests",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-3.7.4",
+          "type": "library",
+          "name": "jinja2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-7.0.2",
+          "type": "library",
+          "name": "django",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-9.16.11",
+          "type": "library",
+          "name": "pyyaml",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Comptabilite-worker",
+      "type": "component",
+      "name": "Comptabilite-worker",
+      "components": [
+        {
+          "bom-ref": "code:app-0015-python-worker",
+          "type": "code",
+          "name": "app-0015-python-worker",
+          "purl": "https://git.example.local/payments/app-0015-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/payments/app-0015-python:2.3.5-worker",
+          "type": "image",
+          "name": "registry.example.local/payments/app-0015-python:2.3.5-worker"
+        },
+        {
+          "bom-ref": "library:requests-6.14.10",
+          "type": "library",
+          "name": "requests",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-8.12.4",
+          "type": "library",
+          "name": "jinja2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-6.1.10",
+          "type": "library",
+          "name": "jinja2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-3.6.10",
+          "type": "library",
+          "name": "flask",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-1.4.7",
+          "type": "library",
+          "name": "pyyaml",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Comptabilite-api",
+      "name": "Comptabilite-api",
+      "endpoints": [
+        "https://comptabilite.apps.example.invalid/api/v1",
+        "https://comptabilite.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Comptabilite-worker",
+      "name": "Comptabilite-worker",
+      "endpoints": [
+        "amqps://mq.example.invalid/comptabilite.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/payments/app-0015-python:2.3.5",
+      "dependsOn": [
+        "service:Comptabilite-api"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/payments/app-0015-python:2.3.5-worker",
+      "dependsOn": [
+        "service:Comptabilite-worker"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0015"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "production-environment",
+      "value": "Comptabilite-production"
+    },
+    {
+      "name": "preproduction-environment",
+      "value": "Comptabilite-preproduction"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "critical",
+    "payments"
+  ]
+}

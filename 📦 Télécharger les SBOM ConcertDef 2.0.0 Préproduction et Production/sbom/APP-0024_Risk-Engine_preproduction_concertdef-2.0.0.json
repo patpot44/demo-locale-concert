@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Risk-Engine-preproduction:2.0.4-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 4,
+  "revenue": 4000.0,
+  "metadata": {
+    "timestamp": "2026-02-22T00:00:00Z",
+    "type": "application",
+    "application-name": "Risk-Engine-preproduction",
+    "application-version": "2.0.4-preproduction",
+    "description": "Synthetic preproduction definition for Risk Engine",
+    "build-number": "build-prep-2026024",
+    "build-timestamp": "2026-03-24T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Digital",
+      "email": "digital@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Digital"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Risk-Engine-api-preproduction",
+      "type": "component",
+      "name": "Risk-Engine-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0024-java-preproduction",
+          "type": "code",
+          "name": "app-0024-java-preproduction",
+          "purl": "https://git.example.local/digital/app-0024",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/digital/app-0024-java:2.0.4-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/digital/app-0024-java:2.0.4-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:snakeyaml-1.8.3-1",
+          "type": "library",
+          "name": "snakeyaml-1.8.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-7.18.5-2",
+          "type": "library",
+          "name": "spring-core-7.18.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-6.5.11-3",
+          "type": "library",
+          "name": "spring-core-6.5.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-9.4.6-4",
+          "type": "library",
+          "name": "jackson-databind-9.4.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-8.10.7-5",
+          "type": "library",
+          "name": "hibernate-core-8.10.7",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Risk-Engine-worker-preproduction",
+      "type": "component",
+      "name": "Risk-Engine-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0024-java-worker-preproduction",
+          "type": "code",
+          "name": "app-0024-java-worker-preproduction",
+          "purl": "https://git.example.local/digital/app-0024-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/digital/app-0024-java-worker:2.0.4-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/digital/app-0024-java-worker:2.0.4-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:snakeyaml-2.18.12-6",
+          "type": "library",
+          "name": "snakeyaml-2.18.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-4.18.3-7",
+          "type": "library",
+          "name": "commons-text-4.18.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-9.4.10-8",
+          "type": "library",
+          "name": "postgresql-9.4.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-6.9.10-9",
+          "type": "library",
+          "name": "spring-core-6.9.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-5.3.6-10",
+          "type": "library",
+          "name": "hibernate-core-5.3.6",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Risk-Engine-api-preproduction",
+      "name": "Risk-Engine-api-preproduction",
+      "endpoints": [
+        "https://risk-engine-preprod.apps.example.invalid/api/v1",
+        "https://risk-engine-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Risk-Engine-worker-preproduction",
+      "name": "Risk-Engine-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/risk-engine.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/digital/app-0024-java:2.0.4-preproduction-preproduction",
+      "dependsOn": [
+        "service:Risk-Engine-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/digital/app-0024-java-worker:2.0.4-preproduction-preproduction",
+      "dependsOn": [
+        "service:Risk-Engine-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0024"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Risk-Engine"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "high",
+    "digital"
+  ]
+}

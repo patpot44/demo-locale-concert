@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "bob-marketplace": {
+      "type": "streamable-http",
+      "url": "http://127.0.0.1:39247/mcp",
+      "headers": {
+        "Bob-Marketplace-Token": "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"
+      },
+      "disabled": false,
+      "alwaysAllow": [
+        "search_assets",
+        "get_asset",
+        "list_installed",
+        "list_favorites",
+        "suggest_assets",
+        "list_updates"
+      ]
+    }
+  }
+}

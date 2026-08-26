@@ -1,0 +1,216 @@
+{
+  "bom-ref": "application:Portail-Client:2.2.2",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 3,
+  "data-sensitivity": 2,
+  "revenue": 7500.0,
+  "metadata": {
+    "timestamp": "2026-01-07T00:00:00Z",
+    "type": "application",
+    "application-name": "Portail-Client",
+    "application-version": "2.2.2",
+    "description": "Synthetic application definition for Portail Client",
+    "build-number": "build-2026002",
+    "build-timestamp": "2026-02-06T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Finance",
+      "email": "finance@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Finance"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Portail-Client-api",
+      "type": "component",
+      "name": "Portail-Client-api",
+      "components": [
+        {
+          "bom-ref": "code:app-0002-python",
+          "type": "code",
+          "name": "app-0002-python",
+          "purl": "https://git.example.local/finance/app-0002",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/finance/app-0002-python:2.2.2",
+          "type": "image",
+          "name": "registry.example.local/finance/app-0002-python:2.2.2"
+        },
+        {
+          "bom-ref": "library:numpy-3.6.0",
+          "type": "library",
+          "name": "numpy",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-1.1.9",
+          "type": "library",
+          "name": "numpy",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-9.6.12",
+          "type": "library",
+          "name": "flask",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-4.16.0",
+          "type": "library",
+          "name": "urllib3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-5.17.1",
+          "type": "library",
+          "name": "django",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Portail-Client-worker",
+      "type": "component",
+      "name": "Portail-Client-worker",
+      "components": [
+        {
+          "bom-ref": "code:app-0002-python-worker",
+          "type": "code",
+          "name": "app-0002-python-worker",
+          "purl": "https://git.example.local/finance/app-0002-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/finance/app-0002-python:2.2.2-worker",
+          "type": "image",
+          "name": "registry.example.local/finance/app-0002-python:2.2.2-worker"
+        },
+        {
+          "bom-ref": "library:urllib3-4.15.12",
+          "type": "library",
+          "name": "urllib3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-1.19.2",
+          "type": "library",
+          "name": "requests",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-2.5.6",
+          "type": "library",
+          "name": "numpy",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-5.17.7",
+          "type": "library",
+          "name": "flask",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-8.16.3",
+          "type": "library",
+          "name": "requests",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Portail-Client-api",
+      "name": "Portail-Client-api",
+      "endpoints": [
+        "https://portail-client.apps.example.invalid/api/v1",
+        "https://portail-client.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Portail-Client-worker",
+      "name": "Portail-Client-worker",
+      "endpoints": [
+        "amqps://mq.example.invalid/portail-client.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/finance/app-0002-python:2.2.2",
+      "dependsOn": [
+        "service:Portail-Client-api"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/finance/app-0002-python:2.2.2-worker",
+      "dependsOn": [
+        "service:Portail-Client-worker"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0002"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "production-environment",
+      "value": "Portail-Client-production"
+    },
+    {
+      "name": "preproduction-environment",
+      "value": "Portail-Client-preproduction"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "medium",
+    "finance"
+  ]
+}

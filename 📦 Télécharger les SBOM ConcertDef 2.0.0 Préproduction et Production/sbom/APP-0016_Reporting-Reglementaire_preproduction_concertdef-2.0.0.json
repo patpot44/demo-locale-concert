@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Reporting-Reglementaire-preproduction:2.4.6-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 4,
+  "revenue": 4000.0,
+  "metadata": {
+    "timestamp": "2026-02-06T00:00:00Z",
+    "type": "application",
+    "application-name": "Reporting-Reglementaire-preproduction",
+    "application-version": "2.4.6-preproduction",
+    "description": "Synthetic preproduction definition for Reporting Reglementaire",
+    "build-number": "build-prep-2026016",
+    "build-timestamp": "2026-03-08T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Finance",
+      "email": "finance@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Finance"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Reporting-Reglementaire-api-preproduction",
+      "type": "component",
+      "name": "Reporting-Reglementaire-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0016-go-preproduction",
+          "type": "code",
+          "name": "app-0016-go-preproduction",
+          "purl": "https://git.example.local/finance/app-0016",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/finance/app-0016-go:2.4.6-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/finance/app-0016-go:2.4.6-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:viper-5.15.9-1",
+          "type": "library",
+          "name": "viper-5.15.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mysql-2.6.0-2",
+          "type": "library",
+          "name": "mysql-2.6.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:gin-5.7.8-3",
+          "type": "library",
+          "name": "gin-5.7.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:client_golang-8.3.9-4",
+          "type": "library",
+          "name": "client_golang-8.3.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:viper-5.11.11-5",
+          "type": "library",
+          "name": "viper-5.11.11",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Reporting-Reglementaire-worker-preproduction",
+      "type": "component",
+      "name": "Reporting-Reglementaire-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0016-go-worker-preproduction",
+          "type": "code",
+          "name": "app-0016-go-worker-preproduction",
+          "purl": "https://git.example.local/finance/app-0016-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/finance/app-0016-go-worker:2.4.6-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/finance/app-0016-go-worker:2.4.6-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:zap-3.6.0-6",
+          "type": "library",
+          "name": "zap-3.6.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:viper-5.4.8-7",
+          "type": "library",
+          "name": "viper-5.4.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mux-5.7.6-8",
+          "type": "library",
+          "name": "mux-5.7.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:grpc-4.18.3-9",
+          "type": "library",
+          "name": "grpc-4.18.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mux-2.15.12-10",
+          "type": "library",
+          "name": "mux-2.15.12",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Reporting-Reglementaire-api-preproduction",
+      "name": "Reporting-Reglementaire-api-preproduction",
+      "endpoints": [
+        "https://reporting-reglementaire-preprod.apps.example.invalid/api/v1",
+        "https://reporting-reglementaire-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Reporting-Reglementaire-worker-preproduction",
+      "name": "Reporting-Reglementaire-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/reporting-reglementaire.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/finance/app-0016-go:2.4.6-preproduction-preproduction",
+      "dependsOn": [
+        "service:Reporting-Reglementaire-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/finance/app-0016-go-worker:2.4.6-preproduction-preproduction",
+      "dependsOn": [
+        "service:Reporting-Reglementaire-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0016"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Reporting-Reglementaire"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Go"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "high",
+    "finance"
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Paiements-SEPA-preproduction:2.1.1-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 3,
+  "data-sensitivity": 2,
+  "revenue": 3000.0,
+  "metadata": {
+    "timestamp": "2026-01-07T00:00:00Z",
+    "type": "application",
+    "application-name": "Paiements-SEPA-preproduction",
+    "application-version": "2.1.1-preproduction",
+    "description": "Synthetic preproduction definition for Paiements SEPA",
+    "build-number": "build-prep-2026001",
+    "build-timestamp": "2026-02-06T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Integration",
+      "email": "integration@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Integration"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Paiements-SEPA-api-preproduction",
+      "type": "component",
+      "name": "Paiements-SEPA-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0001-go-preproduction",
+          "type": "code",
+          "name": "app-0001-go-preproduction",
+          "purl": "https://git.example.local/integration/app-0001",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0001-go:2.1.1-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0001-go:2.1.1-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:zap-2.5.2-1",
+          "type": "library",
+          "name": "zap-2.5.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:viper-9.0.11-2",
+          "type": "library",
+          "name": "viper-9.0.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:gin-8.2.2-3",
+          "type": "library",
+          "name": "gin-8.2.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:client_golang-7.16.1-4",
+          "type": "library",
+          "name": "client_golang-7.16.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:gin-9.9.12-5",
+          "type": "library",
+          "name": "gin-9.9.12",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Paiements-SEPA-worker-preproduction",
+      "type": "component",
+      "name": "Paiements-SEPA-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0001-go-worker-preproduction",
+          "type": "code",
+          "name": "app-0001-go-worker-preproduction",
+          "purl": "https://git.example.local/integration/app-0001-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0001-go-worker:2.1.1-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0001-go-worker:2.1.1-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:viper-5.1.2-6",
+          "type": "library",
+          "name": "viper-5.1.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:zap-5.16.3-7",
+          "type": "library",
+          "name": "zap-5.16.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mux-1.16.8-8",
+          "type": "library",
+          "name": "mux-1.16.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:zap-2.11.6-9",
+          "type": "library",
+          "name": "zap-2.11.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:crypto-4.18.4-10",
+          "type": "library",
+          "name": "crypto-4.18.4",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Paiements-SEPA-api-preproduction",
+      "name": "Paiements-SEPA-api-preproduction",
+      "endpoints": [
+        "https://paiements-sepa-preprod.apps.example.invalid/api/v1",
+        "https://paiements-sepa-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Paiements-SEPA-worker-preproduction",
+      "name": "Paiements-SEPA-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/paiements-sepa.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/integration/app-0001-go:2.1.1-preproduction-preproduction",
+      "dependsOn": [
+        "service:Paiements-SEPA-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/integration/app-0001-go-worker:2.1.1-preproduction-preproduction",
+      "dependsOn": [
+        "service:Paiements-SEPA-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0001"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Paiements-SEPA"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Go"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "medium",
+    "integration"
+  ]
+}

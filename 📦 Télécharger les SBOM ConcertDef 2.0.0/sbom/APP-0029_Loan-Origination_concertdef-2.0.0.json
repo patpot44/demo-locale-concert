@@ -1,0 +1,216 @@
+{
+  "bom-ref": "application:Loan-Origination:2.5.9",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 5,
+  "revenue": 12500.0,
+  "metadata": {
+    "timestamp": "2026-02-03T00:00:00Z",
+    "type": "application",
+    "application-name": "Loan-Origination",
+    "application-version": "2.5.9",
+    "description": "Synthetic application definition for Loan Origination",
+    "build-number": "build-2026029",
+    "build-timestamp": "2026-03-05T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Security",
+      "email": "security@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Security"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Loan-Origination-api",
+      "type": "component",
+      "name": "Loan-Origination-api",
+      "components": [
+        {
+          "bom-ref": "code:app-0029-java",
+          "type": "code",
+          "name": "app-0029-java",
+          "purl": "https://git.example.local/security/app-0029",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0029-java:2.5.9",
+          "type": "image",
+          "name": "registry.example.local/security/app-0029-java:2.5.9"
+        },
+        {
+          "bom-ref": "library:hibernate-core-4.13.2",
+          "type": "library",
+          "name": "hibernate-core",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:snakeyaml-6.15.3",
+          "type": "library",
+          "name": "snakeyaml",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-6.11.4",
+          "type": "library",
+          "name": "jackson-databind",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-3.17.11",
+          "type": "library",
+          "name": "commons-text",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-5.6.12",
+          "type": "library",
+          "name": "commons-text",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Loan-Origination-worker",
+      "type": "component",
+      "name": "Loan-Origination-worker",
+      "components": [
+        {
+          "bom-ref": "code:app-0029-java-worker",
+          "type": "code",
+          "name": "app-0029-java-worker",
+          "purl": "https://git.example.local/security/app-0029-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0029-java:2.5.9-worker",
+          "type": "image",
+          "name": "registry.example.local/security/app-0029-java:2.5.9-worker"
+        },
+        {
+          "bom-ref": "library:commons-text-5.10.7",
+          "type": "library",
+          "name": "commons-text",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-2.15.12",
+          "type": "library",
+          "name": "spring-core",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-9.0.9",
+          "type": "library",
+          "name": "netty-handler",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-7.18.12",
+          "type": "library",
+          "name": "spring-core",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-4.1.0",
+          "type": "library",
+          "name": "hibernate-core",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Loan-Origination-api",
+      "name": "Loan-Origination-api",
+      "endpoints": [
+        "https://loan-origination.apps.example.invalid/api/v1",
+        "https://loan-origination.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Loan-Origination-worker",
+      "name": "Loan-Origination-worker",
+      "endpoints": [
+        "amqps://mq.example.invalid/loan-origination.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/security/app-0029-java:2.5.9",
+      "dependsOn": [
+        "service:Loan-Origination-api"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/security/app-0029-java:2.5.9-worker",
+      "dependsOn": [
+        "service:Loan-Origination-worker"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0029"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "production-environment",
+      "value": "Loan-Origination-production"
+    },
+    {
+      "name": "preproduction-environment",
+      "value": "Loan-Origination-preproduction"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "critical",
+    "security"
+  ]
+}

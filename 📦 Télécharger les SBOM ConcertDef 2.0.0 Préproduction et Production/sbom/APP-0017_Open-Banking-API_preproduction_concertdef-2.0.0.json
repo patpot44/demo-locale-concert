@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Open-Banking-API-preproduction:2.5.7-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 4,
+  "revenue": 4000.0,
+  "metadata": {
+    "timestamp": "2026-02-08T00:00:00Z",
+    "type": "application",
+    "application-name": "Open-Banking-API-preproduction",
+    "application-version": "2.5.7-preproduction",
+    "description": "Synthetic preproduction definition for Open Banking API",
+    "build-number": "build-prep-2026017",
+    "build-timestamp": "2026-03-10T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Integration",
+      "email": "integration@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Integration"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Open-Banking-API-api-preproduction",
+      "type": "component",
+      "name": "Open-Banking-API-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0017-java-preproduction",
+          "type": "code",
+          "name": "app-0017-java-preproduction",
+          "purl": "https://git.example.local/integration/app-0017",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0017-java:2.5.7-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0017-java:2.5.7-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:jackson-databind-7.13.12-1",
+          "type": "library",
+          "name": "jackson-databind-7.13.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:snakeyaml-6.13.2-2",
+          "type": "library",
+          "name": "snakeyaml-6.13.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-7.15.4-3",
+          "type": "library",
+          "name": "commons-text-7.15.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-9.18.9-4",
+          "type": "library",
+          "name": "netty-handler-9.18.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-5.17.8-5",
+          "type": "library",
+          "name": "postgresql-5.17.8",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Open-Banking-API-worker-preproduction",
+      "type": "component",
+      "name": "Open-Banking-API-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0017-java-worker-preproduction",
+          "type": "code",
+          "name": "app-0017-java-worker-preproduction",
+          "purl": "https://git.example.local/integration/app-0017-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0017-java-worker:2.5.7-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0017-java-worker:2.5.7-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:netty-handler-3.2.3-6",
+          "type": "library",
+          "name": "netty-handler-3.2.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-1.19.10-7",
+          "type": "library",
+          "name": "netty-handler-1.19.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-8.13.4-8",
+          "type": "library",
+          "name": "jackson-databind-8.13.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:snakeyaml-4.10.4-9",
+          "type": "library",
+          "name": "snakeyaml-4.10.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-9.4.5-10",
+          "type": "library",
+          "name": "netty-handler-9.4.5",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Open-Banking-API-api-preproduction",
+      "name": "Open-Banking-API-api-preproduction",
+      "endpoints": [
+        "https://open-banking-api-preprod.apps.example.invalid/api/v1",
+        "https://open-banking-api-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Open-Banking-API-worker-preproduction",
+      "name": "Open-Banking-API-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/open-banking-api.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/integration/app-0017-java:2.5.7-preproduction-preproduction",
+      "dependsOn": [
+        "service:Open-Banking-API-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/integration/app-0017-java-worker:2.5.7-preproduction-preproduction",
+      "dependsOn": [
+        "service:Open-Banking-API-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0017"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Open-Banking-API"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "high",
+    "integration"
+  ]
+}

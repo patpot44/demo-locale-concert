@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Fraude-Temps-Reel-production:2.1.3-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 2,
+  "revenue": 12500.0,
+  "metadata": {
+    "timestamp": "2026-02-01T00:00:00Z",
+    "type": "application",
+    "application-name": "Fraude-Temps-Reel-production",
+    "application-version": "2.1.3-production",
+    "description": "Synthetic production definition for Fraude Temps Reel",
+    "build-number": "build-prod-2026013",
+    "build-timestamp": "2026-03-03T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Fraude-Temps-Reel-api-production",
+      "type": "component",
+      "name": "Fraude-Temps-Reel-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0013-python-production",
+          "type": "code",
+          "name": "app-0013-python-production",
+          "purl": "https://git.example.local/claims/app-0013",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0013-python:2.1.3-production-production",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0013-python:2.1.3-production-production"
+        },
+        {
+          "bom-ref": "library:pyyaml-9.7.2-1",
+          "type": "library",
+          "name": "pyyaml-9.7.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-8.18.12-2",
+          "type": "library",
+          "name": "requests-8.18.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-1.3.2-3",
+          "type": "library",
+          "name": "pyyaml-1.3.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-4.6.0-4",
+          "type": "library",
+          "name": "django-4.6.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-7.1.8-5",
+          "type": "library",
+          "name": "requests-7.1.8",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Fraude-Temps-Reel-worker-production",
+      "type": "component",
+      "name": "Fraude-Temps-Reel-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0013-python-worker-production",
+          "type": "code",
+          "name": "app-0013-python-worker-production",
+          "purl": "https://git.example.local/claims/app-0013-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0013-python-worker:2.1.3-production-production",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0013-python-worker:2.1.3-production-production"
+        },
+        {
+          "bom-ref": "library:numpy-1.14.7-6",
+          "type": "library",
+          "name": "numpy-1.14.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-1.20.4-7",
+          "type": "library",
+          "name": "flask-1.20.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-1.9.5-8",
+          "type": "library",
+          "name": "pyyaml-1.9.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-9.11.7-9",
+          "type": "library",
+          "name": "numpy-9.11.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-5.14.7-10",
+          "type": "library",
+          "name": "urllib3-5.14.7",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Fraude-Temps-Reel-api-production",
+      "name": "Fraude-Temps-Reel-api-production",
+      "endpoints": [
+        "https://fraude-temps-reel-prod.apps.example.invalid/api/v1",
+        "https://fraude-temps-reel-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "public",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Fraude-Temps-Reel-worker-production",
+      "name": "Fraude-Temps-Reel-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/fraude-temps-reel.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0013-python:2.1.3-production-production",
+      "dependsOn": [
+        "service:Fraude-Temps-Reel-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0013-python-worker:2.1.3-production-production",
+      "dependsOn": [
+        "service:Fraude-Temps-Reel-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0013"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Fraude-Temps-Reel"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "critical",
+    "claims"
+  ]
+}

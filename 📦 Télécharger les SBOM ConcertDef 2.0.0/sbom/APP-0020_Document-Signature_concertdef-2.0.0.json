@@ -1,0 +1,216 @@
+{
+  "bom-ref": "application:Document-Signature:2.2.0",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 4,
+  "revenue": 10000.0,
+  "metadata": {
+    "timestamp": "2026-01-25T00:00:00Z",
+    "type": "application",
+    "application-name": "Document-Signature",
+    "application-version": "2.2.0",
+    "description": "Synthetic application definition for Document Signature",
+    "build-number": "build-2026020",
+    "build-timestamp": "2026-02-24T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Document-Signature-api",
+      "type": "component",
+      "name": "Document-Signature-api",
+      "components": [
+        {
+          "bom-ref": "code:app-0020-javascript",
+          "type": "code",
+          "name": "app-0020-javascript",
+          "purl": "https://git.example.local/claims/app-0020",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0020-javascript:2.2.0",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0020-javascript:2.2.0"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-9.18.8",
+          "type": "library",
+          "name": "jsonwebtoken",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:minimist-8.1.3",
+          "type": "library",
+          "name": "minimist",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:lodash-8.9.1",
+          "type": "library",
+          "name": "lodash",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:minimist-2.10.11",
+          "type": "library",
+          "name": "minimist",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-6.10.11",
+          "type": "library",
+          "name": "jsonwebtoken",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Document-Signature-worker",
+      "type": "component",
+      "name": "Document-Signature-worker",
+      "components": [
+        {
+          "bom-ref": "code:app-0020-javascript-worker",
+          "type": "code",
+          "name": "app-0020-javascript-worker",
+          "purl": "https://git.example.local/claims/app-0020-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0020-javascript:2.2.0-worker",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0020-javascript:2.2.0-worker"
+        },
+        {
+          "bom-ref": "library:webpack-2.11.4",
+          "type": "library",
+          "name": "webpack",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:express-1.18.8",
+          "type": "library",
+          "name": "express",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:webpack-3.4.2",
+          "type": "library",
+          "name": "webpack",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:express-6.16.11",
+          "type": "library",
+          "name": "express",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:express-7.17.1",
+          "type": "library",
+          "name": "express",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Document-Signature-api",
+      "name": "Document-Signature-api",
+      "endpoints": [
+        "https://document-signature.apps.example.invalid/api/v1",
+        "https://document-signature.apps.example.invalid/health"
+      ],
+      "network-exposure": "public",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Document-Signature-worker",
+      "name": "Document-Signature-worker",
+      "endpoints": [
+        "amqps://mq.example.invalid/document-signature.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0020-javascript:2.2.0",
+      "dependsOn": [
+        "service:Document-Signature-api"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0020-javascript:2.2.0-worker",
+      "dependsOn": [
+        "service:Document-Signature-worker"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0020"
+    },
+    {
+      "name": "technology",
+      "value": "JavaScript"
+    },
+    {
+      "name": "production-environment",
+      "value": "Document-Signature-production"
+    },
+    {
+      "name": "preproduction-environment",
+      "value": "Document-Signature-preproduction"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "high",
+    "claims"
+  ]
+}

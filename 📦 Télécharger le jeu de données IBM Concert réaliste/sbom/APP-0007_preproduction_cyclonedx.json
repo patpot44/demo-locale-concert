@@ -1,0 +1,2329 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:a2498a51-afa1-4e0a-ad02-65dbe0b76fbf",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-08-21T17:33:15Z",
+    "tools": [
+      {
+        "vendor": "Synthetic POC",
+        "name": "Concert Dataset Generator",
+        "version": "1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:golang/example/app-0007@4.7.0",
+      "name": "app-0007",
+      "version": "4.7.0",
+      "properties": [
+        {
+          "name": "concert:application_id",
+          "value": "APP-0007"
+        },
+        {
+          "name": "environment",
+          "value": "preproduction"
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "application_id",
+        "value": "APP-0007"
+      },
+      {
+        "name": "application_name",
+        "value": "Facturation"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      },
+      {
+        "name": "business_criticality",
+        "value": "High"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/prometheus/client_golang@4.1.3?instance=0",
+      "group": "",
+      "name": "client_golang",
+      "version": "4.1.3",
+      "purl": "pkg:golang/github.com/prometheus/client_golang@4.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@9.5.10?instance=1",
+      "group": "",
+      "name": "grpc",
+      "version": "9.5.10",
+      "purl": "pkg:golang/google.golang.org/grpc@9.5.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/go-sql-driver/mysql@1.19.7?instance=2",
+      "group": "",
+      "name": "mysql",
+      "version": "1.19.7",
+      "purl": "pkg:golang/github.com/go-sql-driver/mysql@1.19.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gorilla/mux@7.15.1?instance=3",
+      "group": "",
+      "name": "mux",
+      "version": "7.15.1",
+      "purl": "pkg:golang/github.com/gorilla/mux@7.15.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gorilla/mux@6.7.1?instance=4",
+      "group": "",
+      "name": "mux",
+      "version": "6.7.1",
+      "purl": "pkg:golang/github.com/gorilla/mux@6.7.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gorilla/mux@1.2.2?instance=5",
+      "group": "",
+      "name": "mux",
+      "version": "1.2.2",
+      "purl": "pkg:golang/github.com/gorilla/mux@1.2.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@5.16.3?instance=6",
+      "group": "",
+      "name": "viper",
+      "version": "5.16.3",
+      "purl": "pkg:golang/github.com/spf13/viper@5.16.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@9.16.5?instance=7",
+      "group": "",
+      "name": "grpc",
+      "version": "9.16.5",
+      "purl": "pkg:golang/google.golang.org/grpc@9.16.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/go-sql-driver/mysql@7.1.9?instance=8",
+      "group": "",
+      "name": "mysql",
+      "version": "7.1.9",
+      "purl": "pkg:golang/github.com/go-sql-driver/mysql@7.1.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@4.3.2?instance=9",
+      "group": "",
+      "name": "grpc",
+      "version": "4.3.2",
+      "purl": "pkg:golang/google.golang.org/grpc@4.3.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@8.3.9?instance=10",
+      "group": "",
+      "name": "grpc",
+      "version": "8.3.9",
+      "purl": "pkg:golang/google.golang.org/grpc@8.3.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@4.19.5?instance=11",
+      "group": "",
+      "name": "grpc",
+      "version": "4.19.5",
+      "purl": "pkg:golang/google.golang.org/grpc@4.19.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@2.11.9?instance=12",
+      "group": "",
+      "name": "viper",
+      "version": "2.11.9",
+      "purl": "pkg:golang/github.com/spf13/viper@2.11.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@4.6.12?instance=13",
+      "group": "",
+      "name": "grpc",
+      "version": "4.6.12",
+      "purl": "pkg:golang/google.golang.org/grpc@4.6.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/golang.org/x/crypto@3.13.2?instance=14",
+      "group": "",
+      "name": "crypto",
+      "version": "3.13.2",
+      "purl": "pkg:golang/golang.org/x/crypto@3.13.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@6.13.1?instance=15",
+      "group": "",
+      "name": "gin",
+      "version": "6.13.1",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@6.13.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@4.2.8?instance=16",
+      "group": "",
+      "name": "grpc",
+      "version": "4.2.8",
+      "purl": "pkg:golang/google.golang.org/grpc@4.2.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@2.7.11?instance=17",
+      "group": "",
+      "name": "gin",
+      "version": "2.7.11",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@2.7.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gorilla/mux@2.3.2?instance=18",
+      "group": "",
+      "name": "mux",
+      "version": "2.3.2",
+      "purl": "pkg:golang/github.com/gorilla/mux@2.3.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/prometheus/client_golang@6.1.4?instance=19",
+      "group": "",
+      "name": "client_golang",
+      "version": "6.1.4",
+      "purl": "pkg:golang/github.com/prometheus/client_golang@6.1.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/prometheus/client_golang@3.19.10?instance=20",
+      "group": "",
+      "name": "client_golang",
+      "version": "3.19.10",
+      "purl": "pkg:golang/github.com/prometheus/client_golang@3.19.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@4.14.2?instance=21",
+      "group": "",
+      "name": "gin",
+      "version": "4.14.2",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@4.14.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@4.2.12?instance=22",
+      "group": "",
+      "name": "viper",
+      "version": "4.2.12",
+      "purl": "pkg:golang/github.com/spf13/viper@4.2.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@6.5.0?instance=23",
+      "group": "",
+      "name": "gin",
+      "version": "6.5.0",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@6.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gorilla/mux@8.17.2?instance=24",
+      "group": "",
+      "name": "mux",
+      "version": "8.17.2",
+      "purl": "pkg:golang/github.com/gorilla/mux@8.17.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/go.uber.org/zap@3.3.12?instance=25",
+      "group": "",
+      "name": "zap",
+      "version": "3.3.12",
+      "purl": "pkg:golang/go.uber.org/zap@3.3.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/golang.org/x/crypto@2.2.0?instance=26",
+      "group": "",
+      "name": "crypto",
+      "version": "2.2.0",
+      "purl": "pkg:golang/golang.org/x/crypto@2.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@2.16.9?instance=27",
+      "group": "",
+      "name": "grpc",
+      "version": "2.16.9",
+      "purl": "pkg:golang/google.golang.org/grpc@2.16.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@3.18.1?instance=28",
+      "group": "",
+      "name": "gin",
+      "version": "3.18.1",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@3.18.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@3.15.8?instance=29",
+      "group": "",
+      "name": "viper",
+      "version": "3.15.8",
+      "purl": "pkg:golang/github.com/spf13/viper@3.15.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@8.8.4?instance=30",
+      "group": "",
+      "name": "viper",
+      "version": "8.8.4",
+      "purl": "pkg:golang/github.com/spf13/viper@8.8.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@3.10.11?instance=31",
+      "group": "",
+      "name": "gin",
+      "version": "3.10.11",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@3.10.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/golang.org/x/crypto@6.12.8?instance=32",
+      "group": "",
+      "name": "crypto",
+      "version": "6.12.8",
+      "purl": "pkg:golang/golang.org/x/crypto@6.12.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@4.16.2?instance=33",
+      "group": "",
+      "name": "viper",
+      "version": "4.16.2",
+      "purl": "pkg:golang/github.com/spf13/viper@4.16.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/go.uber.org/zap@5.2.6?instance=34",
+      "group": "",
+      "name": "zap",
+      "version": "5.2.6",
+      "purl": "pkg:golang/go.uber.org/zap@5.2.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@5.20.7?instance=35",
+      "group": "",
+      "name": "viper",
+      "version": "5.20.7",
+      "purl": "pkg:golang/github.com/spf13/viper@5.20.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@9.1.0?instance=36",
+      "group": "",
+      "name": "viper",
+      "version": "9.1.0",
+      "purl": "pkg:golang/github.com/spf13/viper@9.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/golang.org/x/crypto@3.13.10?instance=37",
+      "group": "",
+      "name": "crypto",
+      "version": "3.13.10",
+      "purl": "pkg:golang/golang.org/x/crypto@3.13.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/go-sql-driver/mysql@8.14.6?instance=38",
+      "group": "",
+      "name": "mysql",
+      "version": "8.14.6",
+      "purl": "pkg:golang/github.com/go-sql-driver/mysql@8.14.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@4.6.2?instance=39",
+      "group": "",
+      "name": "viper",
+      "version": "4.6.2",
+      "purl": "pkg:golang/github.com/spf13/viper@4.6.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@4.19.9?instance=40",
+      "group": "",
+      "name": "grpc",
+      "version": "4.19.9",
+      "purl": "pkg:golang/google.golang.org/grpc@4.19.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@7.10.9?instance=41",
+      "group": "",
+      "name": "gin",
+      "version": "7.10.9",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@7.10.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/prometheus/client_golang@3.6.5?instance=42",
+      "group": "",
+      "name": "client_golang",
+      "version": "3.6.5",
+      "purl": "pkg:golang/github.com/prometheus/client_golang@3.6.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@1.3.11?instance=43",
+      "group": "",
+      "name": "gin",
+      "version": "1.3.11",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@1.3.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/prometheus/client_golang@6.5.9?instance=44",
+      "group": "",
+      "name": "client_golang",
+      "version": "6.5.9",
+      "purl": "pkg:golang/github.com/prometheus/client_golang@6.5.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@4.0.1?instance=45",
+      "group": "",
+      "name": "viper",
+      "version": "4.0.1",
+      "purl": "pkg:golang/github.com/spf13/viper@4.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@1.11.5?instance=46",
+      "group": "",
+      "name": "viper",
+      "version": "1.11.5",
+      "purl": "pkg:golang/github.com/spf13/viper@1.11.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/prometheus/client_golang@9.9.12?instance=47",
+      "group": "",
+      "name": "client_golang",
+      "version": "9.9.12",
+      "purl": "pkg:golang/github.com/prometheus/client_golang@9.9.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@6.14.4?instance=48",
+      "group": "",
+      "name": "viper",
+      "version": "6.14.4",
+      "purl": "pkg:golang/github.com/spf13/viper@6.14.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@5.10.4?instance=49",
+      "group": "",
+      "name": "gin",
+      "version": "5.10.4",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@5.10.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/go-sql-driver/mysql@7.7.11?instance=50",
+      "group": "",
+      "name": "mysql",
+      "version": "7.7.11",
+      "purl": "pkg:golang/github.com/go-sql-driver/mysql@7.7.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@7.13.12?instance=51",
+      "group": "",
+      "name": "gin",
+      "version": "7.13.12",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@7.13.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/prometheus/client_golang@3.14.1?instance=52",
+      "group": "",
+      "name": "client_golang",
+      "version": "3.14.1",
+      "purl": "pkg:golang/github.com/prometheus/client_golang@3.14.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/go.uber.org/zap@2.7.4?instance=53",
+      "group": "",
+      "name": "zap",
+      "version": "2.7.4",
+      "purl": "pkg:golang/go.uber.org/zap@2.7.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/prometheus/client_golang@1.13.7?instance=54",
+      "group": "",
+      "name": "client_golang",
+      "version": "1.13.7",
+      "purl": "pkg:golang/github.com/prometheus/client_golang@1.13.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/go.uber.org/zap@3.11.11?instance=55",
+      "group": "",
+      "name": "zap",
+      "version": "3.11.11",
+      "purl": "pkg:golang/go.uber.org/zap@3.11.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@6.3.3?instance=56",
+      "group": "",
+      "name": "grpc",
+      "version": "6.3.3",
+      "purl": "pkg:golang/google.golang.org/grpc@6.3.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/go-sql-driver/mysql@8.16.9?instance=57",
+      "group": "",
+      "name": "mysql",
+      "version": "8.16.9",
+      "purl": "pkg:golang/github.com/go-sql-driver/mysql@8.16.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/go.uber.org/zap@2.13.7?instance=58",
+      "group": "",
+      "name": "zap",
+      "version": "2.13.7",
+      "purl": "pkg:golang/go.uber.org/zap@2.13.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/spf13/viper@9.1.4?instance=59",
+      "group": "",
+      "name": "viper",
+      "version": "9.1.4",
+      "purl": "pkg:golang/github.com/spf13/viper@9.1.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/go.uber.org/zap@5.20.11?instance=60",
+      "group": "",
+      "name": "zap",
+      "version": "5.20.11",
+      "purl": "pkg:golang/go.uber.org/zap@5.20.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/google.golang.org/grpc@9.16.4?instance=61",
+      "group": "",
+      "name": "grpc",
+      "version": "9.16.4",
+      "purl": "pkg:golang/google.golang.org/grpc@9.16.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/github.com/prometheus/client_golang@4.1.3?instance=0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/google.golang.org/grpc@9.5.10?instance=1"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/github.com/go-sql-driver/mysql@1.19.7?instance=2"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/github.com/gorilla/mux@7.15.1?instance=3"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/github.com/gorilla/mux@6.7.1?instance=4"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/github.com/gorilla/mux@1.2.2?instance=5"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/github.com/spf13/viper@5.16.3?instance=6"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/google.golang.org/grpc@9.16.5?instance=7"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/github.com/go-sql-driver/mysql@7.1.9?instance=8"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/google.golang.org/grpc@4.3.2?instance=9"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/google.golang.org/grpc@8.3.9?instance=10"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/google.golang.org/grpc@4.19.5?instance=11"
+      ]
+    },
+    {
+      "ref": "pkg:golang/example/app-0007@4.7.0",
+      "dependsOn": [
+        "pkg:golang/github.com/prometheus/client_golang@4.1.3?instance=0",
+        "pkg:golang/google.golang.org/grpc@9.5.10?instance=1",
+        "pkg:golang/github.com/go-sql-driver/mysql@1.19.7?instance=2",
+        "pkg:golang/github.com/gorilla/mux@7.15.1?instance=3",
+        "pkg:golang/github.com/gorilla/mux@6.7.1?instance=4",
+        "pkg:golang/github.com/gorilla/mux@1.2.2?instance=5",
+        "pkg:golang/github.com/spf13/viper@5.16.3?instance=6",
+        "pkg:golang/google.golang.org/grpc@9.16.5?instance=7",
+        "pkg:golang/github.com/go-sql-driver/mysql@7.1.9?instance=8",
+        "pkg:golang/google.golang.org/grpc@4.3.2?instance=9",
+        "pkg:golang/google.golang.org/grpc@8.3.9?instance=10",
+        "pkg:golang/google.golang.org/grpc@4.19.5?instance=11"
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "CVE-2025-29927",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.9,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/gorilla/mux@8.17.2?instance=24"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0791"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "10"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-21401",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.3,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/gin-gonic/gin@2.7.11?instance=17"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.1318"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "3.1"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2021-44228",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.7,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/spf13/viper@4.2.12?instance=22"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.152"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "6.5"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-21626",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 9.0,
+          "severity": "critical",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/spf13/viper@4.2.12?instance=22"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.6209"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "10"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-24813",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.7,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/prometheus/client_golang@6.5.9?instance=44"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0233"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "3.1"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-32463",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.3,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/go.uber.org/zap@5.2.6?instance=34"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.3161"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "10"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-3094",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/go.uber.org/zap@5.20.11?instance=60"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.6896"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "5.2"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-3094",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.0,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/gin-gonic/gin@6.13.1?instance=15"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.209"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "5.7"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/go.uber.org/zap@3.3.12?instance=25"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2594"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "3.5"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2021-44228",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/go.uber.org/zap@2.7.4?instance=53"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.1844"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.0"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-21626",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.8,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/google.golang.org/grpc@6.3.3?instance=56"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.3171"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "3.8"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-21626",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.0,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/prometheus/client_golang@6.1.4?instance=19"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0832"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "5.3"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-29927",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/gin-gonic/gin@3.18.1?instance=28"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0351"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "3.4"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 6.2,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/spf13/viper@9.1.0?instance=36"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0141"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.1"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.4,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/spf13/viper@4.2.12?instance=22"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0604"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "5.5"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 6.4,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/spf13/viper@6.14.4?instance=48"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0304"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.3"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.0,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/github.com/gorilla/mux@2.3.2?instance=18"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.9013"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.2"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-44487",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 6.0,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:golang/go.uber.org/zap@3.11.11?instance=55"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.1607"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.4"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    }
+  ]
+}

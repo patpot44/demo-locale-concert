@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Data-Hub-production:2.2.8-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 2,
+  "revenue": 10000.0,
+  "metadata": {
+    "timestamp": "2026-01-22T00:00:00Z",
+    "type": "application",
+    "application-name": "Data-Hub-production",
+    "application-version": "2.2.8-production",
+    "description": "Synthetic production definition for Data Hub",
+    "build-number": "build-prod-2026008",
+    "build-timestamp": "2026-02-21T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Security",
+      "email": "security@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Security"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Data-Hub-api-production",
+      "type": "component",
+      "name": "Data-Hub-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0008-java-production",
+          "type": "code",
+          "name": "app-0008-java-production",
+          "purl": "https://git.example.local/security/app-0008",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0008-java:2.2.8-production-production",
+          "type": "image",
+          "name": "registry.example.local/security/app-0008-java:2.2.8-production-production"
+        },
+        {
+          "bom-ref": "library:netty-handler-7.14.4-1",
+          "type": "library",
+          "name": "netty-handler-7.14.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-6.3.4-2",
+          "type": "library",
+          "name": "log4j-core-6.3.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-4.11.9-3",
+          "type": "library",
+          "name": "jackson-databind-4.11.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-1.20.0-4",
+          "type": "library",
+          "name": "postgresql-1.20.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-5.0.10-5",
+          "type": "library",
+          "name": "log4j-core-5.0.10",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Data-Hub-worker-production",
+      "type": "component",
+      "name": "Data-Hub-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0008-java-worker-production",
+          "type": "code",
+          "name": "app-0008-java-worker-production",
+          "purl": "https://git.example.local/security/app-0008-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0008-java-worker:2.2.8-production-production",
+          "type": "image",
+          "name": "registry.example.local/security/app-0008-java-worker:2.2.8-production-production"
+        },
+        {
+          "bom-ref": "library:hibernate-core-3.17.12-6",
+          "type": "library",
+          "name": "hibernate-core-3.17.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-3.6.7-7",
+          "type": "library",
+          "name": "log4j-core-3.6.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-8.1.8-8",
+          "type": "library",
+          "name": "hibernate-core-8.1.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-2.7.12-9",
+          "type": "library",
+          "name": "log4j-core-2.7.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-7.7.0-10",
+          "type": "library",
+          "name": "jackson-databind-7.7.0",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Data-Hub-api-production",
+      "name": "Data-Hub-api-production",
+      "endpoints": [
+        "https://data-hub-prod.apps.example.invalid/api/v1",
+        "https://data-hub-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Data-Hub-worker-production",
+      "name": "Data-Hub-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/data-hub.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/security/app-0008-java:2.2.8-production-production",
+      "dependsOn": [
+        "service:Data-Hub-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/security/app-0008-java-worker:2.2.8-production-production",
+      "dependsOn": [
+        "service:Data-Hub-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0008"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Data-Hub"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "high",
+    "security"
+  ]
+}

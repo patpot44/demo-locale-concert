@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Claims-Portal-preproduction:2.3.1-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 3,
+  "data-sensitivity": 2,
+  "revenue": 3000.0,
+  "metadata": {
+    "timestamp": "2026-02-16T00:00:00Z",
+    "type": "application",
+    "application-name": "Claims-Portal-preproduction",
+    "application-version": "2.3.1-preproduction",
+    "description": "Synthetic preproduction definition for Claims Portal",
+    "build-number": "build-prep-2026021",
+    "build-timestamp": "2026-03-18T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Payments",
+      "email": "payments@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Payments"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Claims-Portal-api-preproduction",
+      "type": "component",
+      "name": "Claims-Portal-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0021-go",
+          "type": "code",
+          "name": "app-0021-go",
+          "purl": "https://git.example.local/payments/app-0021",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/payments/app-0021-go:2.3.1-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/payments/app-0021-go:2.3.1-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:viper-7.10.3-1",
+          "type": "library",
+          "name": "viper-7.10.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:zap-2.20.12-2",
+          "type": "library",
+          "name": "zap-2.20.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:viper-9.5.6-3",
+          "type": "library",
+          "name": "viper-9.5.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:crypto-3.3.2-4",
+          "type": "library",
+          "name": "crypto-3.3.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:crypto-9.16.5-5",
+          "type": "library",
+          "name": "crypto-9.16.5",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Claims-Portal-worker-preproduction",
+      "type": "component",
+      "name": "Claims-Portal-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0021-go-worker",
+          "type": "code",
+          "name": "app-0021-go-worker",
+          "purl": "https://git.example.local/payments/app-0021-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/payments/app-0021-go-worker:2.3.1-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/payments/app-0021-go-worker:2.3.1-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:mux-3.15.4-6",
+          "type": "library",
+          "name": "mux-3.15.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mysql-2.0.4-7",
+          "type": "library",
+          "name": "mysql-2.0.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:grpc-5.9.11-8",
+          "type": "library",
+          "name": "grpc-5.9.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:zap-9.2.6-9",
+          "type": "library",
+          "name": "zap-9.2.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:grpc-9.15.2-10",
+          "type": "library",
+          "name": "grpc-9.15.2",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Claims-Portal-api-preproduction",
+      "name": "Claims-Portal-api-preproduction",
+      "endpoints": [
+        "https://claims-portal-preprod.apps.example.invalid/api/v1",
+        "https://claims-portal-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Claims-Portal-worker-preproduction",
+      "name": "Claims-Portal-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/claims-portal.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/payments/app-0021-go:2.3.1-preproduction-preproduction",
+      "dependsOn": [
+        "service:Claims-Portal-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/payments/app-0021-go-worker:2.3.1-preproduction-preproduction",
+      "dependsOn": [
+        "service:Claims-Portal-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0021"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Claims-Portal"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Go"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "medium",
+    "payments"
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:KYC-Service-production:2.1.9-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 3,
+  "data-sensitivity": 4,
+  "revenue": 7500.0,
+  "metadata": {
+    "timestamp": "2026-02-13T00:00:00Z",
+    "type": "application",
+    "application-name": "KYC-Service-production",
+    "application-version": "2.1.9-production",
+    "description": "Synthetic production definition for KYC Service",
+    "build-number": "build-prod-2026019",
+    "build-timestamp": "2026-03-15T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Data",
+      "email": "data@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Data"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:KYC-Service-api-production",
+      "type": "component",
+      "name": "KYC-Service-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0019-go-production",
+          "type": "code",
+          "name": "app-0019-go-production",
+          "purl": "https://git.example.local/data/app-0019",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/data/app-0019-go:2.1.9-production-production",
+          "type": "image",
+          "name": "registry.example.local/data/app-0019-go:2.1.9-production-production"
+        },
+        {
+          "bom-ref": "library:mux-9.6.0-1",
+          "type": "library",
+          "name": "mux-9.6.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:viper-5.8.8-2",
+          "type": "library",
+          "name": "viper-5.8.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mux-7.11.12-3",
+          "type": "library",
+          "name": "mux-7.11.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:client_golang-1.2.10-4",
+          "type": "library",
+          "name": "client_golang-1.2.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:crypto-2.3.8-5",
+          "type": "library",
+          "name": "crypto-2.3.8",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:KYC-Service-worker-production",
+      "type": "component",
+      "name": "KYC-Service-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0019-go-worker-production",
+          "type": "code",
+          "name": "app-0019-go-worker-production",
+          "purl": "https://git.example.local/data/app-0019-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/data/app-0019-go-worker:2.1.9-production-production",
+          "type": "image",
+          "name": "registry.example.local/data/app-0019-go-worker:2.1.9-production-production"
+        },
+        {
+          "bom-ref": "library:mysql-5.13.4-6",
+          "type": "library",
+          "name": "mysql-5.13.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:viper-2.3.11-7",
+          "type": "library",
+          "name": "viper-2.3.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mux-7.5.0-8",
+          "type": "library",
+          "name": "mux-7.5.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:gin-5.5.9-9",
+          "type": "library",
+          "name": "gin-5.5.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:gin-5.10.4-10",
+          "type": "library",
+          "name": "gin-5.10.4",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:KYC-Service-api-production",
+      "name": "KYC-Service-api-production",
+      "endpoints": [
+        "https://kyc-service-prod.apps.example.invalid/api/v1",
+        "https://kyc-service-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "public",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:KYC-Service-worker-production",
+      "name": "KYC-Service-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/kyc-service.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/data/app-0019-go:2.1.9-production-production",
+      "dependsOn": [
+        "service:KYC-Service-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/data/app-0019-go-worker:2.1.9-production-production",
+      "dependsOn": [
+        "service:KYC-Service-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0019"
+    },
+    {
+      "name": "base-application-name",
+      "value": "KYC-Service"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Go"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "medium",
+    "data"
+  ]
+}

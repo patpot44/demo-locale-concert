@@ -1,0 +1,2791 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:076487c9-2484-4117-b873-83f582aa6923",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-08-14T17:33:15Z",
+    "tools": [
+      {
+        "vendor": "Synthetic POC",
+        "name": "Concert Dataset Generator",
+        "version": "1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:maven/example/app-0018@3.8.0",
+      "name": "app-0018",
+      "version": "3.8.0",
+      "properties": [
+        {
+          "name": "concert:application_id",
+          "value": "APP-0018"
+        },
+        {
+          "name": "environment",
+          "value": "preproduction"
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "application_id",
+        "value": "APP-0018"
+      },
+      {
+        "name": "application_name",
+        "value": "Batch Reconciliation"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      },
+      {
+        "name": "business_criticality",
+        "value": "High"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@1.16.8?instance=0",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "1.16.8",
+      "purl": "pkg:maven/org.yaml/snakeyaml@1.16.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j-core@3.11.8?instance=1",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "3.11.8",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@3.11.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j-core@1.1.1?instance=2",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "1.1.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@9.6.11?instance=3",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "9.6.11",
+      "purl": "pkg:maven/org.springframework/spring-core@9.6.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@6.8.4?instance=4",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "6.8.4",
+      "purl": "pkg:maven/org.springframework/spring-core@6.8.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@3.3.4?instance=5",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "3.3.4",
+      "purl": "pkg:maven/io.netty/netty-handler@3.3.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@2.6.0?instance=6",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "2.6.0",
+      "purl": "pkg:maven/org.yaml/snakeyaml@2.6.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@6.5.2?instance=7",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "6.5.2",
+      "purl": "pkg:maven/org.springframework/spring-core@6.5.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@8.0.3?instance=8",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "8.0.3",
+      "purl": "pkg:maven/io.netty/netty-handler@8.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.postgresql/postgresql@7.17.6?instance=9",
+      "group": "org.postgresql",
+      "name": "postgresql",
+      "version": "7.17.6",
+      "purl": "pkg:maven/org.postgresql/postgresql@7.17.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@4.13.1?instance=10",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "4.13.1",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@4.13.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@5.7.5?instance=11",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "5.7.5",
+      "purl": "pkg:maven/io.netty/netty-handler@5.7.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@9.2.12?instance=12",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "9.2.12",
+      "purl": "pkg:maven/io.netty/netty-handler@9.2.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@4.12.11?instance=13",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "4.12.11",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@4.12.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@6.10.9?instance=14",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "6.10.9",
+      "purl": "pkg:maven/io.netty/netty-handler@6.10.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@2.10.5?instance=15",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "2.10.5",
+      "purl": "pkg:maven/org.apache.commons/commons-text@2.10.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@2.9.5?instance=16",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "2.9.5",
+      "purl": "pkg:maven/org.springframework/spring-core@2.9.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@6.9.0?instance=17",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "6.9.0",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@6.9.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@4.16.5?instance=18",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "4.16.5",
+      "purl": "pkg:maven/org.yaml/snakeyaml@4.16.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j-core@4.8.11?instance=19",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "4.8.11",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@4.8.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@7.20.2?instance=20",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "7.20.2",
+      "purl": "pkg:maven/io.netty/netty-handler@7.20.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@6.1.2?instance=21",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "6.1.2",
+      "purl": "pkg:maven/org.yaml/snakeyaml@6.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@8.11.3?instance=22",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "8.11.3",
+      "purl": "pkg:maven/org.apache.commons/commons-text@8.11.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.postgresql/postgresql@8.15.5?instance=23",
+      "group": "org.postgresql",
+      "name": "postgresql",
+      "version": "8.15.5",
+      "purl": "pkg:maven/org.postgresql/postgresql@8.15.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@8.11.3?instance=24",
+      "group": "com.fasterxml.jackson.core",
+      "name": "jackson-databind",
+      "version": "8.11.3",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@8.11.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@8.13.11?instance=25",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "8.13.11",
+      "purl": "pkg:maven/org.springframework/spring-core@8.13.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@7.20.8?instance=26",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "7.20.8",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@7.20.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@1.10.11?instance=27",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "1.10.11",
+      "purl": "pkg:maven/io.netty/netty-handler@1.10.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j-core@3.17.10?instance=28",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "3.17.10",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@3.17.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@7.0.12?instance=29",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "7.0.12",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@7.0.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.7.0?instance=30",
+      "group": "com.fasterxml.jackson.core",
+      "name": "jackson-databind",
+      "version": "2.7.0",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.7.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@4.11.11?instance=31",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "4.11.11",
+      "purl": "pkg:maven/org.springframework/spring-core@4.11.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@3.16.0?instance=32",
+      "group": "com.fasterxml.jackson.core",
+      "name": "jackson-databind",
+      "version": "3.16.0",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@3.16.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.postgresql/postgresql@3.5.12?instance=33",
+      "group": "org.postgresql",
+      "name": "postgresql",
+      "version": "3.5.12",
+      "purl": "pkg:maven/org.postgresql/postgresql@3.5.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j-core@6.10.3?instance=34",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "6.10.3",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@6.10.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@3.10.1?instance=35",
+      "group": "com.fasterxml.jackson.core",
+      "name": "jackson-databind",
+      "version": "3.10.1",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@3.10.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@3.5.5?instance=36",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "3.5.5",
+      "purl": "pkg:maven/org.springframework/spring-core@3.5.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@8.10.0?instance=37",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "8.10.0",
+      "purl": "pkg:maven/org.yaml/snakeyaml@8.10.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@6.13.0?instance=38",
+      "group": "com.fasterxml.jackson.core",
+      "name": "jackson-databind",
+      "version": "6.13.0",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@6.13.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@8.13.4?instance=39",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "8.13.4",
+      "purl": "pkg:maven/org.apache.commons/commons-text@8.13.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j-core@7.15.5?instance=40",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "7.15.5",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@7.15.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@6.6.8?instance=41",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "6.6.8",
+      "purl": "pkg:maven/org.springframework/spring-core@6.6.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@7.20.7?instance=42",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "7.20.7",
+      "purl": "pkg:maven/io.netty/netty-handler@7.20.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j-core@1.13.7?instance=43",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "1.13.7",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@1.13.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.postgresql/postgresql@3.0.4?instance=44",
+      "group": "org.postgresql",
+      "name": "postgresql",
+      "version": "3.0.4",
+      "purl": "pkg:maven/org.postgresql/postgresql@3.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@8.18.5?instance=45",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "8.18.5",
+      "purl": "pkg:maven/org.springframework/spring-core@8.18.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@4.8.8?instance=46",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "4.8.8",
+      "purl": "pkg:maven/io.netty/netty-handler@4.8.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@4.8.10?instance=47",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "4.8.10",
+      "purl": "pkg:maven/org.apache.commons/commons-text@4.8.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j-core@6.8.10?instance=48",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "6.8.10",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@6.8.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@5.17.8?instance=49",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "5.17.8",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@5.17.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@5.14.9?instance=50",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "5.14.9",
+      "purl": "pkg:maven/org.yaml/snakeyaml@5.14.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.postgresql/postgresql@1.15.7?instance=51",
+      "group": "org.postgresql",
+      "name": "postgresql",
+      "version": "1.15.7",
+      "purl": "pkg:maven/org.postgresql/postgresql@1.15.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@4.4.12?instance=52",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "4.4.12",
+      "purl": "pkg:maven/org.apache.commons/commons-text@4.4.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@1.6.6?instance=53",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "1.6.6",
+      "purl": "pkg:maven/org.yaml/snakeyaml@1.6.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.postgresql/postgresql@9.8.3?instance=54",
+      "group": "org.postgresql",
+      "name": "postgresql",
+      "version": "9.8.3",
+      "purl": "pkg:maven/org.postgresql/postgresql@9.8.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@2.6.0?instance=55",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "2.6.0",
+      "purl": "pkg:maven/org.yaml/snakeyaml@2.6.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@7.11.5?instance=56",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "7.11.5",
+      "purl": "pkg:maven/org.springframework/spring-core@7.11.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@8.14.3?instance=57",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "8.14.3",
+      "purl": "pkg:maven/org.springframework/spring-core@8.14.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/io.netty/netty-handler@6.15.0?instance=58",
+      "group": "io.netty",
+      "name": "netty-handler",
+      "version": "6.15.0",
+      "purl": "pkg:maven/io.netty/netty-handler@6.15.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j-core@8.17.1?instance=59",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "8.17.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@8.17.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@5.15.11?instance=60",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "5.15.11",
+      "purl": "pkg:maven/org.springframework/spring-core@5.15.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@7.3.1?instance=61",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "7.3.1",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@7.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@4.18.9?instance=62",
+      "group": "com.fasterxml.jackson.core",
+      "name": "jackson-databind",
+      "version": "4.18.9",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@4.18.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@8.16.2?instance=63",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "8.16.2",
+      "purl": "pkg:maven/org.apache.commons/commons-text@8.16.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.springframework/spring-core@9.4.11?instance=64",
+      "group": "org.springframework",
+      "name": "spring-core",
+      "version": "9.4.11",
+      "purl": "pkg:maven/org.springframework/spring-core@9.4.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.postgresql/postgresql@1.14.12?instance=65",
+      "group": "org.postgresql",
+      "name": "postgresql",
+      "version": "1.14.12",
+      "purl": "pkg:maven/org.postgresql/postgresql@1.14.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@8.5.5?instance=66",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "8.5.5",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@8.5.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@6.16.8?instance=67",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "6.16.8",
+      "purl": "pkg:maven/org.yaml/snakeyaml@6.16.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@3.15.8?instance=68",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "3.15.8",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@3.15.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@3.1.4?instance=69",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "3.1.4",
+      "purl": "pkg:maven/org.yaml/snakeyaml@3.1.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@2.17.6?instance=70",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "2.17.6",
+      "purl": "pkg:maven/org.yaml/snakeyaml@2.17.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@4.5.7?instance=71",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "4.5.7",
+      "purl": "pkg:maven/org.apache.commons/commons-text@4.5.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.postgresql/postgresql@7.7.9?instance=72",
+      "group": "org.postgresql",
+      "name": "postgresql",
+      "version": "7.7.9",
+      "purl": "pkg:maven/org.postgresql/postgresql@7.7.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.hibernate/hibernate-core@9.18.9?instance=73",
+      "group": "org.hibernate",
+      "name": "hibernate-core",
+      "version": "9.18.9",
+      "purl": "pkg:maven/org.hibernate/hibernate-core@9.18.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.yaml/snakeyaml@8.20.2?instance=74",
+      "group": "org.yaml",
+      "name": "snakeyaml",
+      "version": "8.20.2",
+      "purl": "pkg:maven/org.yaml/snakeyaml@8.20.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@4.4.10?instance=75",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "4.4.10",
+      "purl": "pkg:maven/org.apache.commons/commons-text@4.4.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@7.5.12?instance=76",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "7.5.12",
+      "purl": "pkg:maven/org.apache.commons/commons-text@7.5.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.yaml/snakeyaml@1.16.8?instance=0"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.apache.logging.log4j/log4j-core@3.11.8?instance=1"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.apache.logging.log4j/log4j-core@1.1.1?instance=2"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.springframework/spring-core@9.6.11?instance=3"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.springframework/spring-core@6.8.4?instance=4"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/io.netty/netty-handler@3.3.4?instance=5"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.yaml/snakeyaml@2.6.0?instance=6"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.springframework/spring-core@6.5.2?instance=7"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/io.netty/netty-handler@8.0.3?instance=8"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.postgresql/postgresql@7.17.6?instance=9"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.hibernate/hibernate-core@4.13.1?instance=10"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/io.netty/netty-handler@5.7.5?instance=11"
+      ]
+    },
+    {
+      "ref": "pkg:maven/example/app-0018@3.8.0",
+      "dependsOn": [
+        "pkg:maven/org.yaml/snakeyaml@1.16.8?instance=0",
+        "pkg:maven/org.apache.logging.log4j/log4j-core@3.11.8?instance=1",
+        "pkg:maven/org.apache.logging.log4j/log4j-core@1.1.1?instance=2",
+        "pkg:maven/org.springframework/spring-core@9.6.11?instance=3",
+        "pkg:maven/org.springframework/spring-core@6.8.4?instance=4",
+        "pkg:maven/io.netty/netty-handler@3.3.4?instance=5",
+        "pkg:maven/org.yaml/snakeyaml@2.6.0?instance=6",
+        "pkg:maven/org.springframework/spring-core@6.5.2?instance=7",
+        "pkg:maven/io.netty/netty-handler@8.0.3?instance=8",
+        "pkg:maven/org.postgresql/postgresql@7.17.6?instance=9",
+        "pkg:maven/org.hibernate/hibernate-core@4.13.1?instance=10",
+        "pkg:maven/io.netty/netty-handler@5.7.5?instance=11"
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.7,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/io.netty/netty-handler@4.8.8?instance=46"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.3444"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.6"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-38545",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.6,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/io.netty/netty-handler@7.20.2?instance=20"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.4125"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "10"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-29927",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 8.0,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.logging.log4j/log4j-core@6.10.3?instance=34"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.3113"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "9.4"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-24813",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.0,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/io.netty/netty-handler@7.20.2?instance=20"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.288"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "10"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-32463",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.yaml/snakeyaml@6.16.8?instance=67"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.3783"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "10"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-29927",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.4,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.commons/commons-text@2.10.5?instance=15"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2125"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.0"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-3094",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.3,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@3.16.0?instance=32"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0063"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "9.2"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-38545",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 8.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.springframework/spring-core@5.15.11?instance=60"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.3619"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "10"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.8,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.hibernate/hibernate-core@6.9.0?instance=17"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.1717"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "6.7"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-21401",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@6.13.0?instance=38"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.5267"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.0"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-3094",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.4,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.springframework/spring-core@9.6.11?instance=3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.3386"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "10"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-21626",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.postgresql/postgresql@1.14.12?instance=65"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2439"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "6.6"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-44487",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.8,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.yaml/snakeyaml@1.16.8?instance=0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.1003"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "6.4"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-3094",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 6.2,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.yaml/snakeyaml@4.16.5?instance=18"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.3729"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "5.1"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-21401",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 8.3,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.logging.log4j/log4j-core@7.15.5?instance=40"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.5689"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "10"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-3094",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.commons/commons-text@4.4.12?instance=52"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2036"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "6.1"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-32463",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.6,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.springframework/spring-core@2.9.5?instance=16"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0731"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "5.2"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 6.9,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.logging.log4j/log4j-core@1.1.1?instance=2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2658"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "7.9"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-21626",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 9.8,
+          "severity": "critical",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/io.netty/netty-handler@4.8.8?instance=46"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2208"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "7.4"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.4,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.hibernate/hibernate-core@8.5.5?instance=66"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.364"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "8.4"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.7,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.logging.log4j/log4j-core@6.8.10?instance=48"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0884"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "3.3"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    }
+  ]
+}

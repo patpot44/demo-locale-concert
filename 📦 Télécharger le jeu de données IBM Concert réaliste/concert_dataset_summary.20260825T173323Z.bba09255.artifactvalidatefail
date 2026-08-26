@@ -1,0 +1,64 @@
+{
+  "tool": "artifact-validator",
+  "schemaVersion": "2.0",
+  "validatorVersion": "3.1.0",
+  "result": "invalid",
+  "exitCode": 2,
+  "input": {
+    "path": "/mnt/data/concert_realistic_dataset/concert_dataset_summary.xlsx",
+    "sha256": "7b27bb5c19e2c04c465de5331f210e116b8add30fcf6aedd50eb76d2a95f8d8d",
+    "sizeBytes": 103939,
+    "kind": "xlsx"
+  },
+  "output": null,
+  "backup": null,
+  "repair": {
+    "mode": "compat",
+    "applied": [
+      {
+        "rule": "XLSX_WORKSHEET_TABLE_FILTER_REMOVE",
+        "part": "/xl/worksheets/sheet2.xml",
+        "detail": "Removed a worksheet filter that overlapped a table filter.",
+        "before": null,
+        "after": null
+      },
+      {
+        "rule": "XLSX_WORKSHEET_TABLE_FILTER_REMOVE",
+        "part": "/xl/worksheets/sheet3.xml",
+        "detail": "Removed a worksheet filter that overlapped a table filter.",
+        "before": null,
+        "after": null
+      },
+      {
+        "rule": "XLSX_WORKSHEET_TABLE_FILTER_REMOVE",
+        "part": "/xl/worksheets/sheet4.xml",
+        "detail": "Removed a worksheet filter that overlapped a table filter.",
+        "before": null,
+        "after": null
+      }
+    ],
+    "revalidated": true,
+    "status": "partial",
+    "outputPublished": false
+  },
+  "packageError": null,
+  "summary": {
+    "errorCount": 1,
+    "warningCount": 0,
+    "repairableCount": 0,
+    "issueCount": 1
+  },
+  "issues": [
+    {
+      "code": "XLSX_ELEMENT_ORDER_INVALID",
+      "category": "schema",
+      "severity": "error",
+      "part": "/xl/styles.xml",
+      "xpath": null,
+      "message": "A stylesheet font contains child elements in schema-invalid order.",
+      "repairable": false,
+      "suggestedFix": "Repair the SpreadsheetML element order. 1. Locate the reported worksheet, chart, or styles part. 2. Re-serialize the affected XML with schema-valid child order while preserving values and relationship IDs. 3. Re-run validation and confirm the ordering error is cleared.",
+      "fixMode": null
+    }
+  ]
+}

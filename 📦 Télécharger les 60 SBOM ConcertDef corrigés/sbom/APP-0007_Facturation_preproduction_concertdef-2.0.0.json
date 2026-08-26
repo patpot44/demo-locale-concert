@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Facturation-preproduction:2.1.7-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 2,
+  "revenue": 4000.0,
+  "metadata": {
+    "timestamp": "2026-01-19T00:00:00Z",
+    "type": "application",
+    "application-name": "Facturation-preproduction",
+    "application-version": "2.1.7-preproduction",
+    "description": "Synthetic preproduction definition for Facturation",
+    "build-number": "build-prep-2026007",
+    "build-timestamp": "2026-02-18T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Data",
+      "email": "data@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Data"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Facturation-api-preproduction",
+      "type": "component",
+      "name": "Facturation-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0007-go",
+          "type": "code",
+          "name": "app-0007-go",
+          "purl": "https://git.example.local/data/app-0007",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/data/app-0007-go:2.1.7-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/data/app-0007-go:2.1.7-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:client_golang-4.1.3-1",
+          "type": "library",
+          "name": "client_golang-4.1.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:grpc-9.5.10-2",
+          "type": "library",
+          "name": "grpc-9.5.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mysql-1.19.7-3",
+          "type": "library",
+          "name": "mysql-1.19.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mux-7.15.1-4",
+          "type": "library",
+          "name": "mux-7.15.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mux-6.7.1-5",
+          "type": "library",
+          "name": "mux-6.7.1",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Facturation-worker-preproduction",
+      "type": "component",
+      "name": "Facturation-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0007-go-worker",
+          "type": "code",
+          "name": "app-0007-go-worker",
+          "purl": "https://git.example.local/data/app-0007-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/data/app-0007-go-worker:2.1.7-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/data/app-0007-go-worker:2.1.7-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:mux-1.2.2-6",
+          "type": "library",
+          "name": "mux-1.2.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:viper-5.16.3-7",
+          "type": "library",
+          "name": "viper-5.16.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:grpc-9.16.5-8",
+          "type": "library",
+          "name": "grpc-9.16.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:mysql-7.1.9-9",
+          "type": "library",
+          "name": "mysql-7.1.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:grpc-4.3.2-10",
+          "type": "library",
+          "name": "grpc-4.3.2",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Facturation-api-preproduction",
+      "name": "Facturation-api-preproduction",
+      "endpoints": [
+        "https://facturation-preprod.apps.example.invalid/api/v1",
+        "https://facturation-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Facturation-worker-preproduction",
+      "name": "Facturation-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/facturation.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/data/app-0007-go:2.1.7-preproduction-preproduction",
+      "dependsOn": [
+        "service:Facturation-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/data/app-0007-go-worker:2.1.7-preproduction-preproduction",
+      "dependsOn": [
+        "service:Facturation-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0007"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Facturation"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Go"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "high",
+    "data"
+  ]
+}

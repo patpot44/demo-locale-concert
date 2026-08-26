@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:IAM-Gateway-production:2.3.9-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 4,
+  "revenue": 12500.0,
+  "metadata": {
+    "timestamp": "2026-01-24T00:00:00Z",
+    "type": "application",
+    "application-name": "IAM-Gateway-production",
+    "application-version": "2.3.9-production",
+    "description": "Synthetic production definition for IAM Gateway",
+    "build-number": "build-prod-2026009",
+    "build-timestamp": "2026-02-23T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Payments",
+      "email": "payments@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Payments"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:IAM-Gateway-api-production",
+      "type": "component",
+      "name": "IAM-Gateway-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0009-python",
+          "type": "code",
+          "name": "app-0009-python",
+          "purl": "https://git.example.local/payments/app-0009",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/payments/app-0009-python:2.3.9-production-production",
+          "type": "image",
+          "name": "registry.example.local/payments/app-0009-python:2.3.9-production-production"
+        },
+        {
+          "bom-ref": "library:cryptography-4.20.12-1",
+          "type": "library",
+          "name": "cryptography-4.20.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-3.17.0-2",
+          "type": "library",
+          "name": "numpy-3.17.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-3.16.11-3",
+          "type": "library",
+          "name": "urllib3-3.16.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-2.10.10-4",
+          "type": "library",
+          "name": "flask-2.10.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-1.5.6-5",
+          "type": "library",
+          "name": "jinja2-1.5.6",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:IAM-Gateway-worker-production",
+      "type": "component",
+      "name": "IAM-Gateway-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0009-python-worker",
+          "type": "code",
+          "name": "app-0009-python-worker",
+          "purl": "https://git.example.local/payments/app-0009-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/payments/app-0009-python-worker:2.3.9-production-production",
+          "type": "image",
+          "name": "registry.example.local/payments/app-0009-python-worker:2.3.9-production-production"
+        },
+        {
+          "bom-ref": "library:django-9.19.7-6",
+          "type": "library",
+          "name": "django-9.19.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-4.4.1-7",
+          "type": "library",
+          "name": "urllib3-4.4.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-6.7.2-8",
+          "type": "library",
+          "name": "jinja2-6.7.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-2.13.1-9",
+          "type": "library",
+          "name": "jinja2-2.13.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-7.7.0-10",
+          "type": "library",
+          "name": "numpy-7.7.0",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:IAM-Gateway-api-production",
+      "name": "IAM-Gateway-api-production",
+      "endpoints": [
+        "https://iam-gateway-prod.apps.example.invalid/api/v1",
+        "https://iam-gateway-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:IAM-Gateway-worker-production",
+      "name": "IAM-Gateway-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/iam-gateway.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/payments/app-0009-python:2.3.9-production-production",
+      "dependsOn": [
+        "service:IAM-Gateway-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/payments/app-0009-python-worker:2.3.9-production-production",
+      "dependsOn": [
+        "service:IAM-Gateway-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0009"
+    },
+    {
+      "name": "base-application-name",
+      "value": "IAM-Gateway"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "critical",
+    "payments"
+  ]
+}

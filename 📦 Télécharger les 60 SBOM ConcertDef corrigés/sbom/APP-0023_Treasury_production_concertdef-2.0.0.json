@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Treasury-production:2.5.3-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 2,
+  "revenue": 12500.0,
+  "metadata": {
+    "timestamp": "2026-02-21T00:00:00Z",
+    "type": "application",
+    "application-name": "Treasury-production",
+    "application-version": "2.5.3-production",
+    "description": "Synthetic production definition for Treasury",
+    "build-number": "build-prod-2026023",
+    "build-timestamp": "2026-03-23T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Core-Banking",
+      "email": "core-banking@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Core Banking"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Treasury-api-production",
+      "type": "component",
+      "name": "Treasury-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0023-python",
+          "type": "code",
+          "name": "app-0023-python",
+          "purl": "https://git.example.local/core-banking/app-0023",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/core-banking/app-0023-python:2.5.3-production-production",
+          "type": "image",
+          "name": "registry.example.local/core-banking/app-0023-python:2.5.3-production-production"
+        },
+        {
+          "bom-ref": "library:urllib3-9.15.6-1",
+          "type": "library",
+          "name": "urllib3-9.15.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-8.2.10-2",
+          "type": "library",
+          "name": "pyyaml-8.2.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-2.7.5-3",
+          "type": "library",
+          "name": "pyyaml-2.7.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-3.16.8-4",
+          "type": "library",
+          "name": "numpy-3.16.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-6.11.7-5",
+          "type": "library",
+          "name": "pyyaml-6.11.7",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Treasury-worker-production",
+      "type": "component",
+      "name": "Treasury-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0023-python-worker",
+          "type": "code",
+          "name": "app-0023-python-worker",
+          "purl": "https://git.example.local/core-banking/app-0023-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/core-banking/app-0023-python-worker:2.5.3-production-production",
+          "type": "image",
+          "name": "registry.example.local/core-banking/app-0023-python-worker:2.5.3-production-production"
+        },
+        {
+          "bom-ref": "library:requests-1.17.7-6",
+          "type": "library",
+          "name": "requests-1.17.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-7.5.3-7",
+          "type": "library",
+          "name": "pyyaml-7.5.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-5.5.11-8",
+          "type": "library",
+          "name": "flask-5.5.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-3.19.5-9",
+          "type": "library",
+          "name": "pyyaml-3.19.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-3.18.10-10",
+          "type": "library",
+          "name": "urllib3-3.18.10",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Treasury-api-production",
+      "name": "Treasury-api-production",
+      "endpoints": [
+        "https://treasury-prod.apps.example.invalid/api/v1",
+        "https://treasury-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Treasury-worker-production",
+      "name": "Treasury-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/treasury.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/core-banking/app-0023-python:2.5.3-production-production",
+      "dependsOn": [
+        "service:Treasury-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/core-banking/app-0023-python-worker:2.5.3-production-production",
+      "dependsOn": [
+        "service:Treasury-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0023"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Treasury"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "critical",
+    "core-banking"
+  ]
+}

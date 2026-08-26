@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Partner-Gateway-production:2.4.2-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 3,
+  "data-sensitivity": 5,
+  "revenue": 7500.0,
+  "metadata": {
+    "timestamp": "2026-02-19T00:00:00Z",
+    "type": "application",
+    "application-name": "Partner-Gateway-production",
+    "application-version": "2.4.2-production",
+    "description": "Synthetic production definition for Partner Gateway",
+    "build-number": "build-prod-2026022",
+    "build-timestamp": "2026-03-21T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Partner-Gateway-api-production",
+      "type": "component",
+      "name": "Partner-Gateway-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0022-javascript-production",
+          "type": "code",
+          "name": "app-0022-javascript-production",
+          "purl": "https://git.example.local/claims/app-0022",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0022-javascript:2.4.2-production-production",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0022-javascript:2.4.2-production-production"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-7.14.2-1",
+          "type": "library",
+          "name": "jsonwebtoken-7.14.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-5.16.1-2",
+          "type": "library",
+          "name": "moment-5.16.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:webpack-7.10.12-3",
+          "type": "library",
+          "name": "webpack-7.10.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-5.14.9-4",
+          "type": "library",
+          "name": "moment-5.14.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-8.3.12-5",
+          "type": "library",
+          "name": "jsonwebtoken-8.3.12",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Partner-Gateway-worker-production",
+      "type": "component",
+      "name": "Partner-Gateway-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0022-javascript-worker-production",
+          "type": "code",
+          "name": "app-0022-javascript-worker-production",
+          "purl": "https://git.example.local/claims/app-0022-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0022-javascript-worker:2.4.2-production-production",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0022-javascript-worker:2.4.2-production-production"
+        },
+        {
+          "bom-ref": "library:express-6.9.5-6",
+          "type": "library",
+          "name": "express-6.9.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-3.6.11-7",
+          "type": "library",
+          "name": "moment-3.6.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:lodash-9.7.2-8",
+          "type": "library",
+          "name": "lodash-9.7.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:webpack-7.0.8-9",
+          "type": "library",
+          "name": "webpack-7.0.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:axios-2.15.9-10",
+          "type": "library",
+          "name": "axios-2.15.9",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Partner-Gateway-api-production",
+      "name": "Partner-Gateway-api-production",
+      "endpoints": [
+        "https://partner-gateway-prod.apps.example.invalid/api/v1",
+        "https://partner-gateway-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "public",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Partner-Gateway-worker-production",
+      "name": "Partner-Gateway-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/partner-gateway.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0022-javascript:2.4.2-production-production",
+      "dependsOn": [
+        "service:Partner-Gateway-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0022-javascript-worker:2.4.2-production-production",
+      "dependsOn": [
+        "service:Partner-Gateway-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0022"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Partner-Gateway"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "JavaScript"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "medium",
+    "claims"
+  ]
+}

@@ -1,0 +1,31 @@
+﻿application_id,application_name,business_criticality,owner_team,technology,internet_exposed,repository_url,data_classification
+APP-0001,Paiements SEPA,Medium,Integration,Go,False,https://git.example.local/integration/app-0001,Internal
+APP-0002,Portail Client,Medium,Finance,Python,False,https://git.example.local/finance/app-0002,Internal
+APP-0003,API Sinistres,Critical,Security,Python,True,https://git.example.local/security/app-0003,Confidential
+APP-0004,Mobile Banking,High,Claims,Java,True,https://git.example.local/claims/app-0004,Confidential
+APP-0005,Gestion Contrats,High,Claims,Java,True,https://git.example.local/claims/app-0005,Restricted
+APP-0006,CRM Conseillers,Medium,Core Banking,Python,False,https://git.example.local/core-banking/app-0006,Restricted
+APP-0007,Facturation,High,Data,Go,True,https://git.example.local/data/app-0007,Internal
+APP-0008,Data Hub,High,Security,Java,False,https://git.example.local/security/app-0008,Internal
+APP-0009,IAM Gateway,Critical,Payments,Python,False,https://git.example.local/payments/app-0009,Confidential
+APP-0010,GED,Critical,Integration,Java,False,https://git.example.local/integration/app-0010,Restricted
+APP-0011,Notification Service,High,Data,Python,False,https://git.example.local/data/app-0011,Restricted
+APP-0012,Tarification,Medium,Integration,JavaScript,False,https://git.example.local/integration/app-0012,Restricted
+APP-0013,Fraude Temps Reel,Critical,Claims,Python,True,https://git.example.local/claims/app-0013,Internal
+APP-0014,Referentiel Client,High,Finance,Python,False,https://git.example.local/finance/app-0014,Confidential
+APP-0015,Comptabilite,Critical,Payments,Python,False,https://git.example.local/payments/app-0015,Restricted
+APP-0016,Reporting Reglementaire,High,Finance,Go,True,https://git.example.local/finance/app-0016,Confidential
+APP-0017,Open Banking API,High,Integration,Java,False,https://git.example.local/integration/app-0017,Confidential
+APP-0018,Batch Reconciliation,High,Integration,Java,True,https://git.example.local/integration/app-0018,Restricted
+APP-0019,KYC Service,Medium,Data,Go,True,https://git.example.local/data/app-0019,Confidential
+APP-0020,Document Signature,High,Claims,JavaScript,True,https://git.example.local/claims/app-0020,Confidential
+APP-0021,Claims Portal,Medium,Payments,Go,False,https://git.example.local/payments/app-0021,Internal
+APP-0022,Partner Gateway,Medium,Claims,JavaScript,True,https://git.example.local/claims/app-0022,Restricted
+APP-0023,Treasury,Critical,Core Banking,Python,False,https://git.example.local/core-banking/app-0023,Internal
+APP-0024,Risk Engine,High,Digital,Java,False,https://git.example.local/digital/app-0024,Confidential
+APP-0025,Customer 360,High,Integration,Python,True,https://git.example.local/integration/app-0025,Confidential
+APP-0026,Consent Management,High,Claims,JavaScript,False,https://git.example.local/claims/app-0026,Restricted
+APP-0027,Archive Service,High,Data,Go,True,https://git.example.local/data/app-0027,Confidential
+APP-0028,Marketing Automation,Medium,Core Banking,Python,True,https://git.example.local/core-banking/app-0028,Internal
+APP-0029,Loan Origination,Critical,Security,Java,False,https://git.example.local/security/app-0029,Restricted
+APP-0030,Card Authorization,Critical,Integration,Python,False,https://git.example.local/integration/app-0030,Internal

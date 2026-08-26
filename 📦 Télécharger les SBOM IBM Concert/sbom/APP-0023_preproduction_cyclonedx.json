@@ -1,0 +1,1902 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:e8c62615-4d70-4154-8182-51b0f4fbce8e",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-08-18T17:33:15Z",
+    "tools": [
+      {
+        "vendor": "Synthetic POC",
+        "name": "Concert Dataset Generator",
+        "version": "1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:pypi/example/app-0023@4.3.0",
+      "name": "app-0023",
+      "version": "4.3.0",
+      "properties": [
+        {
+          "name": "concert:application_id",
+          "value": "APP-0023"
+        },
+        {
+          "name": "environment",
+          "value": "preproduction"
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "application_id",
+        "value": "APP-0023"
+      },
+      {
+        "name": "application_name",
+        "value": "Treasury"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      },
+      {
+        "name": "business_criticality",
+        "value": "Critical"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/urllib3@5.4.1?instance=0",
+      "group": "",
+      "name": "urllib3",
+      "version": "5.4.1",
+      "purl": "pkg:pypi/urllib3@5.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/numpy@2.8.9?instance=1",
+      "group": "",
+      "name": "numpy",
+      "version": "2.8.9",
+      "purl": "pkg:pypi/numpy@2.8.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@4.1.4?instance=2",
+      "group": "",
+      "name": "pyyaml",
+      "version": "4.1.4",
+      "purl": "pkg:pypi/pyyaml@4.1.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@9.4.1?instance=3",
+      "group": "",
+      "name": "pyyaml",
+      "version": "9.4.1",
+      "purl": "pkg:pypi/pyyaml@9.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/flask@4.17.8?instance=4",
+      "group": "",
+      "name": "flask",
+      "version": "4.17.8",
+      "purl": "pkg:pypi/flask@4.17.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@4.2.2?instance=5",
+      "group": "",
+      "name": "requests",
+      "version": "4.2.2",
+      "purl": "pkg:pypi/requests@4.2.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/flask@6.7.7?instance=6",
+      "group": "",
+      "name": "flask",
+      "version": "6.7.7",
+      "purl": "pkg:pypi/flask@6.7.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/numpy@8.17.0?instance=7",
+      "group": "",
+      "name": "numpy",
+      "version": "8.17.0",
+      "purl": "pkg:pypi/numpy@8.17.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@2.0.7?instance=8",
+      "group": "",
+      "name": "pyyaml",
+      "version": "2.0.7",
+      "purl": "pkg:pypi/pyyaml@2.0.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cryptography@2.1.0?instance=9",
+      "group": "",
+      "name": "cryptography",
+      "version": "2.1.0",
+      "purl": "pkg:pypi/cryptography@2.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/numpy@5.8.3?instance=10",
+      "group": "",
+      "name": "numpy",
+      "version": "5.8.3",
+      "purl": "pkg:pypi/numpy@5.8.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/numpy@3.12.7?instance=11",
+      "group": "",
+      "name": "numpy",
+      "version": "3.12.7",
+      "purl": "pkg:pypi/numpy@3.12.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jinja2@1.1.12?instance=12",
+      "group": "",
+      "name": "jinja2",
+      "version": "1.1.12",
+      "purl": "pkg:pypi/jinja2@1.1.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/flask@2.17.8?instance=13",
+      "group": "",
+      "name": "flask",
+      "version": "2.17.8",
+      "purl": "pkg:pypi/flask@2.17.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jinja2@6.1.6?instance=14",
+      "group": "",
+      "name": "jinja2",
+      "version": "6.1.6",
+      "purl": "pkg:pypi/jinja2@6.1.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/flask@9.12.1?instance=15",
+      "group": "",
+      "name": "flask",
+      "version": "9.12.1",
+      "purl": "pkg:pypi/flask@9.12.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cryptography@7.1.11?instance=16",
+      "group": "",
+      "name": "cryptography",
+      "version": "7.1.11",
+      "purl": "pkg:pypi/cryptography@7.1.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jinja2@3.19.10?instance=17",
+      "group": "",
+      "name": "jinja2",
+      "version": "3.19.10",
+      "purl": "pkg:pypi/jinja2@3.19.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@1.14.3?instance=18",
+      "group": "",
+      "name": "requests",
+      "version": "1.14.3",
+      "purl": "pkg:pypi/requests@1.14.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@3.4.10?instance=19",
+      "group": "",
+      "name": "requests",
+      "version": "3.4.10",
+      "purl": "pkg:pypi/requests@3.4.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/flask@1.6.4?instance=20",
+      "group": "",
+      "name": "flask",
+      "version": "1.6.4",
+      "purl": "pkg:pypi/flask@1.6.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cryptography@5.16.12?instance=21",
+      "group": "",
+      "name": "cryptography",
+      "version": "5.16.12",
+      "purl": "pkg:pypi/cryptography@5.16.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/django@5.14.0?instance=22",
+      "group": "",
+      "name": "django",
+      "version": "5.14.0",
+      "purl": "pkg:pypi/django@5.14.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@8.15.6?instance=23",
+      "group": "",
+      "name": "requests",
+      "version": "8.15.6",
+      "purl": "pkg:pypi/requests@8.15.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jinja2@8.4.0?instance=24",
+      "group": "",
+      "name": "jinja2",
+      "version": "8.4.0",
+      "purl": "pkg:pypi/jinja2@8.4.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/django@4.12.6?instance=25",
+      "group": "",
+      "name": "django",
+      "version": "4.12.6",
+      "purl": "pkg:pypi/django@4.12.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@8.10.5?instance=26",
+      "group": "",
+      "name": "pyyaml",
+      "version": "8.10.5",
+      "purl": "pkg:pypi/pyyaml@8.10.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jinja2@9.5.8?instance=27",
+      "group": "",
+      "name": "jinja2",
+      "version": "9.5.8",
+      "purl": "pkg:pypi/jinja2@9.5.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@6.11.3?instance=28",
+      "group": "",
+      "name": "requests",
+      "version": "6.11.3",
+      "purl": "pkg:pypi/requests@6.11.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@4.7.1?instance=29",
+      "group": "",
+      "name": "pyyaml",
+      "version": "4.7.1",
+      "purl": "pkg:pypi/pyyaml@4.7.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cryptography@1.18.5?instance=30",
+      "group": "",
+      "name": "cryptography",
+      "version": "1.18.5",
+      "purl": "pkg:pypi/cryptography@1.18.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/urllib3@9.12.7?instance=31",
+      "group": "",
+      "name": "urllib3",
+      "version": "9.12.7",
+      "purl": "pkg:pypi/urllib3@9.12.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jinja2@1.16.0?instance=32",
+      "group": "",
+      "name": "jinja2",
+      "version": "1.16.0",
+      "purl": "pkg:pypi/jinja2@1.16.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@8.10.5?instance=33",
+      "group": "",
+      "name": "pyyaml",
+      "version": "8.10.5",
+      "purl": "pkg:pypi/pyyaml@8.10.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/urllib3@9.12.0?instance=34",
+      "group": "",
+      "name": "urllib3",
+      "version": "9.12.0",
+      "purl": "pkg:pypi/urllib3@9.12.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/numpy@8.5.12?instance=35",
+      "group": "",
+      "name": "numpy",
+      "version": "8.5.12",
+      "purl": "pkg:pypi/numpy@8.5.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/numpy@4.18.0?instance=36",
+      "group": "",
+      "name": "numpy",
+      "version": "4.18.0",
+      "purl": "pkg:pypi/numpy@4.18.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@7.0.4?instance=37",
+      "group": "",
+      "name": "requests",
+      "version": "7.0.4",
+      "purl": "pkg:pypi/requests@7.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/django@1.7.4?instance=38",
+      "group": "",
+      "name": "django",
+      "version": "1.7.4",
+      "purl": "pkg:pypi/django@1.7.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cryptography@7.0.5?instance=39",
+      "group": "",
+      "name": "cryptography",
+      "version": "7.0.5",
+      "purl": "pkg:pypi/cryptography@7.0.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/numpy@7.6.11?instance=40",
+      "group": "",
+      "name": "numpy",
+      "version": "7.6.11",
+      "purl": "pkg:pypi/numpy@7.6.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/django@3.11.12?instance=41",
+      "group": "",
+      "name": "django",
+      "version": "3.11.12",
+      "purl": "pkg:pypi/django@3.11.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/django@5.15.9?instance=42",
+      "group": "",
+      "name": "django",
+      "version": "5.15.9",
+      "purl": "pkg:pypi/django@5.15.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/numpy@5.14.6?instance=43",
+      "group": "",
+      "name": "numpy",
+      "version": "5.14.6",
+      "purl": "pkg:pypi/numpy@5.14.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jinja2@3.11.12?instance=44",
+      "group": "",
+      "name": "jinja2",
+      "version": "3.11.12",
+      "purl": "pkg:pypi/jinja2@3.11.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@6.10.3?instance=45",
+      "group": "",
+      "name": "requests",
+      "version": "6.10.3",
+      "purl": "pkg:pypi/requests@6.10.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@1.12.0?instance=46",
+      "group": "",
+      "name": "requests",
+      "version": "1.12.0",
+      "purl": "pkg:pypi/requests@1.12.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@3.0.2?instance=47",
+      "group": "",
+      "name": "requests",
+      "version": "3.0.2",
+      "purl": "pkg:pypi/requests@3.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/django@5.5.3?instance=48",
+      "group": "",
+      "name": "django",
+      "version": "5.5.3",
+      "purl": "pkg:pypi/django@5.5.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/django@7.4.9?instance=49",
+      "group": "",
+      "name": "django",
+      "version": "7.4.9",
+      "purl": "pkg:pypi/django@7.4.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/flask@6.12.11?instance=50",
+      "group": "",
+      "name": "flask",
+      "version": "6.12.11",
+      "purl": "pkg:pypi/flask@6.12.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "scope",
+          "value": "optional"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/urllib3@5.4.1?instance=0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/numpy@2.8.9?instance=1"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/pyyaml@4.1.4?instance=2"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/pyyaml@9.4.1?instance=3"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/flask@4.17.8?instance=4"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/requests@4.2.2?instance=5"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/flask@6.7.7?instance=6"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/numpy@8.17.0?instance=7"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/pyyaml@2.0.7?instance=8"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/cryptography@2.1.0?instance=9"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/numpy@5.8.3?instance=10"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/numpy@3.12.7?instance=11"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/example/app-0023@4.3.0",
+      "dependsOn": [
+        "pkg:pypi/urllib3@5.4.1?instance=0",
+        "pkg:pypi/numpy@2.8.9?instance=1",
+        "pkg:pypi/pyyaml@4.1.4?instance=2",
+        "pkg:pypi/pyyaml@9.4.1?instance=3",
+        "pkg:pypi/flask@4.17.8?instance=4",
+        "pkg:pypi/requests@4.2.2?instance=5",
+        "pkg:pypi/flask@6.7.7?instance=6",
+        "pkg:pypi/numpy@8.17.0?instance=7",
+        "pkg:pypi/pyyaml@2.0.7?instance=8",
+        "pkg:pypi/cryptography@2.1.0?instance=9",
+        "pkg:pypi/numpy@5.8.3?instance=10",
+        "pkg:pypi/numpy@3.12.7?instance=11"
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "CVE-2024-21626",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.9,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/flask@6.7.7?instance=6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0858"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.6"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2021-44228",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.9,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@9.12.7?instance=31"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0829"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "9.1"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-44487",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.1,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/cryptography@1.18.5?instance=30"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.7237"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "4.4"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-21401",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 6.6,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/django@5.15.9?instance=42"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2286"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "8.3"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2021-44228",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/cryptography@7.0.5?instance=39"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.5536"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "5.0"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-38545",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.6,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/numpy@8.17.0?instance=7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2741"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "9.8"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2021-44228",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 4.2,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/jinja2@3.19.10?instance=17"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2011"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "3.5"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P3"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2021-44228",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/django@5.15.9?instance=42"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.1131"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "6.9"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-21401",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.3,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/jinja2@1.1.12?instance=12"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.1504"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "6.4"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2022-22965",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.1,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/pyyaml@8.10.5?instance=33"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.1308"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "5.6"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2021-44228",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 6.9,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/requests@8.15.6?instance=23"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.4261"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "6.5"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-21401",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 7.4,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Synthetic POC finding. Component present but no observed runtime path."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/numpy@2.8.9?instance=1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0183"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "false"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "5.5"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-29927",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 5.1,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/cryptography@1.18.5?instance=30"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.2842"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "6.6"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P2"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-29927",
+      "source": {
+        "name": "SyntheticScanner",
+        "url": "https://example.invalid/synthetic"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 8.2,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Synthetic POC finding. Runtime reachable."
+      },
+      "affects": [
+        {
+          "ref": "pkg:pypi/cryptography@7.0.5?instance=39"
+        }
+      ],
+      "properties": [
+        {
+          "name": "epss",
+          "value": "0.0774"
+        },
+        {
+          "name": "internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "runtime_reachable",
+          "value": "true"
+        },
+        {
+          "name": "concert_risk_score",
+          "value": "9.4"
+        },
+        {
+          "name": "suggested_priority",
+          "value": "P1"
+        }
+      ]
+    }
+  ]
+}

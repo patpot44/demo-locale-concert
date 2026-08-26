@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:API-Sinistres-preproduction:2.3.3-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 4,
+  "revenue": 5000.0,
+  "metadata": {
+    "timestamp": "2026-01-11T00:00:00Z",
+    "type": "application",
+    "application-name": "API-Sinistres-preproduction",
+    "application-version": "2.3.3-preproduction",
+    "description": "Synthetic preproduction definition for API Sinistres",
+    "build-number": "build-prep-2026003",
+    "build-timestamp": "2026-02-10T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Security",
+      "email": "security@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Security"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:API-Sinistres-api-preproduction",
+      "type": "component",
+      "name": "API-Sinistres-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0003-python",
+          "type": "code",
+          "name": "app-0003-python",
+          "purl": "https://git.example.local/security/app-0003",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0003-python:2.3.3-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/security/app-0003-python:2.3.3-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:requests-6.18.3-1",
+          "type": "library",
+          "name": "requests-6.18.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-1.13.11-2",
+          "type": "library",
+          "name": "django-1.13.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-3.12.4-3",
+          "type": "library",
+          "name": "flask-3.12.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-5.5.9-4",
+          "type": "library",
+          "name": "jinja2-5.5.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:cryptography-2.2.2-5",
+          "type": "library",
+          "name": "cryptography-2.2.2",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:API-Sinistres-worker-preproduction",
+      "type": "component",
+      "name": "API-Sinistres-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0003-python-worker",
+          "type": "code",
+          "name": "app-0003-python-worker",
+          "purl": "https://git.example.local/security/app-0003-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0003-python-worker:2.3.3-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/security/app-0003-python-worker:2.3.3-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:cryptography-1.9.11-6",
+          "type": "library",
+          "name": "cryptography-1.9.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-3.3.1-7",
+          "type": "library",
+          "name": "jinja2-3.3.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-3.16.10-8",
+          "type": "library",
+          "name": "django-3.16.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-1.0.10-9",
+          "type": "library",
+          "name": "jinja2-1.0.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:cryptography-5.19.5-10",
+          "type": "library",
+          "name": "cryptography-5.19.5",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:API-Sinistres-api-preproduction",
+      "name": "API-Sinistres-api-preproduction",
+      "endpoints": [
+        "https://api-sinistres-preprod.apps.example.invalid/api/v1",
+        "https://api-sinistres-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:API-Sinistres-worker-preproduction",
+      "name": "API-Sinistres-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/api-sinistres.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/security/app-0003-python:2.3.3-preproduction-preproduction",
+      "dependsOn": [
+        "service:API-Sinistres-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/security/app-0003-python-worker:2.3.3-preproduction-preproduction",
+      "dependsOn": [
+        "service:API-Sinistres-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0003"
+    },
+    {
+      "name": "base-application-name",
+      "value": "API-Sinistres"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "critical",
+    "security"
+  ]
+}

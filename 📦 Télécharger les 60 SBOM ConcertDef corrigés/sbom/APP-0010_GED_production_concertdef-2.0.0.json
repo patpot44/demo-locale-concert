@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:GED-production:2.4.0-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 5,
+  "revenue": 12500.0,
+  "metadata": {
+    "timestamp": "2026-01-26T00:00:00Z",
+    "type": "application",
+    "application-name": "GED-production",
+    "application-version": "2.4.0-production",
+    "description": "Synthetic production definition for GED",
+    "build-number": "build-prod-2026010",
+    "build-timestamp": "2026-02-25T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Integration",
+      "email": "integration@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Integration"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:GED-api-production",
+      "type": "component",
+      "name": "GED-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0010-java",
+          "type": "code",
+          "name": "app-0010-java",
+          "purl": "https://git.example.local/integration/app-0010",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0010-java:2.4.0-production-production",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0010-java:2.4.0-production-production"
+        },
+        {
+          "bom-ref": "library:log4j-core-3.14.8-1",
+          "type": "library",
+          "name": "log4j-core-3.14.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-2.20.5-2",
+          "type": "library",
+          "name": "spring-core-2.20.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-3.7.6-3",
+          "type": "library",
+          "name": "jackson-databind-3.7.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:snakeyaml-2.10.2-4",
+          "type": "library",
+          "name": "snakeyaml-2.10.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-3.12.8-5",
+          "type": "library",
+          "name": "commons-text-3.12.8",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:GED-worker-production",
+      "type": "component",
+      "name": "GED-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0010-java-worker",
+          "type": "code",
+          "name": "app-0010-java-worker",
+          "purl": "https://git.example.local/integration/app-0010-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0010-java-worker:2.4.0-production-production",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0010-java-worker:2.4.0-production-production"
+        },
+        {
+          "bom-ref": "library:hibernate-core-2.19.12-6",
+          "type": "library",
+          "name": "hibernate-core-2.19.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-1.11.6-7",
+          "type": "library",
+          "name": "spring-core-1.11.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-4.9.6-8",
+          "type": "library",
+          "name": "log4j-core-4.9.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-7.6.3-9",
+          "type": "library",
+          "name": "postgresql-7.6.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-4.11.7-10",
+          "type": "library",
+          "name": "postgresql-4.11.7",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:GED-api-production",
+      "name": "GED-api-production",
+      "endpoints": [
+        "https://ged-prod.apps.example.invalid/api/v1",
+        "https://ged-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:GED-worker-production",
+      "name": "GED-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/ged.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/integration/app-0010-java:2.4.0-production-production",
+      "dependsOn": [
+        "service:GED-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/integration/app-0010-java-worker:2.4.0-production-production",
+      "dependsOn": [
+        "service:GED-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0010"
+    },
+    {
+      "name": "base-application-name",
+      "value": "GED"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "critical",
+    "integration"
+  ]
+}

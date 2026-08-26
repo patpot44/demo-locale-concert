@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Portail-Client-preproduction:2.2.2-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 3,
+  "data-sensitivity": 2,
+  "revenue": 3000.0,
+  "metadata": {
+    "timestamp": "2026-01-09T00:00:00Z",
+    "type": "application",
+    "application-name": "Portail-Client-preproduction",
+    "application-version": "2.2.2-preproduction",
+    "description": "Synthetic preproduction definition for Portail Client",
+    "build-number": "build-prep-2026002",
+    "build-timestamp": "2026-02-08T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Finance",
+      "email": "finance@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Finance"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Portail-Client-api-preproduction",
+      "type": "component",
+      "name": "Portail-Client-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0002-python-preproduction",
+          "type": "code",
+          "name": "app-0002-python-preproduction",
+          "purl": "https://git.example.local/finance/app-0002",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/finance/app-0002-python:2.2.2-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/finance/app-0002-python:2.2.2-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:pyyaml-8.5.11-1",
+          "type": "library",
+          "name": "pyyaml-8.5.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-9.20.10-2",
+          "type": "library",
+          "name": "requests-9.20.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-7.2.3-3",
+          "type": "library",
+          "name": "pyyaml-7.2.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-4.13.12-4",
+          "type": "library",
+          "name": "requests-4.13.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-1.0.4-5",
+          "type": "library",
+          "name": "numpy-1.0.4",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Portail-Client-worker-preproduction",
+      "type": "component",
+      "name": "Portail-Client-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0002-python-worker-preproduction",
+          "type": "code",
+          "name": "app-0002-python-worker-preproduction",
+          "purl": "https://git.example.local/finance/app-0002-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/finance/app-0002-python-worker:2.2.2-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/finance/app-0002-python-worker:2.2.2-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:cryptography-1.7.4-6",
+          "type": "library",
+          "name": "cryptography-1.7.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-1.15.2-7",
+          "type": "library",
+          "name": "django-1.15.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-4.15.12-8",
+          "type": "library",
+          "name": "numpy-4.15.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:cryptography-9.2.9-9",
+          "type": "library",
+          "name": "cryptography-9.2.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-2.9.1-10",
+          "type": "library",
+          "name": "urllib3-2.9.1",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Portail-Client-api-preproduction",
+      "name": "Portail-Client-api-preproduction",
+      "endpoints": [
+        "https://portail-client-preprod.apps.example.invalid/api/v1",
+        "https://portail-client-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Portail-Client-worker-preproduction",
+      "name": "Portail-Client-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/portail-client.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/finance/app-0002-python:2.2.2-preproduction-preproduction",
+      "dependsOn": [
+        "service:Portail-Client-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/finance/app-0002-python-worker:2.2.2-preproduction-preproduction",
+      "dependsOn": [
+        "service:Portail-Client-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0002"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Portail-Client"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "medium",
+    "finance"
+  ]
+}

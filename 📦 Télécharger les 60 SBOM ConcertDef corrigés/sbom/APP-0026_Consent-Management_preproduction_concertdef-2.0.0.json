@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Consent-Management-preproduction:2.2.6-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 5,
+  "revenue": 4000.0,
+  "metadata": {
+    "timestamp": "2026-02-26T00:00:00Z",
+    "type": "application",
+    "application-name": "Consent-Management-preproduction",
+    "application-version": "2.2.6-preproduction",
+    "description": "Synthetic preproduction definition for Consent Management",
+    "build-number": "build-prep-2026026",
+    "build-timestamp": "2026-03-28T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Consent-Management-api-preproduction",
+      "type": "component",
+      "name": "Consent-Management-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0026-javascript",
+          "type": "code",
+          "name": "app-0026-javascript",
+          "purl": "https://git.example.local/claims/app-0026",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0026-javascript:2.2.6-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0026-javascript:2.2.6-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-1.11.10-1",
+          "type": "library",
+          "name": "jsonwebtoken-1.11.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-4.4.6-2",
+          "type": "library",
+          "name": "moment-4.4.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:express-5.20.9-3",
+          "type": "library",
+          "name": "express-5.20.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:express-2.14.3-4",
+          "type": "library",
+          "name": "express-2.14.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:minimist-4.8.6-5",
+          "type": "library",
+          "name": "minimist-4.8.6",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Consent-Management-worker-preproduction",
+      "type": "component",
+      "name": "Consent-Management-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0026-javascript-worker",
+          "type": "code",
+          "name": "app-0026-javascript-worker",
+          "purl": "https://git.example.local/claims/app-0026-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0026-javascript-worker:2.2.6-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0026-javascript-worker:2.2.6-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-9.8.1-6",
+          "type": "library",
+          "name": "jsonwebtoken-9.8.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:axios-4.14.1-7",
+          "type": "library",
+          "name": "axios-4.14.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:lodash-5.7.10-8",
+          "type": "library",
+          "name": "lodash-5.7.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:react-8.19.2-9",
+          "type": "library",
+          "name": "react-8.19.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:axios-9.0.8-10",
+          "type": "library",
+          "name": "axios-9.0.8",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Consent-Management-api-preproduction",
+      "name": "Consent-Management-api-preproduction",
+      "endpoints": [
+        "https://consent-management-preprod.apps.example.invalid/api/v1",
+        "https://consent-management-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Consent-Management-worker-preproduction",
+      "name": "Consent-Management-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/consent-management.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0026-javascript:2.2.6-preproduction-preproduction",
+      "dependsOn": [
+        "service:Consent-Management-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0026-javascript-worker:2.2.6-preproduction-preproduction",
+      "dependsOn": [
+        "service:Consent-Management-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0026"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Consent-Management"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "JavaScript"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "high",
+    "claims"
+  ]
+}

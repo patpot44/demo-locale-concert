@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Mobile-Banking-preproduction:2.4.4-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 4,
+  "revenue": 4000.0,
+  "metadata": {
+    "timestamp": "2026-01-13T00:00:00Z",
+    "type": "application",
+    "application-name": "Mobile-Banking-preproduction",
+    "application-version": "2.4.4-preproduction",
+    "description": "Synthetic preproduction definition for Mobile Banking",
+    "build-number": "build-prep-2026004",
+    "build-timestamp": "2026-02-12T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Mobile-Banking-api-preproduction",
+      "type": "component",
+      "name": "Mobile-Banking-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0004-java-preproduction",
+          "type": "code",
+          "name": "app-0004-java-preproduction",
+          "purl": "https://git.example.local/claims/app-0004",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0004-java:2.4.4-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0004-java:2.4.4-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:spring-core-1.18.8-1",
+          "type": "library",
+          "name": "spring-core-1.18.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-2.3.6-2",
+          "type": "library",
+          "name": "log4j-core-2.3.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-5.18.4-3",
+          "type": "library",
+          "name": "spring-core-5.18.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-6.3.9-4",
+          "type": "library",
+          "name": "jackson-databind-6.3.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-4.8.2-5",
+          "type": "library",
+          "name": "netty-handler-4.8.2",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Mobile-Banking-worker-preproduction",
+      "type": "component",
+      "name": "Mobile-Banking-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0004-java-worker-preproduction",
+          "type": "code",
+          "name": "app-0004-java-worker-preproduction",
+          "purl": "https://git.example.local/claims/app-0004-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0004-java-worker:2.4.4-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0004-java-worker:2.4.4-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:log4j-core-6.19.9-6",
+          "type": "library",
+          "name": "log4j-core-6.19.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-3.11.12-7",
+          "type": "library",
+          "name": "netty-handler-3.11.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-9.0.8-8",
+          "type": "library",
+          "name": "spring-core-9.0.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-3.18.7-9",
+          "type": "library",
+          "name": "postgresql-3.18.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-1.11.9-10",
+          "type": "library",
+          "name": "jackson-databind-1.11.9",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Mobile-Banking-api-preproduction",
+      "name": "Mobile-Banking-api-preproduction",
+      "endpoints": [
+        "https://mobile-banking-preprod.apps.example.invalid/api/v1",
+        "https://mobile-banking-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Mobile-Banking-worker-preproduction",
+      "name": "Mobile-Banking-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/mobile-banking.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0004-java:2.4.4-preproduction-preproduction",
+      "dependsOn": [
+        "service:Mobile-Banking-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0004-java-worker:2.4.4-preproduction-preproduction",
+      "dependsOn": [
+        "service:Mobile-Banking-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0004"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Mobile-Banking"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "high",
+    "claims"
+  ]
+}

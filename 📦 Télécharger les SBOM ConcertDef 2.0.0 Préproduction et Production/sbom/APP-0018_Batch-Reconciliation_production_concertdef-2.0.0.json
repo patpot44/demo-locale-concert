@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Batch-Reconciliation-production:2.0.8-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 5,
+  "revenue": 10000.0,
+  "metadata": {
+    "timestamp": "2026-02-11T00:00:00Z",
+    "type": "application",
+    "application-name": "Batch-Reconciliation-production",
+    "application-version": "2.0.8-production",
+    "description": "Synthetic production definition for Batch Reconciliation",
+    "build-number": "build-prod-2026018",
+    "build-timestamp": "2026-03-13T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Integration",
+      "email": "integration@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Integration"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Batch-Reconciliation-api-production",
+      "type": "component",
+      "name": "Batch-Reconciliation-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0018-java-production",
+          "type": "code",
+          "name": "app-0018-java-production",
+          "purl": "https://git.example.local/integration/app-0018",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0018-java:2.0.8-production-production",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0018-java:2.0.8-production-production"
+        },
+        {
+          "bom-ref": "library:hibernate-core-9.2.1-1",
+          "type": "library",
+          "name": "hibernate-core-9.2.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-9.5.12-2",
+          "type": "library",
+          "name": "spring-core-9.5.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-7.20.7-3",
+          "type": "library",
+          "name": "spring-core-7.20.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-6.14.7-4",
+          "type": "library",
+          "name": "postgresql-6.14.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-8.20.11-5",
+          "type": "library",
+          "name": "jackson-databind-8.20.11",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Batch-Reconciliation-worker-production",
+      "type": "component",
+      "name": "Batch-Reconciliation-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0018-java-worker-production",
+          "type": "code",
+          "name": "app-0018-java-worker-production",
+          "purl": "https://git.example.local/integration/app-0018-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0018-java-worker:2.0.8-production-production",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0018-java-worker:2.0.8-production-production"
+        },
+        {
+          "bom-ref": "library:netty-handler-6.20.1-6",
+          "type": "library",
+          "name": "netty-handler-6.20.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-3.2.0-7",
+          "type": "library",
+          "name": "log4j-core-3.2.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-2.12.8-8",
+          "type": "library",
+          "name": "hibernate-core-2.12.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-5.19.1-9",
+          "type": "library",
+          "name": "hibernate-core-5.19.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-6.13.12-10",
+          "type": "library",
+          "name": "commons-text-6.13.12",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Batch-Reconciliation-api-production",
+      "name": "Batch-Reconciliation-api-production",
+      "endpoints": [
+        "https://batch-reconciliation-prod.apps.example.invalid/api/v1",
+        "https://batch-reconciliation-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "public",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Batch-Reconciliation-worker-production",
+      "name": "Batch-Reconciliation-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/batch-reconciliation.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/integration/app-0018-java:2.0.8-production-production",
+      "dependsOn": [
+        "service:Batch-Reconciliation-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/integration/app-0018-java-worker:2.0.8-production-production",
+      "dependsOn": [
+        "service:Batch-Reconciliation-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0018"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Batch-Reconciliation"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "high",
+    "integration"
+  ]
+}

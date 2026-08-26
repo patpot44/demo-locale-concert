@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Gestion-Contrats-preproduction:2.5.5-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 5,
+  "revenue": 4000.0,
+  "metadata": {
+    "timestamp": "2026-01-15T00:00:00Z",
+    "type": "application",
+    "application-name": "Gestion-Contrats-preproduction",
+    "application-version": "2.5.5-preproduction",
+    "description": "Synthetic preproduction definition for Gestion Contrats",
+    "build-number": "build-prep-2026005",
+    "build-timestamp": "2026-02-14T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Gestion-Contrats-api-preproduction",
+      "type": "component",
+      "name": "Gestion-Contrats-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0005-java",
+          "type": "code",
+          "name": "app-0005-java",
+          "purl": "https://git.example.local/claims/app-0005",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0005-java:2.5.5-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0005-java:2.5.5-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:snakeyaml-5.2.5-1",
+          "type": "library",
+          "name": "snakeyaml-5.2.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-1.9.4-2",
+          "type": "library",
+          "name": "hibernate-core-1.9.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:snakeyaml-3.7.12-3",
+          "type": "library",
+          "name": "snakeyaml-3.7.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-3.10.4-4",
+          "type": "library",
+          "name": "hibernate-core-3.10.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-6.13.3-5",
+          "type": "library",
+          "name": "commons-text-6.13.3",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Gestion-Contrats-worker-preproduction",
+      "type": "component",
+      "name": "Gestion-Contrats-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0005-java-worker",
+          "type": "code",
+          "name": "app-0005-java-worker",
+          "purl": "https://git.example.local/claims/app-0005-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0005-java-worker:2.5.5-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0005-java-worker:2.5.5-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:postgresql-2.17.4-6",
+          "type": "library",
+          "name": "postgresql-2.17.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-5.13.1-7",
+          "type": "library",
+          "name": "hibernate-core-5.13.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-5.5.11-8",
+          "type": "library",
+          "name": "postgresql-5.5.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-6.14.7-9",
+          "type": "library",
+          "name": "netty-handler-6.14.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-3.19.0-10",
+          "type": "library",
+          "name": "hibernate-core-3.19.0",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Gestion-Contrats-api-preproduction",
+      "name": "Gestion-Contrats-api-preproduction",
+      "endpoints": [
+        "https://gestion-contrats-preprod.apps.example.invalid/api/v1",
+        "https://gestion-contrats-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Gestion-Contrats-worker-preproduction",
+      "name": "Gestion-Contrats-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/gestion-contrats.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0005-java:2.5.5-preproduction-preproduction",
+      "dependsOn": [
+        "service:Gestion-Contrats-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0005-java-worker:2.5.5-preproduction-preproduction",
+      "dependsOn": [
+        "service:Gestion-Contrats-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0005"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Gestion-Contrats"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "high",
+    "claims"
+  ]
+}

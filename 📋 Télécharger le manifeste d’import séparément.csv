@@ -1,0 +1,61 @@
+﻿file,application_id,application_name,environment,cyclonedx_version,components,vulnerabilities,serial_number,timestamp
+APP-0001_preproduction_cyclonedx.json,APP-0001,Paiements SEPA,preproduction,1.5,57,11,urn:uuid:30c0a5f1-e8e1-4aad-a474-f0b3b89ac4d2,2026-08-20T17:33:15Z
+APP-0001_production_cyclonedx.json,APP-0001,Paiements SEPA,production,1.5,51,21,urn:uuid:b5b67bd7-983e-4551-9714-155a2ce7bb73,2026-08-18T17:33:15Z
+APP-0002_preproduction_cyclonedx.json,APP-0002,Portail Client,preproduction,1.5,50,15,urn:uuid:28837894-ed0d-49b1-a1c7-372ea787b796,2026-08-18T17:33:15Z
+APP-0002_production_cyclonedx.json,APP-0002,Portail Client,production,1.5,64,22,urn:uuid:24da10b4-6951-467e-99ea-3c0062c887ed,2026-08-15T17:33:15Z
+APP-0003_preproduction_cyclonedx.json,APP-0003,API Sinistres,preproduction,1.5,67,10,urn:uuid:a25dbe97-b380-4f3c-8bcb-ec17ae690888,2026-08-19T17:33:15Z
+APP-0003_production_cyclonedx.json,APP-0003,API Sinistres,production,1.5,54,15,urn:uuid:c9044fc4-0431-489a-80bd-92788d053b75,2026-08-17T17:33:15Z
+APP-0004_preproduction_cyclonedx.json,APP-0004,Mobile Banking,preproduction,1.5,56,20,urn:uuid:3241d989-7bb7-4061-ad2a-490a0c941667,2026-08-23T17:33:15Z
+APP-0004_production_cyclonedx.json,APP-0004,Mobile Banking,production,1.5,54,28,urn:uuid:130aa6c2-88f7-4d89-a9b3-13500f11f667,2026-08-13T17:33:15Z
+APP-0005_preproduction_cyclonedx.json,APP-0005,Gestion Contrats,preproduction,1.5,74,15,urn:uuid:d03d63a8-bc04-4ac9-af5d-f633c648a836,2026-08-17T17:33:15Z
+APP-0005_production_cyclonedx.json,APP-0005,Gestion Contrats,production,1.5,61,30,urn:uuid:7c282785-72e9-4f07-975d-a7f5ae9b5066,2026-08-14T17:33:15Z
+APP-0006_preproduction_cyclonedx.json,APP-0006,CRM Conseillers,preproduction,1.5,57,12,urn:uuid:5f1a9fab-605e-4565-b4ac-f4aa069b5fd9,2026-08-25T17:33:15Z
+APP-0006_production_cyclonedx.json,APP-0006,CRM Conseillers,production,1.5,63,20,urn:uuid:36680478-5a91-42d9-877c-957f4d774fbe,2026-08-24T17:33:15Z
+APP-0007_preproduction_cyclonedx.json,APP-0007,Facturation,preproduction,1.5,62,18,urn:uuid:a2498a51-afa1-4e0a-ad02-65dbe0b76fbf,2026-08-21T17:33:15Z
+APP-0007_production_cyclonedx.json,APP-0007,Facturation,production,1.5,82,25,urn:uuid:b487c804-ed34-4427-b870-afe4d4585410,2026-08-13T17:33:15Z
+APP-0008_preproduction_cyclonedx.json,APP-0008,Data Hub,preproduction,1.5,75,10,urn:uuid:c3010df3-2b4b-4eb5-bb38-162200b75e04,2026-08-16T17:33:15Z
+APP-0008_production_cyclonedx.json,APP-0008,Data Hub,production,1.5,74,23,urn:uuid:3f864bf7-1261-4c43-96a6-5090f90ed4f2,2026-08-23T17:33:15Z
+APP-0009_preproduction_cyclonedx.json,APP-0009,IAM Gateway,preproduction,1.5,71,21,urn:uuid:793e51df-8341-46c5-82a5-7d5805f9b756,2026-08-16T17:33:15Z
+APP-0009_production_cyclonedx.json,APP-0009,IAM Gateway,production,1.5,72,23,urn:uuid:7c1fe152-b6e6-4b67-bc97-dacb147a4165,2026-08-25T17:33:15Z
+APP-0010_preproduction_cyclonedx.json,APP-0010,GED,preproduction,1.5,68,17,urn:uuid:d7a04dcb-a114-420e-940e-a559fb3a5cbf,2026-08-20T17:33:15Z
+APP-0010_production_cyclonedx.json,APP-0010,GED,production,1.5,78,23,urn:uuid:7fbbef7b-7ca1-4707-97f6-fa544b868c2f,2026-08-24T17:33:15Z
+APP-0011_preproduction_cyclonedx.json,APP-0011,Notification Service,preproduction,1.5,51,19,urn:uuid:0c7396e6-61ba-4a17-bbdf-d50b39888880,2026-08-17T17:33:15Z
+APP-0011_production_cyclonedx.json,APP-0011,Notification Service,production,1.5,72,22,urn:uuid:2aa52644-c6ba-469b-ab08-4f7def6bfbce,2026-08-14T17:33:15Z
+APP-0012_preproduction_cyclonedx.json,APP-0012,Tarification,preproduction,1.5,74,14,urn:uuid:a5d6ca3e-34d9-43e4-a4d0-8ca204ac0223,2026-08-25T17:33:15Z
+APP-0012_production_cyclonedx.json,APP-0012,Tarification,production,1.5,71,19,urn:uuid:460f1a23-956e-473f-b434-53adcf116c51,2026-08-23T17:33:15Z
+APP-0013_preproduction_cyclonedx.json,APP-0013,Fraude Temps Reel,preproduction,1.5,56,18,urn:uuid:9c72355c-13a6-4b97-bd95-d735a286d055,2026-08-16T17:33:15Z
+APP-0013_production_cyclonedx.json,APP-0013,Fraude Temps Reel,production,1.5,60,19,urn:uuid:e5aa73e8-c821-46c2-96d1-1d962acf2c01,2026-08-21T17:33:15Z
+APP-0014_preproduction_cyclonedx.json,APP-0014,Referentiel Client,preproduction,1.5,52,15,urn:uuid:aa9563e7-e32a-4446-b79b-d33629ca4c3d,2026-08-18T17:33:15Z
+APP-0014_production_cyclonedx.json,APP-0014,Referentiel Client,production,1.5,56,27,urn:uuid:5961493a-0def-4244-8c2a-a1079783a4c4,2026-08-14T17:33:15Z
+APP-0015_preproduction_cyclonedx.json,APP-0015,Comptabilite,preproduction,1.5,61,18,urn:uuid:32a71982-fc57-40ef-82f9-480d8c69dab4,2026-08-17T17:33:15Z
+APP-0015_production_cyclonedx.json,APP-0015,Comptabilite,production,1.5,54,19,urn:uuid:c6051192-d367-4230-9c03-ba5d0684dad1,2026-08-23T17:33:15Z
+APP-0016_preproduction_cyclonedx.json,APP-0016,Reporting Reglementaire,preproduction,1.5,77,11,urn:uuid:4470d373-a20f-44b5-b848-97022a639124,2026-08-20T17:33:15Z
+APP-0016_production_cyclonedx.json,APP-0016,Reporting Reglementaire,production,1.5,79,14,urn:uuid:08e9a9e7-1bee-48e6-810d-d47f60eacaa4,2026-08-21T17:33:15Z
+APP-0017_preproduction_cyclonedx.json,APP-0017,Open Banking API,preproduction,1.5,67,19,urn:uuid:aa71a186-44b8-4554-a592-bcd494b330a4,2026-08-25T17:33:15Z
+APP-0017_production_cyclonedx.json,APP-0017,Open Banking API,production,1.5,48,26,urn:uuid:85d390e1-0488-40bb-8cbb-52e6b3c575f5,2026-08-20T17:33:15Z
+APP-0018_preproduction_cyclonedx.json,APP-0018,Batch Reconciliation,preproduction,1.5,77,21,urn:uuid:076487c9-2484-4117-b873-83f582aa6923,2026-08-14T17:33:15Z
+APP-0018_production_cyclonedx.json,APP-0018,Batch Reconciliation,production,1.5,56,22,urn:uuid:ff0227ed-3ebc-4191-b9e3-6db367608099,2026-08-13T17:33:15Z
+APP-0019_preproduction_cyclonedx.json,APP-0019,KYC Service,preproduction,1.5,76,19,urn:uuid:9d4994ec-102d-4013-b2b9-1576caba751a,2026-08-15T17:33:15Z
+APP-0019_production_cyclonedx.json,APP-0019,KYC Service,production,1.5,57,14,urn:uuid:aa93174e-23d1-4ad8-a315-086db7bf9ff4,2026-08-14T17:33:15Z
+APP-0020_preproduction_cyclonedx.json,APP-0020,Document Signature,preproduction,1.5,67,21,urn:uuid:e4f44134-2a81-48c1-a1cd-7b1a8394d34e,2026-08-18T17:33:15Z
+APP-0020_production_cyclonedx.json,APP-0020,Document Signature,production,1.5,71,29,urn:uuid:7d6a08db-277e-4aa3-acee-846dc339c4d4,2026-08-24T17:33:15Z
+APP-0021_preproduction_cyclonedx.json,APP-0021,Claims Portal,preproduction,1.5,79,11,urn:uuid:351990db-81e1-4437-b69b-10ca2ed21bb0,2026-08-21T17:33:15Z
+APP-0021_production_cyclonedx.json,APP-0021,Claims Portal,production,1.5,50,15,urn:uuid:08458317-2b0c-44aa-b624-a5d8930457b5,2026-08-24T17:33:15Z
+APP-0022_preproduction_cyclonedx.json,APP-0022,Partner Gateway,preproduction,1.5,67,21,urn:uuid:ccbb429a-e159-447d-abf1-28ab2af0767c,2026-08-19T17:33:15Z
+APP-0022_production_cyclonedx.json,APP-0022,Partner Gateway,production,1.5,78,19,urn:uuid:ea9edc6a-da37-430c-95f9-f73c7d8c0e82,2026-08-17T17:33:15Z
+APP-0023_preproduction_cyclonedx.json,APP-0023,Treasury,preproduction,1.5,51,14,urn:uuid:e8c62615-4d70-4154-8182-51b0f4fbce8e,2026-08-18T17:33:15Z
+APP-0023_production_cyclonedx.json,APP-0023,Treasury,production,1.5,79,26,urn:uuid:46218c0e-1e6b-467c-ad36-3db1a6acc8f0,2026-08-18T17:33:15Z
+APP-0024_preproduction_cyclonedx.json,APP-0024,Risk Engine,preproduction,1.5,53,11,urn:uuid:896bee35-365a-4e94-92da-230cba3ae463,2026-08-25T17:33:15Z
+APP-0024_production_cyclonedx.json,APP-0024,Risk Engine,production,1.5,79,17,urn:uuid:6ac5a7a0-dcbd-4117-bf9f-bfeea8aa3046,2026-08-25T17:33:15Z
+APP-0025_preproduction_cyclonedx.json,APP-0025,Customer 360,preproduction,1.5,74,19,urn:uuid:30aa9343-0809-45d3-9719-5231305155fd,2026-08-20T17:33:15Z
+APP-0025_production_cyclonedx.json,APP-0025,Customer 360,production,1.5,51,14,urn:uuid:889ab46c-6970-4e47-9945-11a98eeb8ea6,2026-08-20T17:33:15Z
+APP-0026_preproduction_cyclonedx.json,APP-0026,Consent Management,preproduction,1.5,79,19,urn:uuid:79b9e4a1-d6cb-4774-bf6b-81863847c76a,2026-08-17T17:33:15Z
+APP-0026_production_cyclonedx.json,APP-0026,Consent Management,production,1.5,75,30,urn:uuid:fa4c47dc-abe8-48ac-8591-f713eecc02c6,2026-08-18T17:33:15Z
+APP-0027_preproduction_cyclonedx.json,APP-0027,Archive Service,preproduction,1.5,75,17,urn:uuid:02149960-92cd-458e-8a3e-f4dba10cc330,2026-08-13T17:33:15Z
+APP-0027_production_cyclonedx.json,APP-0027,Archive Service,production,1.5,59,20,urn:uuid:26a19e11-5b19-4f3c-be0f-3ef278759fcb,2026-08-25T17:33:15Z
+APP-0028_preproduction_cyclonedx.json,APP-0028,Marketing Automation,preproduction,1.5,58,10,urn:uuid:8be8e05b-3533-44c3-9f87-19d54c87cd75,2026-08-22T17:33:15Z
+APP-0028_production_cyclonedx.json,APP-0028,Marketing Automation,production,1.5,61,23,urn:uuid:466b2fca-62df-4d5f-82c7-4ee4a16234ae,2026-08-15T17:33:15Z
+APP-0029_preproduction_cyclonedx.json,APP-0029,Loan Origination,preproduction,1.5,67,20,urn:uuid:92c84faf-09a8-4d9b-97fa-4c53fdd124e0,2026-08-20T17:33:15Z
+APP-0029_production_cyclonedx.json,APP-0029,Loan Origination,production,1.5,62,26,urn:uuid:30241216-6817-4a31-b34a-9b61eb677102,2026-08-17T17:33:15Z
+APP-0030_preproduction_cyclonedx.json,APP-0030,Card Authorization,preproduction,1.5,51,16,urn:uuid:c24918f9-3131-4159-a795-ccf49087c98c,2026-08-25T17:33:15Z
+APP-0030_production_cyclonedx.json,APP-0030,Card Authorization,production,1.5,56,14,urn:uuid:a036d54b-c7ac-43a9-a2e7-46d1da22f6fb,2026-08-23T17:33:15Z

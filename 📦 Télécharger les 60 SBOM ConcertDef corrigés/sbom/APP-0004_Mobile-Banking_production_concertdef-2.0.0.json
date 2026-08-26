@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Mobile-Banking-production:2.4.4-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 4,
+  "revenue": 10000.0,
+  "metadata": {
+    "timestamp": "2026-01-14T00:00:00Z",
+    "type": "application",
+    "application-name": "Mobile-Banking-production",
+    "application-version": "2.4.4-production",
+    "description": "Synthetic production definition for Mobile Banking",
+    "build-number": "build-prod-2026004",
+    "build-timestamp": "2026-02-13T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Mobile-Banking-api-production",
+      "type": "component",
+      "name": "Mobile-Banking-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0004-java",
+          "type": "code",
+          "name": "app-0004-java",
+          "purl": "https://git.example.local/claims/app-0004",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0004-java:2.4.4-production-production",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0004-java:2.4.4-production-production"
+        },
+        {
+          "bom-ref": "library:hibernate-core-2.17.9-1",
+          "type": "library",
+          "name": "hibernate-core-2.17.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-8.13.1-2",
+          "type": "library",
+          "name": "log4j-core-8.13.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:snakeyaml-1.10.10-3",
+          "type": "library",
+          "name": "snakeyaml-1.10.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-8.12.8-4",
+          "type": "library",
+          "name": "commons-text-8.12.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-8.17.6-5",
+          "type": "library",
+          "name": "log4j-core-8.17.6",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Mobile-Banking-worker-production",
+      "type": "component",
+      "name": "Mobile-Banking-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0004-java-worker",
+          "type": "code",
+          "name": "app-0004-java-worker",
+          "purl": "https://git.example.local/claims/app-0004-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0004-java-worker:2.4.4-production-production",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0004-java-worker:2.4.4-production-production"
+        },
+        {
+          "bom-ref": "library:log4j-core-6.7.12-6",
+          "type": "library",
+          "name": "log4j-core-6.7.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-2.13.0-7",
+          "type": "library",
+          "name": "commons-text-2.13.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-2.12.7-8",
+          "type": "library",
+          "name": "commons-text-2.12.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-4.14.4-9",
+          "type": "library",
+          "name": "netty-handler-4.14.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-2.14.1-10",
+          "type": "library",
+          "name": "spring-core-2.14.1",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Mobile-Banking-api-production",
+      "name": "Mobile-Banking-api-production",
+      "endpoints": [
+        "https://mobile-banking-prod.apps.example.invalid/api/v1",
+        "https://mobile-banking-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "public",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Mobile-Banking-worker-production",
+      "name": "Mobile-Banking-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/mobile-banking.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0004-java:2.4.4-production-production",
+      "dependsOn": [
+        "service:Mobile-Banking-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0004-java-worker:2.4.4-production-production",
+      "dependsOn": [
+        "service:Mobile-Banking-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0004"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Mobile-Banking"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "high",
+    "claims"
+  ]
+}

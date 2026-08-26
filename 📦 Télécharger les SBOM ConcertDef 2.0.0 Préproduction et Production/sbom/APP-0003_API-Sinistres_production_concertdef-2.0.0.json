@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:API-Sinistres-production:2.3.3-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 4,
+  "revenue": 12500.0,
+  "metadata": {
+    "timestamp": "2026-01-12T00:00:00Z",
+    "type": "application",
+    "application-name": "API-Sinistres-production",
+    "application-version": "2.3.3-production",
+    "description": "Synthetic production definition for API Sinistres",
+    "build-number": "build-prod-2026003",
+    "build-timestamp": "2026-02-11T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Security",
+      "email": "security@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Security"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:API-Sinistres-api-production",
+      "type": "component",
+      "name": "API-Sinistres-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0003-python-production",
+          "type": "code",
+          "name": "app-0003-python-production",
+          "purl": "https://git.example.local/security/app-0003",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0003-python:2.3.3-production-production",
+          "type": "image",
+          "name": "registry.example.local/security/app-0003-python:2.3.3-production-production"
+        },
+        {
+          "bom-ref": "library:pyyaml-4.3.0-1",
+          "type": "library",
+          "name": "pyyaml-4.3.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-1.17.6-2",
+          "type": "library",
+          "name": "django-1.17.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-9.2.0-3",
+          "type": "library",
+          "name": "urllib3-9.2.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-6.2.2-4",
+          "type": "library",
+          "name": "flask-6.2.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-2.10.8-5",
+          "type": "library",
+          "name": "urllib3-2.10.8",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:API-Sinistres-worker-production",
+      "type": "component",
+      "name": "API-Sinistres-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0003-python-worker-production",
+          "type": "code",
+          "name": "app-0003-python-worker-production",
+          "purl": "https://git.example.local/security/app-0003-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0003-python-worker:2.3.3-production-production",
+          "type": "image",
+          "name": "registry.example.local/security/app-0003-python-worker:2.3.3-production-production"
+        },
+        {
+          "bom-ref": "library:requests-2.16.1-6",
+          "type": "library",
+          "name": "requests-2.16.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:cryptography-5.2.6-7",
+          "type": "library",
+          "name": "cryptography-5.2.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:cryptography-6.2.4-8",
+          "type": "library",
+          "name": "cryptography-6.2.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-5.13.1-9",
+          "type": "library",
+          "name": "urllib3-5.13.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-4.15.3-10",
+          "type": "library",
+          "name": "requests-4.15.3",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:API-Sinistres-api-production",
+      "name": "API-Sinistres-api-production",
+      "endpoints": [
+        "https://api-sinistres-prod.apps.example.invalid/api/v1",
+        "https://api-sinistres-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "public",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:API-Sinistres-worker-production",
+      "name": "API-Sinistres-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/api-sinistres.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/security/app-0003-python:2.3.3-production-production",
+      "dependsOn": [
+        "service:API-Sinistres-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/security/app-0003-python-worker:2.3.3-production-production",
+      "dependsOn": [
+        "service:API-Sinistres-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0003"
+    },
+    {
+      "name": "base-application-name",
+      "value": "API-Sinistres"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "critical",
+    "security"
+  ]
+}

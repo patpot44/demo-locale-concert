@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Referentiel-Client-production:2.2.4-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 4,
+  "revenue": 10000.0,
+  "metadata": {
+    "timestamp": "2026-02-03T00:00:00Z",
+    "type": "application",
+    "application-name": "Referentiel-Client-production",
+    "application-version": "2.2.4-production",
+    "description": "Synthetic production definition for Referentiel Client",
+    "build-number": "build-prod-2026014",
+    "build-timestamp": "2026-03-05T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Finance",
+      "email": "finance@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Finance"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Referentiel-Client-api-production",
+      "type": "component",
+      "name": "Referentiel-Client-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0014-python-production",
+          "type": "code",
+          "name": "app-0014-python-production",
+          "purl": "https://git.example.local/finance/app-0014",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/finance/app-0014-python:2.2.4-production-production",
+          "type": "image",
+          "name": "registry.example.local/finance/app-0014-python:2.2.4-production-production"
+        },
+        {
+          "bom-ref": "library:pyyaml-2.14.7-1",
+          "type": "library",
+          "name": "pyyaml-2.14.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:cryptography-6.0.4-2",
+          "type": "library",
+          "name": "cryptography-6.0.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-4.17.8-3",
+          "type": "library",
+          "name": "urllib3-4.17.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-2.0.7-4",
+          "type": "library",
+          "name": "requests-2.0.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-8.1.9-5",
+          "type": "library",
+          "name": "requests-8.1.9",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Referentiel-Client-worker-production",
+      "type": "component",
+      "name": "Referentiel-Client-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0014-python-worker-production",
+          "type": "code",
+          "name": "app-0014-python-worker-production",
+          "purl": "https://git.example.local/finance/app-0014-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/finance/app-0014-python-worker:2.2.4-production-production",
+          "type": "image",
+          "name": "registry.example.local/finance/app-0014-python-worker:2.2.4-production-production"
+        },
+        {
+          "bom-ref": "library:django-6.7.5-6",
+          "type": "library",
+          "name": "django-6.7.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-7.3.8-7",
+          "type": "library",
+          "name": "flask-7.3.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-6.0.4-8",
+          "type": "library",
+          "name": "urllib3-6.0.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-4.15.7-9",
+          "type": "library",
+          "name": "flask-4.15.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-9.19.8-10",
+          "type": "library",
+          "name": "numpy-9.19.8",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Referentiel-Client-api-production",
+      "name": "Referentiel-Client-api-production",
+      "endpoints": [
+        "https://referentiel-client-prod.apps.example.invalid/api/v1",
+        "https://referentiel-client-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Referentiel-Client-worker-production",
+      "name": "Referentiel-Client-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/referentiel-client.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/finance/app-0014-python:2.2.4-production-production",
+      "dependsOn": [
+        "service:Referentiel-Client-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/finance/app-0014-python-worker:2.2.4-production-production",
+      "dependsOn": [
+        "service:Referentiel-Client-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0014"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Referentiel-Client"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "high",
+    "finance"
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Marketing-Automation-preproduction:2.4.8-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 3,
+  "data-sensitivity": 2,
+  "revenue": 3000.0,
+  "metadata": {
+    "timestamp": "2026-03-02T00:00:00Z",
+    "type": "application",
+    "application-name": "Marketing-Automation-preproduction",
+    "application-version": "2.4.8-preproduction",
+    "description": "Synthetic preproduction definition for Marketing Automation",
+    "build-number": "build-prep-2026028",
+    "build-timestamp": "2026-04-01T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Core-Banking",
+      "email": "core-banking@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Core Banking"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Marketing-Automation-api-preproduction",
+      "type": "component",
+      "name": "Marketing-Automation-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0028-python",
+          "type": "code",
+          "name": "app-0028-python",
+          "purl": "https://git.example.local/core-banking/app-0028",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/core-banking/app-0028-python:2.4.8-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/core-banking/app-0028-python:2.4.8-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:jinja2-5.5.0-1",
+          "type": "library",
+          "name": "jinja2-5.5.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-7.2.12-2",
+          "type": "library",
+          "name": "urllib3-7.2.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-9.7.0-3",
+          "type": "library",
+          "name": "urllib3-9.7.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-5.0.9-4",
+          "type": "library",
+          "name": "requests-5.0.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-2.17.8-5",
+          "type": "library",
+          "name": "flask-2.17.8",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Marketing-Automation-worker-preproduction",
+      "type": "component",
+      "name": "Marketing-Automation-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0028-python-worker",
+          "type": "code",
+          "name": "app-0028-python-worker",
+          "purl": "https://git.example.local/core-banking/app-0028-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/core-banking/app-0028-python-worker:2.4.8-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/core-banking/app-0028-python-worker:2.4.8-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:jinja2-1.2.0-6",
+          "type": "library",
+          "name": "jinja2-1.2.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-4.14.5-7",
+          "type": "library",
+          "name": "requests-4.14.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-1.7.10-8",
+          "type": "library",
+          "name": "pyyaml-1.7.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-4.17.9-9",
+          "type": "library",
+          "name": "pyyaml-4.17.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:pyyaml-8.8.9-10",
+          "type": "library",
+          "name": "pyyaml-8.8.9",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Marketing-Automation-api-preproduction",
+      "name": "Marketing-Automation-api-preproduction",
+      "endpoints": [
+        "https://marketing-automation-preprod.apps.example.invalid/api/v1",
+        "https://marketing-automation-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Marketing-Automation-worker-preproduction",
+      "name": "Marketing-Automation-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/marketing-automation.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/core-banking/app-0028-python:2.4.8-preproduction-preproduction",
+      "dependsOn": [
+        "service:Marketing-Automation-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/core-banking/app-0028-python-worker:2.4.8-preproduction-preproduction",
+      "dependsOn": [
+        "service:Marketing-Automation-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0028"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Marketing-Automation"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "medium",
+    "core-banking"
+  ]
+}

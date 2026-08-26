@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:CRM-Conseillers-preproduction:2.0.6-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 3,
+  "data-sensitivity": 5,
+  "revenue": 3000.0,
+  "metadata": {
+    "timestamp": "2026-01-17T00:00:00Z",
+    "type": "application",
+    "application-name": "CRM-Conseillers-preproduction",
+    "application-version": "2.0.6-preproduction",
+    "description": "Synthetic preproduction definition for CRM Conseillers",
+    "build-number": "build-prep-2026006",
+    "build-timestamp": "2026-02-16T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Core-Banking",
+      "email": "core-banking@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Core Banking"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:CRM-Conseillers-api-preproduction",
+      "type": "component",
+      "name": "CRM-Conseillers-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0006-python-preproduction",
+          "type": "code",
+          "name": "app-0006-python-preproduction",
+          "purl": "https://git.example.local/core-banking/app-0006",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/core-banking/app-0006-python:2.0.6-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/core-banking/app-0006-python:2.0.6-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:requests-8.17.1-1",
+          "type": "library",
+          "name": "requests-8.17.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-9.9.9-2",
+          "type": "library",
+          "name": "django-9.9.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jinja2-9.14.3-3",
+          "type": "library",
+          "name": "jinja2-9.14.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-7.1.10-4",
+          "type": "library",
+          "name": "django-7.1.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-6.6.0-5",
+          "type": "library",
+          "name": "flask-6.6.0",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:CRM-Conseillers-worker-preproduction",
+      "type": "component",
+      "name": "CRM-Conseillers-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0006-python-worker-preproduction",
+          "type": "code",
+          "name": "app-0006-python-worker-preproduction",
+          "purl": "https://git.example.local/core-banking/app-0006-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/core-banking/app-0006-python-worker:2.0.6-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/core-banking/app-0006-python-worker:2.0.6-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:pyyaml-7.14.10-6",
+          "type": "library",
+          "name": "pyyaml-7.14.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-4.12.2-7",
+          "type": "library",
+          "name": "flask-4.12.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-7.9.9-8",
+          "type": "library",
+          "name": "django-7.9.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:cryptography-3.9.12-9",
+          "type": "library",
+          "name": "cryptography-3.9.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:numpy-5.1.0-10",
+          "type": "library",
+          "name": "numpy-5.1.0",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:CRM-Conseillers-api-preproduction",
+      "name": "CRM-Conseillers-api-preproduction",
+      "endpoints": [
+        "https://crm-conseillers-preprod.apps.example.invalid/api/v1",
+        "https://crm-conseillers-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:CRM-Conseillers-worker-preproduction",
+      "name": "CRM-Conseillers-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/crm-conseillers.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/core-banking/app-0006-python:2.0.6-preproduction-preproduction",
+      "dependsOn": [
+        "service:CRM-Conseillers-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/core-banking/app-0006-python-worker:2.0.6-preproduction-preproduction",
+      "dependsOn": [
+        "service:CRM-Conseillers-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0006"
+    },
+    {
+      "name": "base-application-name",
+      "value": "CRM-Conseillers"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "medium",
+    "core-banking"
+  ]
+}

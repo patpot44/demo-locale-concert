@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Card-Authorization-preproduction:2.0.0-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 2,
+  "revenue": 5000.0,
+  "metadata": {
+    "timestamp": "2026-03-06T00:00:00Z",
+    "type": "application",
+    "application-name": "Card-Authorization-preproduction",
+    "application-version": "2.0.0-preproduction",
+    "description": "Synthetic preproduction definition for Card Authorization",
+    "build-number": "build-prep-2026030",
+    "build-timestamp": "2026-04-05T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Integration",
+      "email": "integration@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Integration"
+      },
+      {
+        "name": "data-classification",
+        "value": "Internal"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Card-Authorization-api-preproduction",
+      "type": "component",
+      "name": "Card-Authorization-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0030-python-preproduction",
+          "type": "code",
+          "name": "app-0030-python-preproduction",
+          "purl": "https://git.example.local/integration/app-0030",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0030-python:2.0.0-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0030-python:2.0.0-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:pyyaml-8.17.7-1",
+          "type": "library",
+          "name": "pyyaml-8.17.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-7.18.5-2",
+          "type": "library",
+          "name": "urllib3-7.18.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:requests-1.4.2-3",
+          "type": "library",
+          "name": "requests-1.4.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-2.0.12-4",
+          "type": "library",
+          "name": "flask-2.0.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-2.5.2-5",
+          "type": "library",
+          "name": "django-2.5.2",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Card-Authorization-worker-preproduction",
+      "type": "component",
+      "name": "Card-Authorization-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0030-python-worker-preproduction",
+          "type": "code",
+          "name": "app-0030-python-worker-preproduction",
+          "purl": "https://git.example.local/integration/app-0030-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0030-python-worker:2.0.0-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0030-python-worker:2.0.0-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:cryptography-7.6.2-6",
+          "type": "library",
+          "name": "cryptography-7.6.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-6.15.2-7",
+          "type": "library",
+          "name": "urllib3-6.15.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:django-5.19.7-8",
+          "type": "library",
+          "name": "django-5.19.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:urllib3-8.2.6-9",
+          "type": "library",
+          "name": "urllib3-8.2.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:flask-8.7.11-10",
+          "type": "library",
+          "name": "flask-8.7.11",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Card-Authorization-api-preproduction",
+      "name": "Card-Authorization-api-preproduction",
+      "endpoints": [
+        "https://card-authorization-preprod.apps.example.invalid/api/v1",
+        "https://card-authorization-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Card-Authorization-worker-preproduction",
+      "name": "Card-Authorization-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/card-authorization.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/integration/app-0030-python:2.0.0-preproduction-preproduction",
+      "dependsOn": [
+        "service:Card-Authorization-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/integration/app-0030-python-worker:2.0.0-preproduction-preproduction",
+      "dependsOn": [
+        "service:Card-Authorization-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0030"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Card-Authorization"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "Python"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "critical",
+    "integration"
+  ]
+}

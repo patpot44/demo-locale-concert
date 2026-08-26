@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Open-Banking-API-production:2.5.7-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 4,
+  "revenue": 10000.0,
+  "metadata": {
+    "timestamp": "2026-02-09T00:00:00Z",
+    "type": "application",
+    "application-name": "Open-Banking-API-production",
+    "application-version": "2.5.7-production",
+    "description": "Synthetic production definition for Open Banking API",
+    "build-number": "build-prod-2026017",
+    "build-timestamp": "2026-03-11T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Integration",
+      "email": "integration@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Integration"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Open-Banking-API-api-production",
+      "type": "component",
+      "name": "Open-Banking-API-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0017-java-production",
+          "type": "code",
+          "name": "app-0017-java-production",
+          "purl": "https://git.example.local/integration/app-0017",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0017-java:2.5.7-production-production",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0017-java:2.5.7-production-production"
+        },
+        {
+          "bom-ref": "library:postgresql-5.20.3-1",
+          "type": "library",
+          "name": "postgresql-5.20.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:snakeyaml-4.1.5-2",
+          "type": "library",
+          "name": "snakeyaml-4.1.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-4.19.2-3",
+          "type": "library",
+          "name": "jackson-databind-4.19.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:log4j-core-9.10.7-4",
+          "type": "library",
+          "name": "log4j-core-9.10.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-6.20.9-5",
+          "type": "library",
+          "name": "hibernate-core-6.20.9",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Open-Banking-API-worker-production",
+      "type": "component",
+      "name": "Open-Banking-API-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0017-java-worker-production",
+          "type": "code",
+          "name": "app-0017-java-worker-production",
+          "purl": "https://git.example.local/integration/app-0017-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/integration/app-0017-java-worker:2.5.7-production-production",
+          "type": "image",
+          "name": "registry.example.local/integration/app-0017-java-worker:2.5.7-production-production"
+        },
+        {
+          "bom-ref": "library:jackson-databind-5.5.4-6",
+          "type": "library",
+          "name": "jackson-databind-5.5.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:postgresql-5.17.8-7",
+          "type": "library",
+          "name": "postgresql-5.17.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-6.12.10-8",
+          "type": "library",
+          "name": "netty-handler-6.12.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-5.14.4-9",
+          "type": "library",
+          "name": "commons-text-5.14.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-6.10.1-10",
+          "type": "library",
+          "name": "hibernate-core-6.10.1",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Open-Banking-API-api-production",
+      "name": "Open-Banking-API-api-production",
+      "endpoints": [
+        "https://open-banking-api-prod.apps.example.invalid/api/v1",
+        "https://open-banking-api-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Open-Banking-API-worker-production",
+      "name": "Open-Banking-API-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/open-banking-api.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/integration/app-0017-java:2.5.7-production-production",
+      "dependsOn": [
+        "service:Open-Banking-API-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/integration/app-0017-java-worker:2.5.7-production-production",
+      "dependsOn": [
+        "service:Open-Banking-API-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0017"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Open-Banking-API"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "high",
+    "integration"
+  ]
+}

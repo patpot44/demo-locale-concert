@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Partner-Gateway-preproduction:2.4.2-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 3,
+  "data-sensitivity": 5,
+  "revenue": 3000.0,
+  "metadata": {
+    "timestamp": "2026-02-18T00:00:00Z",
+    "type": "application",
+    "application-name": "Partner-Gateway-preproduction",
+    "application-version": "2.4.2-preproduction",
+    "description": "Synthetic preproduction definition for Partner Gateway",
+    "build-number": "build-prep-2026022",
+    "build-timestamp": "2026-03-20T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Partner-Gateway-api-preproduction",
+      "type": "component",
+      "name": "Partner-Gateway-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0022-javascript-preproduction",
+          "type": "code",
+          "name": "app-0022-javascript-preproduction",
+          "purl": "https://git.example.local/claims/app-0022",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0022-javascript:2.4.2-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0022-javascript:2.4.2-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-6.6.1-1",
+          "type": "library",
+          "name": "jsonwebtoken-6.6.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:minimist-6.8.8-2",
+          "type": "library",
+          "name": "minimist-6.8.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:react-1.11.1-3",
+          "type": "library",
+          "name": "react-1.11.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:webpack-8.0.0-4",
+          "type": "library",
+          "name": "webpack-8.0.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-3.20.0-5",
+          "type": "library",
+          "name": "jsonwebtoken-3.20.0",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Partner-Gateway-worker-preproduction",
+      "type": "component",
+      "name": "Partner-Gateway-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0022-javascript-worker-preproduction",
+          "type": "code",
+          "name": "app-0022-javascript-worker-preproduction",
+          "purl": "https://git.example.local/claims/app-0022-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0022-javascript-worker:2.4.2-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0022-javascript-worker:2.4.2-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:react-4.12.3-6",
+          "type": "library",
+          "name": "react-4.12.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:react-7.12.11-7",
+          "type": "library",
+          "name": "react-7.12.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:minimist-8.17.7-8",
+          "type": "library",
+          "name": "minimist-8.17.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-3.18.11-9",
+          "type": "library",
+          "name": "jsonwebtoken-3.18.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:lodash-9.5.6-10",
+          "type": "library",
+          "name": "lodash-9.5.6",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Partner-Gateway-api-preproduction",
+      "name": "Partner-Gateway-api-preproduction",
+      "endpoints": [
+        "https://partner-gateway-preprod.apps.example.invalid/api/v1",
+        "https://partner-gateway-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Partner-Gateway-worker-preproduction",
+      "name": "Partner-Gateway-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/partner-gateway.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0022-javascript:2.4.2-preproduction-preproduction",
+      "dependsOn": [
+        "service:Partner-Gateway-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0022-javascript-worker:2.4.2-preproduction-preproduction",
+      "dependsOn": [
+        "service:Partner-Gateway-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0022"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Partner-Gateway"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "JavaScript"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "medium",
+    "claims"
+  ]
+}

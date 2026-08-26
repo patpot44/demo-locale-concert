@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Document-Signature-preproduction:2.2.0-preproduction",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 4,
+  "revenue": 4000.0,
+  "metadata": {
+    "timestamp": "2026-02-14T00:00:00Z",
+    "type": "application",
+    "application-name": "Document-Signature-preproduction",
+    "application-version": "2.2.0-preproduction",
+    "description": "Synthetic preproduction definition for Document Signature",
+    "build-number": "build-prep-2026020",
+    "build-timestamp": "2026-03-16T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Confidential"
+      },
+      {
+        "name": "environment",
+        "value": "preproduction"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Document-Signature-api-preproduction",
+      "type": "component",
+      "name": "Document-Signature-api-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0020-javascript-preproduction",
+          "type": "code",
+          "name": "app-0020-javascript-preproduction",
+          "purl": "https://git.example.local/claims/app-0020",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0020-javascript:2.2.0-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0020-javascript:2.2.0-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:react-4.6.9-1",
+          "type": "library",
+          "name": "react-4.6.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:axios-8.2.10-2",
+          "type": "library",
+          "name": "axios-8.2.10",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:axios-2.19.2-3",
+          "type": "library",
+          "name": "axios-2.19.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-9.0.9-4",
+          "type": "library",
+          "name": "moment-9.0.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-9.1.0-5",
+          "type": "library",
+          "name": "moment-9.1.0",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Document-Signature-worker-preproduction",
+      "type": "component",
+      "name": "Document-Signature-worker-preproduction",
+      "components": [
+        {
+          "bom-ref": "code:app-0020-javascript-worker-preproduction",
+          "type": "code",
+          "name": "app-0020-javascript-worker-preproduction",
+          "purl": "https://git.example.local/claims/app-0020-worker",
+          "branch": "develop"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0020-javascript-worker:2.2.0-preproduction-preproduction",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0020-javascript-worker:2.2.0-preproduction-preproduction"
+        },
+        {
+          "bom-ref": "library:express-4.11.12-6",
+          "type": "library",
+          "name": "express-4.11.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jsonwebtoken-7.15.0-7",
+          "type": "library",
+          "name": "jsonwebtoken-7.15.0",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-8.13.2-8",
+          "type": "library",
+          "name": "moment-8.13.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-1.0.5-9",
+          "type": "library",
+          "name": "moment-1.0.5",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:express-8.4.5-10",
+          "type": "library",
+          "name": "express-8.4.5",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Document-Signature-api-preproduction",
+      "name": "Document-Signature-api-preproduction",
+      "endpoints": [
+        "https://document-signature-preprod.apps.example.invalid/api/v1",
+        "https://document-signature-preprod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Document-Signature-worker-preproduction",
+      "name": "Document-Signature-worker-preproduction",
+      "endpoints": [
+        "amqps://mq-preproduction.example.invalid/document-signature.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "preproduction"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0020-javascript:2.2.0-preproduction-preproduction",
+      "dependsOn": [
+        "service:Document-Signature-api-preproduction"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0020-javascript-worker:2.2.0-preproduction-preproduction",
+      "dependsOn": [
+        "service:Document-Signature-worker-preproduction"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0020"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Document-Signature"
+    },
+    {
+      "name": "environment",
+      "value": "preproduction"
+    },
+    {
+      "name": "technology",
+      "value": "JavaScript"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "preproduction",
+    "high",
+    "claims"
+  ]
+}

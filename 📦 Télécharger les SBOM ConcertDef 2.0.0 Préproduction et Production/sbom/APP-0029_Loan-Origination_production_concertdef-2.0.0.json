@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Loan-Origination-production:2.5.9-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 5,
+  "revenue": 12500.0,
+  "metadata": {
+    "timestamp": "2026-03-05T00:00:00Z",
+    "type": "application",
+    "application-name": "Loan-Origination-production",
+    "application-version": "2.5.9-production",
+    "description": "Synthetic production definition for Loan Origination",
+    "build-number": "build-prod-2026029",
+    "build-timestamp": "2026-04-04T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Security",
+      "email": "security@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Security"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Loan-Origination-api-production",
+      "type": "component",
+      "name": "Loan-Origination-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0029-java-production",
+          "type": "code",
+          "name": "app-0029-java-production",
+          "purl": "https://git.example.local/security/app-0029",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0029-java:2.5.9-production-production",
+          "type": "image",
+          "name": "registry.example.local/security/app-0029-java:2.5.9-production-production"
+        },
+        {
+          "bom-ref": "library:hibernate-core-4.13.2-1",
+          "type": "library",
+          "name": "hibernate-core-4.13.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:snakeyaml-6.15.3-2",
+          "type": "library",
+          "name": "snakeyaml-6.15.3",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:jackson-databind-6.11.4-3",
+          "type": "library",
+          "name": "jackson-databind-6.11.4",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-3.17.11-4",
+          "type": "library",
+          "name": "commons-text-3.17.11",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:commons-text-5.6.12-5",
+          "type": "library",
+          "name": "commons-text-5.6.12",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Loan-Origination-worker-production",
+      "type": "component",
+      "name": "Loan-Origination-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0029-java-worker-production",
+          "type": "code",
+          "name": "app-0029-java-worker-production",
+          "purl": "https://git.example.local/security/app-0029-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/security/app-0029-java-worker:2.5.9-production-production",
+          "type": "image",
+          "name": "registry.example.local/security/app-0029-java-worker:2.5.9-production-production"
+        },
+        {
+          "bom-ref": "library:commons-text-5.10.7-6",
+          "type": "library",
+          "name": "commons-text-5.10.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-2.15.12-7",
+          "type": "library",
+          "name": "spring-core-2.15.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:netty-handler-9.0.9-8",
+          "type": "library",
+          "name": "netty-handler-9.0.9",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:spring-core-7.18.12-9",
+          "type": "library",
+          "name": "spring-core-7.18.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:hibernate-core-4.1.0-10",
+          "type": "library",
+          "name": "hibernate-core-4.1.0",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Loan-Origination-api-production",
+      "name": "Loan-Origination-api-production",
+      "endpoints": [
+        "https://loan-origination-prod.apps.example.invalid/api/v1",
+        "https://loan-origination-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Loan-Origination-worker-production",
+      "name": "Loan-Origination-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/loan-origination.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/security/app-0029-java:2.5.9-production-production",
+      "dependsOn": [
+        "service:Loan-Origination-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/security/app-0029-java-worker:2.5.9-production-production",
+      "dependsOn": [
+        "service:Loan-Origination-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0029"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Loan-Origination"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "Java"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "critical",
+    "security"
+  ]
+}

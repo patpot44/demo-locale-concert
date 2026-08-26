@@ -1,0 +1,221 @@
+{
+  "bom-ref": "application:Consent-Management-production:2.2.6-production",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 4,
+  "data-sensitivity": 5,
+  "revenue": 10000.0,
+  "metadata": {
+    "timestamp": "2026-02-27T00:00:00Z",
+    "type": "application",
+    "application-name": "Consent-Management-production",
+    "application-version": "2.2.6-production",
+    "description": "Synthetic production definition for Consent Management",
+    "build-number": "build-prod-2026026",
+    "build-timestamp": "2026-03-29T00:00:00Z"
+  },
+  "business": {
+    "name": "ExampleBank",
+    "unit": {
+      "name": "Claims",
+      "email": "claims@example.invalid",
+      "phone": "+33-0-00-00-00-00"
+    },
+    "properties": [
+      {
+        "name": "owner-team",
+        "value": "Claims"
+      },
+      {
+        "name": "data-classification",
+        "value": "Restricted"
+      },
+      {
+        "name": "environment",
+        "value": "production"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "component:Consent-Management-api-production",
+      "type": "component",
+      "name": "Consent-Management-api-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0026-javascript",
+          "type": "code",
+          "name": "app-0026-javascript",
+          "purl": "https://git.example.local/claims/app-0026",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0026-javascript:2.2.6-production-production",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0026-javascript:2.2.6-production-production"
+        },
+        {
+          "bom-ref": "library:express-6.14.2-1",
+          "type": "library",
+          "name": "express-6.14.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:webpack-6.8.8-2",
+          "type": "library",
+          "name": "webpack-6.8.8",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:express-8.6.6-3",
+          "type": "library",
+          "name": "express-8.6.6",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:webpack-2.17.1-4",
+          "type": "library",
+          "name": "webpack-2.17.1",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:webpack-5.12.4-5",
+          "type": "library",
+          "name": "webpack-5.12.4",
+          "scope": "required"
+        }
+      ]
+    },
+    {
+      "bom-ref": "component:Consent-Management-worker-production",
+      "type": "component",
+      "name": "Consent-Management-worker-production",
+      "components": [
+        {
+          "bom-ref": "code:app-0026-javascript-worker",
+          "type": "code",
+          "name": "app-0026-javascript-worker",
+          "purl": "https://git.example.local/claims/app-0026-worker",
+          "branch": "main"
+        },
+        {
+          "bom-ref": "image:registry.example.local/claims/app-0026-javascript-worker:2.2.6-production-production",
+          "type": "image",
+          "name": "registry.example.local/claims/app-0026-javascript-worker:2.2.6-production-production"
+        },
+        {
+          "bom-ref": "library:moment-5.10.2-6",
+          "type": "library",
+          "name": "moment-5.10.2",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:express-2.11.12-7",
+          "type": "library",
+          "name": "express-2.11.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:lodash-3.7.7-8",
+          "type": "library",
+          "name": "lodash-3.7.7",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-2.14.12-9",
+          "type": "library",
+          "name": "moment-2.14.12",
+          "scope": "required"
+        },
+        {
+          "bom-ref": "library:moment-3.11.7-10",
+          "type": "library",
+          "name": "moment-3.11.7",
+          "scope": "required"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:Consent-Management-api-production",
+      "name": "Consent-Management-api-production",
+      "endpoints": [
+        "https://consent-management-prod.apps.example.invalid/api/v1",
+        "https://consent-management-prod.apps.example.invalid/health"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "HTTPS"
+        }
+      ]
+    },
+    {
+      "bom-ref": "service:Consent-Management-worker-production",
+      "name": "Consent-Management-worker-production",
+      "endpoints": [
+        "amqps://mq-production.example.invalid/consent-management.events"
+      ],
+      "network-exposure": "private",
+      "properties": [
+        {
+          "name": "environment",
+          "value": "production"
+        },
+        {
+          "name": "protocol",
+          "value": "AMQPS"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "image:registry.example.local/claims/app-0026-javascript:2.2.6-production-production",
+      "dependsOn": [
+        "service:Consent-Management-api-production"
+      ]
+    },
+    {
+      "ref": "image:registry.example.local/claims/app-0026-javascript-worker:2.2.6-production-production",
+      "dependsOn": [
+        "service:Consent-Management-worker-production"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "application-id",
+      "value": "APP-0026"
+    },
+    {
+      "name": "base-application-name",
+      "value": "Consent-Management"
+    },
+    {
+      "name": "environment",
+      "value": "production"
+    },
+    {
+      "name": "technology",
+      "value": "JavaScript"
+    },
+    {
+      "name": "synthetic-data",
+      "value": "true"
+    }
+  ],
+  "tags": [
+    "poc",
+    "synthetic",
+    "production",
+    "high",
+    "claims"
+  ]
+}

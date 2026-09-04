@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"redis","application":"bank-of-anthos"},"name":"redis","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"port":6379,"targetPort":6379}],"selector":{"app":"redis"}}}
+  creationTimestamp: "2026-02-19T01:56:08Z"
+  labels:
+    app: redis
+    application: bank-of-anthos
+  name: redis
+  namespace: demoapps-bank-anthos
+  resourceVersion: "40497343"
+  uid: acc95c8b-6405-41e1-95fc-83a31e05c501
+spec:
+  clusterIP: 172.30.104.108
+  clusterIPs:
+  - 172.30.104.108
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 6379
+    protocol: TCP
+    targetPort: 6379
+  selector:
+    app: redis
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

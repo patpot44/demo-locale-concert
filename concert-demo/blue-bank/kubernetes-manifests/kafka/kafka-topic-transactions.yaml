@@ -1,0 +1,32 @@
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaTopic
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"concert-bank-kafka"},"name":"transactions","namespace":"demoapps-bank-anthos"},"spec":{"config":{"retention.ms":86400000},"partitions":2,"replicas":3}}
+  creationTimestamp: "2026-02-19T01:55:34Z"
+  finalizers:
+  - strimzi.io/topic-operator
+  generation: 1
+  labels:
+    strimzi.io/cluster: concert-bank-kafka
+  name: transactions
+  namespace: demoapps-bank-anthos
+  resourceVersion: "43762073"
+  uid: 29e6528c-571f-44c9-8739-df7437991ee5
+spec:
+  config:
+    retention.ms: 86400000
+  partitions: 2
+  replicas: 3
+status:
+  conditions:
+  - lastTransitionTime: "2026-02-25T17:15:08.698408361Z"
+    message: Replication factor change not supported, but required for partitions
+      [0, 1]
+    reason: NotSupported
+    status: "False"
+    type: Ready
+  observedGeneration: 1
+  topicId: XNMw41Q_QJSHOb12TNPBlQ
+  topicName: transactions

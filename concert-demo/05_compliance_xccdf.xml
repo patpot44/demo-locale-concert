@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Benchmark
+  xmlns="http://checklists.nist.gov/xccdf/1.2"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cpe="http://cpe.mitre.org/language/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd"
+  id="xccdf_techcorp_benchmark_k8s-cis-1.23"
+  style="SCAP_1.2"
+  resolved="1"
+  xml:lang="en"
+  xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+
+  <status date="2026-08-27">accepted</status>
+  <dc:title xml:lang="en">CIS Kubernetes Benchmark v1.23</dc:title>
+  <dc:publisher>TechCorp Security Team</dc:publisher>
+
+  <Profile id="xccdf_techcorp_profile_k8s-cis-1.23">
+    <title xml:lang="en">CIS Kubernetes Benchmark v1.23</title>
+    <description xml:lang="en">CIS Benchmark for Kubernetes v1.23 compliance profile.</description>
+    <select idref="xccdf_techcorp_rule_KSV001" selected="true"/>
+    <select idref="xccdf_techcorp_rule_KSV003" selected="true"/>
+    <select idref="xccdf_techcorp_rule_KSV012" selected="true"/>
+    <select idref="xccdf_techcorp_rule_KSV014" selected="true"/>
+    <select idref="xccdf_techcorp_rule_KSV016" selected="true"/>
+    <select idref="xccdf_techcorp_rule_KSV018" selected="true"/>
+  </Profile>
+
+  <Rule id="xccdf_techcorp_rule_KSV001" selected="true" severity="medium" weight="1.0">
+    <title xml:lang="en">Process can elevate its own privileges</title>
+    <description xml:lang="en">A program inside the container can elevate its own privileges and run as root.</description>
+    <fix>Set containers[].securityContext.allowPrivilegeEscalation to false.</fix>
+  </Rule>
+  <Rule id="xccdf_techcorp_rule_KSV003" selected="true" severity="low" weight="1.0">
+    <title xml:lang="en">Default capabilities not dropped</title>
+    <description xml:lang="en">The container should drop all default capabilities.</description>
+    <fix>Add ALL to containers[].securityContext.capabilities.drop.</fix>
+  </Rule>
+  <Rule id="xccdf_techcorp_rule_KSV012" selected="true" severity="medium" weight="1.0">
+    <title xml:lang="en">Runs as root user</title>
+    <description xml:lang="en">Force the running image to run as a non-root user.</description>
+    <fix>Set containers[].securityContext.runAsNonRoot to true.</fix>
+  </Rule>
+  <Rule id="xccdf_techcorp_rule_KSV014" selected="true" severity="low" weight="1.0">
+    <title xml:lang="en">Root file system is not read-only</title>
+    <description xml:lang="en">An immutable root file system prevents applications from writing to their local disk.</description>
+    <fix>Change containers[].securityContext.readOnlyRootFilesystem to true.</fix>
+  </Rule>
+  <Rule id="xccdf_techcorp_rule_KSV016" selected="true" severity="low" weight="1.0">
+    <title xml:lang="en">Memory requests not specified</title>
+    <description xml:lang="en">When containers have memory requests specified, the scheduler can make better decisions.</description>
+    <fix>Set containers[].resources.requests.memory.</fix>
+  </Rule>
+  <Rule id="xccdf_techcorp_rule_KSV018" selected="true" severity="low" weight="1.0">
+    <title xml:lang="en">Memory not limited</title>
+    <description xml:lang="en">Enforcing memory limits prevents DoS via resource exhaustion.</description>
+    <fix>Set containers[].resources.limits.memory.</fix>
+  </Rule>
+
+  <TestResult id="xccdf_techcorp_testresult_20260827"
+    start-time="2026-08-27T08:00:00"
+    end-time="2026-08-27T08:05:00"
+    version="1.23">
+
+    <benchmark href="#xccdf_techcorp_benchmark_k8s-cis-1.23"/>
+
+    <title xml:lang="en">CIS Kubernetes v1.23 — prod-eu-west-1</title>
+
+    <identity authenticated="false" privileged="false">k8s-scanner</identity>
+
+    <profile idref="xccdf_techcorp_profile_k8s-cis-1.23"/>
+
+    <target>prod-eu-west-1</target>
+
+    <target-address>10.0.1.0</target-address>
+
+    <target-facts>
+      <fact name="urn:xccdf:fact:asset:identifier:host_name" type="string">prod-eu-west-1</fact>
+    </target-facts>
+
+    <rule-result idref="xccdf_techcorp_rule_KSV001" severity="medium" time="2026-08-27T08:01:00" weight="1.0">
+      <result>fail</result>
+      <message severity="info">Container 'erp-backend' of Deployment 'erp-backend' should set 'securityContext.allowPrivilegeEscalation' to false</message>
+    </rule-result>
+
+    <rule-result idref="xccdf_techcorp_rule_KSV003" severity="low" time="2026-08-27T08:01:00" weight="1.0">
+      <result>fail</result>
+      <message severity="info">Container 'erp-backend' of Deployment 'erp-backend' should add 'ALL' to 'securityContext.capabilities.drop'</message>
+    </rule-result>
+
+    <rule-result idref="xccdf_techcorp_rule_KSV012" severity="medium" time="2026-08-27T08:01:00" weight="1.0">
+      <result>fail</result>
+      <message severity="info">Container 'erp-backend' of Deployment 'erp-backend' should set 'securityContext.runAsNonRoot' to true</message>
+    </rule-result>
+
+    <rule-result idref="xccdf_techcorp_rule_KSV014" severity="low" time="2026-08-27T08:02:00" weight="1.0">
+      <result>fail</result>
+      <message severity="info">Container 'erp-backend' of Deployment 'erp-backend' should set 'securityContext.readOnlyRootFilesystem' to true</message>
+    </rule-result>
+
+    <rule-result idref="xccdf_techcorp_rule_KSV016" severity="low" time="2026-08-27T08:02:00" weight="1.0">
+      <result>fail</result>
+      <message severity="info">Container 'erp-backend' of Deployment 'erp-backend' should set 'resources.requests.memory'</message>
+    </rule-result>
+
+    <rule-result idref="xccdf_techcorp_rule_KSV018" severity="low" time="2026-08-27T08:02:00" weight="1.0">
+      <result>fail</result>
+      <message severity="info">Container 'erp-backend' of Deployment 'erp-backend' should set 'resources.limits.memory'</message>
+    </rule-result>
+
+    <score system="urn:xccdf:scoring:default" maximum="100">66.67</score>
+
+  </TestResult>
+
+</Benchmark>

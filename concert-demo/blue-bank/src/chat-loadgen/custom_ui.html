@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blue Bank - GPU Load Testing</title>
+    <style>
+        /* Override Locust's default header */
+        .logo {
+            display: none !important;
+        }
+        
+        /* Custom Blue Bank branding */
+        .custom-header {
+            background: linear-gradient(135deg, #0f62fe 0%, #002d9c 100%);
+            padding: 24px 32px;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 3px solid #78a9ff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .custom-header h1 {
+            margin: 0;
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .custom-header .subtitle {
+            margin: 8px 0 0 0;
+            font-size: 16px;
+            font-weight: 400;
+            color: #a6c8ff;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        /* Inject custom header at the top */
+        body::before {
+            content: '';
+            display: block;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-header">
+        <h1>Blue Bank</h1>
+        <div class="subtitle">GPU Load Testing Suite</div>
+    </div>
+    
+    <!-- Locust will inject its content here -->
+    <div id="locust-content"></div>
+    
+    <script>
+        // Move Locust's content into our container
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide the default Locust logo
+            const logos = document.querySelectorAll('.logo, a[href*="locust.io"]');
+            logos.forEach(logo => logo.style.display = 'none');
+            
+            // Update page title
+            document.title = 'Blue Bank - GPU Load Testing Suite';
+        });
+    </script>
+</body>
+</html>

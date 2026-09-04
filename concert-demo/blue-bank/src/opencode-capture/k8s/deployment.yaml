@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opencode-capture
+  namespace: default
+  labels:
+    app: opencode-capture
+    workload: swe-coding
+    workload-class: internal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opencode-capture
+  template:
+    metadata:
+      labels:
+        app: opencode-capture
+        workload: swe-coding
+        workload-class: internal
+    spec:
+      containers:
+      - name: opencode
+        image: image-registry.openshift-image-registry.svc:5000/default/opencode-capture:latest
+        imagePullPolicy: Always
+        env:
+        - name: VLLM_API_BASE
+          value: "https://vllm-coding-route-bluebank.apps.bluebank-demo-2.cp.fyre.ibm.com/v1"
+        ports:
+        - containerPort: 3000
+          name: http
+        volumeMounts:
+        - name: captures
+          mountPath: /captures
+        - name: workspaces
+          mountPath: /workspaces
+      volumes:
+      - name: captures
+        emptyDir: {}
+      - name: workspaces
+        emptyDir: {}

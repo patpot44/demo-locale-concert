@@ -1,0 +1,33 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"route.openshift.io/v1","kind":"Route","metadata":{"annotations":{},"name":"dcgm-metrics","namespace":"nvidia-gpu-operator"},"spec":{"port":{"targetPort":9400},"tls":{"termination":"edge"},"to":{"kind":"Service","name":"dcgm-metrics"}}}
+    openshift.io/host.generated: "true"
+  creationTimestamp: "2026-03-31T15:50:40Z"
+  name: dcgm-metrics
+  namespace: nvidia-gpu-operator
+  resourceVersion: "3649353"
+  uid: d9a35fe3-0849-41e6-b8b2-64e4fc45fefc
+spec:
+  host: dcgm-metrics-nvidia-gpu-operator.apps.bluebank-demo-2.cp.fyre.ibm.com
+  port:
+    targetPort: 9400
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: dcgm-metrics
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: "2026-03-31T15:50:40Z"
+      status: "True"
+      type: Admitted
+    host: dcgm-metrics-nvidia-gpu-operator.apps.bluebank-demo-2.cp.fyre.ibm.com
+    routerCanonicalHostname: router-default.apps.bluebank-demo-2.cp.fyre.ibm.com
+    routerName: default
+    wildcardPolicy: None

@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transaction-processor
+  namespace: demoapps-bank-anthos
+  labels:
+    app: transaction-processor
+    application: bank-of-anthos
+    team: ledger
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: transaction-processor
+  template:
+    metadata:
+      labels:
+        app: transaction-processor
+        application: bank-of-anthos
+        team: ledger
+        tier: backend
+    spec:
+      serviceAccountName: bank-of-anthos
+      containers:
+        - name: transaction-processor
+          image: image-registry.openshift-image-registry.svc:5000/demoapps-bank-anthos/transaction-processor:v1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: VERSION
+              value: v1.0
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: concert-bank-kafka-kafka-bootstrap.demoapps-bank-anthos.svc:9092
+          envFrom:
+            - configMapRef:
+                name: ledger-db-config
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
+          volumeMounts:
+            - mountPath: /tmp
+              name: tmp
+      volumes:
+        - emptyDir: {}
+          name: tmp

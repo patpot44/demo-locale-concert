@@ -1,0 +1,102 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm-coding
+  namespace: bluebank
+  labels:
+    app: vllm-coding
+    workload: swe-coding
+    workload-class: internal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vllm-coding
+  template:
+    metadata:
+      labels:
+        app: vllm-coding
+        workload: swe-coding
+        workload-class: internal
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: vllm
+        image: vllm/vllm-openai:v0.6.2
+        args:
+        - --model
+        - /models/granite-4.0-h-small
+        - --trust-remote-code
+        # NOTE: Model name to be verified in M2.1 against actual GPU cluster deployment
+        - --max-model-len
+        - "4096"
+        - --gpu-memory-utilization
+        - "0.80"
+        - --max-num-seqs
+        - "10"
+        - --port
+        - "8000"
+        - --served-model-name
+        - granite-coding
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "4"
+            memory: 16Gi
+          limits:
+            cpu: "4"
+            memory: 16Gi
+          # GPU resources added by overlay via strategic merge patch
+        volumeMounts:
+        - mountPath: /models
+          name: models
+          readOnly: true
+        - mountPath: /dev/shm
+          name: shm
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: true
+      volumes:
+      - hostPath:
+          path: /opt/models
+          type: Directory
+        name: models
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 4Gi
+        name: shm
+      securityContext:
+        fsGroup: 1000
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000
+      restartPolicy: Always
+
+# Made with Bob

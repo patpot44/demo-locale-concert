@@ -1,0 +1,33 @@
+{
+	"data_type": "Catalog",
+	"vm_scan": null,
+	"image_scan": null,
+	"code_scan": null,
+	"dynamic_scan": null,
+	"static_code_scan": null,
+	"catalog_json": [
+		"e95fb23c-57d2-495f-8ab5-2c6b3152bcee.json"
+	],
+	"component_definition": {
+		"e95fb23c-57d2-495f-8ab5-2c6b3152bcee": {
+			"CatalogName": "CIS Controls",
+			"Region": "GLOBAL",
+			"SoftwareFiles": [
+				"cis_k8s_component_definition_software_v1.0.1.json",
+				"rhel_component_definition_v2.0.0.json",
+				"ubuntu24_component_definitionv1.0.0.json",
+				"ocp_component_definition_v1.4.0.json"
+			],
+			"ValidationFiles": [
+				"osco_ocp_validator_v1.0.0.json",
+				"oscap_rhel_validator_v1.0.0.json",
+				"cis_k8s_component_definition_validator_v1.0.0.json",
+				"oscap_ubuntu24_validator_v1.0.0.json"
+			]
+		}
+	},
+	"assessment_name": "",
+	"audit_file": "",
+	"assessment_file": "",
+	"assessment_id": ""
+}

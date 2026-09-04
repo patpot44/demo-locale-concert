@@ -1,0 +1,30 @@
+{
+  "bom-ref": "application:ecommerce-app:1.0.0",
+  "bomFormat": "ConcertDef",
+  "specVersion": "2.0.0",
+  "criticality": 5,
+  "data-sensitivity": 3,
+  "revenue": 50,
+  "metadata": {
+    "timestamp": "2026-09-02T00:36:46Z",
+    "type": "application",
+    "application-name": "Ecommerce-app",
+    "application-version": "1.0.0"
+  },
+  "components": [
+    {
+      "bom-ref": "component:ecommerce-backend",
+      "type": "component",
+      "name": "ecommerce-backend",
+      "components": [
+        {
+          "bom-ref": "code:ecommerce-backend",
+          "type": "code",
+          "name": "ecommerce-backend",
+          "purl": "https://github.ibm.com/ibm-concert-platinum-demos/ecommerce-backend",
+          "branch": "main"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+apiVersion: core.strimzi.io/v1
+kind: StrimziPodSet
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"core.strimzi.io/v1","kind":"StrimziPodSet","metadata":{"annotations":{"strimzi.io/kafka-version":"4.1.1","strimzi.io/storage":"{\"type\":\"ephemeral\"}"},"creationTimestamp":"2026-02-19T01:53:21Z","generation":2,"labels":{"app.kubernetes.io/instance":"concert-bank-kafka","app.kubernetes.io/managed-by":"strimzi-cluster-operator","app.kubernetes.io/name":"kafka","app.kubernetes.io/part-of":"strimzi-concert-bank-kafka","strimzi.io/cluster":"concert-bank-kafka","strimzi.io/component-type":"kafka","strimzi.io/kind":"Kafka","strimzi.io/name":"concert-bank-kafka-kafka","strimzi.io/pool-name":"dual-role"},"name":"concert-bank-kafka-dual-role","namespace":"demoapps-bank-anthos","ownerReferences":[{"apiVersion":"kafka.strimzi.io/v1beta2","blockOwnerDeletion":true,"controller":false,"kind":"KafkaNodePool","name":"dual-role","uid":"6a592268-5ae8-445d-9cb9-620bf41569f4"}],"resourceVersion":"43761069","uid":"d5cdae37-bcde-4d78-8fa0-9c9db689857e"},"spec":{"pods":[{"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{"strimzi.io/clients-ca-cert-generation":"0","strimzi.io/cluster-ca-cert-generation":"0","strimzi.io/cluster-ca-key-generation":"0","strimzi.io/configuration-hash":"592ea103","strimzi.io/kafka-version":"4.1.1","strimzi.io/revision":"8469cefd","strimzi.io/server-cert-hash":"3c9e645dfe119697c01f2ae00b19e4754da40c51"},"labels":{"app.kubernetes.io/instance":"concert-bank-kafka","app.kubernetes.io/managed-by":"strimzi-cluster-operator","app.kubernetes.io/name":"kafka","app.kubernetes.io/part-of":"strimzi-concert-bank-kafka","strimzi.io/broker-role":"true","strimzi.io/cluster":"concert-bank-kafka","strimzi.io/component-type":"kafka","strimzi.io/controller":"strimzipodset","strimzi.io/controller-name":"concert-bank-kafka-dual-role","strimzi.io/controller-role":"true","strimzi.io/kind":"Kafka","strimzi.io/name":"concert-bank-kafka-kafka","strimzi.io/pod-name":"concert-bank-kafka-dual-role-0","strimzi.io/pool-name":"dual-role"},"name":"concert-bank-kafka-dual-role-0","namespace":"demoapps-bank-anthos"},"spec":{"containers":[{"args":["/opt/kafka/kafka_run.sh"],"env":[{"name":"KAFKA_JMX_EXPORTER_ENABLED","value":"false"},{"name":"STRIMZI_KAFKA_GC_LOG_ENABLED","value":"false"},{"name":"KAFKA_CLUSTER_NAME","value":"concert-bank-kafka"},{"name":"KAFKA_HEAP_OPTS","value":"-Xms128M"}],"image":"quay.io/strimzi/kafka@sha256:015ca88119b94649725df6d9f233d5815db26f3bee37d17db0f2cbc80f4bd95b","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["/opt/kafka/kafka_liveness.sh"]},"initialDelaySeconds":15,"timeoutSeconds":5},"name":"kafka","ports":[{"containerPort":8443,"name":"tcp-kafkaagent","protocol":"TCP"},{"containerPort":9090,"name":"tcp-ctrlplane","protocol":"TCP"},{"containerPort":9091,"name":"tcp-replication","protocol":"TCP"},{"containerPort":9092,"name":"tcp-clients","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["/opt/kafka/kafka_readiness.sh"]},"initialDelaySeconds":15,"timeoutSeconds":5},"volumeMounts":[{"mountPath":"/var/lib/kafka/data","name":"data"},{"mountPath":"/tmp","name":"strimzi-tmp"},{"mountPath":"/opt/kafka/custom-config/","name":"kafka-metrics-and-logging"},{"mountPath":"/var/opt/kafka","name":"ready-files"}]}],"hostname":"concert-bank-kafka-dual-role-0","restartPolicy":"Always","schedulerName":"default-scheduler","serviceAccountName":"concert-bank-kafka-kafka","subdomain":"concert-bank-kafka-kafka-brokers","terminationGracePeriodSeconds":30,"volumes":[{"emptyDir":{},"name":"data"},{"emptyDir":{"medium":"Memory","sizeLimit":"500Mi"},"name":"strimzi-tmp"},{"configMap":{"name":"concert-bank-kafka-dual-role-0"},"name":"kafka-metrics-and-logging"},{"emptyDir":{"medium":"Memory","sizeLimit":"1Ki"},"name":"ready-files"}]}},{"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{"strimzi.io/clients-ca-cert-generation":"0","strimzi.io/cluster-ca-cert-generation":"0","strimzi.io/cluster-ca-key-generation":"0","strimzi.io/configuration-hash":"dd22115d","strimzi.io/kafka-version":"4.1.1","strimzi.io/revision":"ff4446f0","strimzi.io/server-cert-hash":"a7a9b5cee77693bad5597054c39db9d8d28a9ba0"},"labels":{"app.kubernetes.io/instance":"concert-bank-kafka","app.kubernetes.io/managed-by":"strimzi-cluster-operator","app.kubernetes.io/name":"kafka","app.kubernetes.io/part-of":"strimzi-concert-bank-kafka","strimzi.io/broker-role":"true","strimzi.io/cluster":"concert-bank-kafka","strimzi.io/component-type":"kafka","strimzi.io/controller":"strimzipodset","strimzi.io/controller-name":"concert-bank-kafka-dual-role","strimzi.io/controller-role":"true","strimzi.io/kind":"Kafka","strimzi.io/name":"concert-bank-kafka-kafka","strimzi.io/pod-name":"concert-bank-kafka-dual-role-1","strimzi.io/pool-name":"dual-role"},"name":"concert-bank-kafka-dual-role-1","namespace":"demoapps-bank-anthos"},"spec":{"containers":[{"args":["/opt/kafka/kafka_run.sh"],"env":[{"name":"KAFKA_JMX_EXPORTER_ENABLED","value":"false"},{"name":"STRIMZI_KAFKA_GC_LOG_ENABLED","value":"false"},{"name":"KAFKA_CLUSTER_NAME","value":"concert-bank-kafka"},{"name":"KAFKA_HEAP_OPTS","value":"-Xms128M"}],"image":"quay.io/strimzi/kafka@sha256:015ca88119b94649725df6d9f233d5815db26f3bee37d17db0f2cbc80f4bd95b","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["/opt/kafka/kafka_liveness.sh"]},"initialDelaySeconds":15,"timeoutSeconds":5},"name":"kafka","ports":[{"containerPort":8443,"name":"tcp-kafkaagent","protocol":"TCP"},{"containerPort":9090,"name":"tcp-ctrlplane","protocol":"TCP"},{"containerPort":9091,"name":"tcp-replication","protocol":"TCP"},{"containerPort":9092,"name":"tcp-clients","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["/opt/kafka/kafka_readiness.sh"]},"initialDelaySeconds":15,"timeoutSeconds":5},"volumeMounts":[{"mountPath":"/var/lib/kafka/data","name":"data"},{"mountPath":"/tmp","name":"strimzi-tmp"},{"mountPath":"/opt/kafka/custom-config/","name":"kafka-metrics-and-logging"},{"mountPath":"/var/opt/kafka","name":"ready-files"}]}],"hostname":"concert-bank-kafka-dual-role-1","restartPolicy":"Always","schedulerName":"default-scheduler","serviceAccountName":"concert-bank-kafka-kafka","subdomain":"concert-bank-kafka-kafka-brokers","terminationGracePeriodSeconds":30,"volumes":[{"emptyDir":{},"name":"data"},{"emptyDir":{"medium":"Memory","sizeLimit":"500Mi"},"name":"strimzi-tmp"},{"configMap":{"name":"concert-bank-kafka-dual-role-1"},"name":"kafka-metrics-and-logging"},{"emptyDir":{"medium":"Memory","sizeLimit":"1Ki"},"name":"ready-files"}]}},{"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{"strimzi.io/clients-ca-cert-generation":"0","strimzi.io/cluster-ca-cert-generation":"0","strimzi.io/cluster-ca-key-generation":"0","strimzi.io/configuration-hash":"f5df3ec3","strimzi.io/kafka-version":"4.1.1","strimzi.io/revision":"fd846882","strimzi.io/server-cert-hash":"189ae6cd78a24bf2bb79ba257485cd75c81bc7a4"},"labels":{"app.kubernetes.io/instance":"concert-bank-kafka","app.kubernetes.io/managed-by":"strimzi-cluster-operator","app.kubernetes.io/name":"kafka","app.kubernetes.io/part-of":"strimzi-concert-bank-kafka","strimzi.io/broker-role":"true","strimzi.io/cluster":"concert-bank-kafka","strimzi.io/component-type":"kafka","strimzi.io/controller":"strimzipodset","strimzi.io/controller-name":"concert-bank-kafka-dual-role","strimzi.io/controller-role":"true","strimzi.io/kind":"Kafka","strimzi.io/name":"concert-bank-kafka-kafka","strimzi.io/pod-name":"concert-bank-kafka-dual-role-2","strimzi.io/pool-name":"dual-role"},"name":"concert-bank-kafka-dual-role-2","namespace":"demoapps-bank-anthos"},"spec":{"containers":[{"args":["/opt/kafka/kafka_run.sh"],"env":[{"name":"KAFKA_JMX_EXPORTER_ENABLED","value":"false"},{"name":"STRIMZI_KAFKA_GC_LOG_ENABLED","value":"false"},{"name":"KAFKA_CLUSTER_NAME","value":"concert-bank-kafka"},{"name":"KAFKA_HEAP_OPTS","value":"-Xms128M"}],"image":"quay.io/strimzi/kafka@sha256:015ca88119b94649725df6d9f233d5815db26f3bee37d17db0f2cbc80f4bd95b","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["/opt/kafka/kafka_liveness.sh"]},"initialDelaySeconds":15,"timeoutSeconds":5},"name":"kafka","ports":[{"containerPort":8443,"name":"tcp-kafkaagent","protocol":"TCP"},{"containerPort":9090,"name":"tcp-ctrlplane","protocol":"TCP"},{"containerPort":9091,"name":"tcp-replication","protocol":"TCP"},{"containerPort":9092,"name":"tcp-clients","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["/opt/kafka/kafka_readiness.sh"]},"initialDelaySeconds":15,"timeoutSeconds":5},"volumeMounts":[{"mountPath":"/var/lib/kafka/data","name":"data"},{"mountPath":"/tmp","name":"strimzi-tmp"},{"mountPath":"/opt/kafka/custom-config/","name":"kafka-metrics-and-logging"},{"mountPath":"/var/opt/kafka","name":"ready-files"}]}],"hostname":"concert-bank-kafka-dual-role-2","restartPolicy":"Always","schedulerName":"default-scheduler","serviceAccountName":"concert-bank-kafka-kafka","subdomain":"concert-bank-kafka-kafka-brokers","terminationGracePeriodSeconds":30,"volumes":[{"emptyDir":{},"name":"data"},{"emptyDir":{"medium":"Memory","sizeLimit":"500Mi"},"name":"strimzi-tmp"},{"configMap":{"name":"concert-bank-kafka-dual-role-2"},"name":"kafka-metrics-and-logging"},{"emptyDir":{"medium":"Memory","sizeLimit":"1Ki"},"name":"ready-files"}]}}],"selector":{"matchLabels":{"strimzi.io/cluster":"concert-bank-kafka","strimzi.io/kind":"Kafka","strimzi.io/name":"concert-bank-kafka-kafka","strimzi.io/pool-name":"dual-role"}}},"status":{"currentPods":3,"observedGeneration":2,"pods":3,"readyPods":3}}
+    strimzi.io/kafka-version: 4.1.1
+    strimzi.io/storage: '{"type":"ephemeral"}'
+  creationTimestamp: "2026-02-19T01:53:21Z"
+  generation: 2
+  labels:
+    app.kubernetes.io/instance: concert-bank-kafka
+    app.kubernetes.io/managed-by: strimzi-cluster-operator
+    app.kubernetes.io/name: kafka
+    app.kubernetes.io/part-of: strimzi-concert-bank-kafka
+    strimzi.io/cluster: concert-bank-kafka
+    strimzi.io/component-type: kafka
+    strimzi.io/kind: Kafka
+    strimzi.io/name: concert-bank-kafka-kafka
+    strimzi.io/pool-name: dual-role
+  name: concert-bank-kafka-dual-role
+  namespace: demoapps-bank-anthos
+  ownerReferences:
+  - apiVersion: kafka.strimzi.io/v1beta2
+    blockOwnerDeletion: true
+    controller: false
+    kind: KafkaNodePool
+    name: dual-role
+    uid: 6a592268-5ae8-445d-9cb9-620bf41569f4
+  resourceVersion: "43762966"
+  uid: d5cdae37-bcde-4d78-8fa0-9c9db689857e
+spec:
+  pods:
+  - apiVersion: v1
+    kind: Pod
+    metadata:
+      annotations:
+        strimzi.io/clients-ca-cert-generation: "0"
+        strimzi.io/cluster-ca-cert-generation: "0"
+        strimzi.io/cluster-ca-key-generation: "0"
+        strimzi.io/configuration-hash: 592ea103
+        strimzi.io/kafka-version: 4.1.1
+        strimzi.io/revision: 8469cefd
+        strimzi.io/server-cert-hash: 3c9e645dfe119697c01f2ae00b19e4754da40c51
+      labels:
+        app.kubernetes.io/instance: concert-bank-kafka
+        app.kubernetes.io/managed-by: strimzi-cluster-operator
+        app.kubernetes.io/name: kafka
+        app.kubernetes.io/part-of: strimzi-concert-bank-kafka
+        strimzi.io/broker-role: "true"
+        strimzi.io/cluster: concert-bank-kafka
+        strimzi.io/component-type: kafka
+        strimzi.io/controller: strimzipodset
+        strimzi.io/controller-name: concert-bank-kafka-dual-role
+        strimzi.io/controller-role: "true"
+        strimzi.io/kind: Kafka
+        strimzi.io/name: concert-bank-kafka-kafka
+        strimzi.io/pod-name: concert-bank-kafka-dual-role-0
+        strimzi.io/pool-name: dual-role
+      name: concert-bank-kafka-dual-role-0
+      namespace: demoapps-bank-anthos
+    spec:
+      containers:
+      - args:
+        - /opt/kafka/kafka_run.sh
+        env:
+        - name: KAFKA_JMX_EXPORTER_ENABLED
+          value: "false"
+        - name: STRIMZI_KAFKA_GC_LOG_ENABLED
+          value: "false"
+        - name: KAFKA_CLUSTER_NAME
+          value: concert-bank-kafka
+        - name: KAFKA_HEAP_OPTS
+          value: -Xms128M
+        image: quay.io/strimzi/kafka@sha256:015ca88119b94649725df6d9f233d5815db26f3bee37d17db0f2cbc80f4bd95b
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          exec:
+            command:
+            - /opt/kafka/kafka_liveness.sh
+          initialDelaySeconds: 15
+          timeoutSeconds: 5
+        name: kafka
+        ports:
+        - containerPort: 8443
+          name: tcp-kafkaagent
+          protocol: TCP
+        - containerPort: 9090
+          name: tcp-ctrlplane
+          protocol: TCP
+        - containerPort: 9091
+          name: tcp-replication
+          protocol: TCP
+        - containerPort: 9092
+          name: tcp-clients
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - /opt/kafka/kafka_readiness.sh
+          initialDelaySeconds: 15
+          timeoutSeconds: 5
+        volumeMounts:
+        - mountPath: /var/lib/kafka/data
+          name: data
+        - mountPath: /tmp
+          name: strimzi-tmp
+        - mountPath: /opt/kafka/custom-config/
+          name: kafka-metrics-and-logging
+        - mountPath: /var/opt/kafka
+          name: ready-files
+      hostname: concert-bank-kafka-dual-role-0
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      serviceAccountName: concert-bank-kafka-kafka
+      subdomain: concert-bank-kafka-kafka-brokers
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: data
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 500Mi
+        name: strimzi-tmp
+      - configMap:
+          name: concert-bank-kafka-dual-role-0
+        name: kafka-metrics-and-logging
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 1Ki
+        name: ready-files
+  - apiVersion: v1
+    kind: Pod
+    metadata:
+      annotations:
+        strimzi.io/clients-ca-cert-generation: "0"
+        strimzi.io/cluster-ca-cert-generation: "0"
+        strimzi.io/cluster-ca-key-generation: "0"
+        strimzi.io/configuration-hash: dd22115d
+        strimzi.io/kafka-version: 4.1.1
+        strimzi.io/revision: ff4446f0
+        strimzi.io/server-cert-hash: a7a9b5cee77693bad5597054c39db9d8d28a9ba0
+      labels:
+        app.kubernetes.io/instance: concert-bank-kafka
+        app.kubernetes.io/managed-by: strimzi-cluster-operator
+        app.kubernetes.io/name: kafka
+        app.kubernetes.io/part-of: strimzi-concert-bank-kafka
+        strimzi.io/broker-role: "true"
+        strimzi.io/cluster: concert-bank-kafka
+        strimzi.io/component-type: kafka
+        strimzi.io/controller: strimzipodset
+        strimzi.io/controller-name: concert-bank-kafka-dual-role
+        strimzi.io/controller-role: "true"
+        strimzi.io/kind: Kafka
+        strimzi.io/name: concert-bank-kafka-kafka
+        strimzi.io/pod-name: concert-bank-kafka-dual-role-1
+        strimzi.io/pool-name: dual-role
+      name: concert-bank-kafka-dual-role-1
+      namespace: demoapps-bank-anthos
+    spec:
+      containers:
+      - args:
+        - /opt/kafka/kafka_run.sh
+        env:
+        - name: KAFKA_JMX_EXPORTER_ENABLED
+          value: "false"
+        - name: STRIMZI_KAFKA_GC_LOG_ENABLED
+          value: "false"
+        - name: KAFKA_CLUSTER_NAME
+          value: concert-bank-kafka
+        - name: KAFKA_HEAP_OPTS
+          value: -Xms128M
+        image: quay.io/strimzi/kafka@sha256:015ca88119b94649725df6d9f233d5815db26f3bee37d17db0f2cbc80f4bd95b
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          exec:
+            command:
+            - /opt/kafka/kafka_liveness.sh
+          initialDelaySeconds: 15
+          timeoutSeconds: 5
+        name: kafka
+        ports:
+        - containerPort: 8443
+          name: tcp-kafkaagent
+          protocol: TCP
+        - containerPort: 9090
+          name: tcp-ctrlplane
+          protocol: TCP
+        - containerPort: 9091
+          name: tcp-replication
+          protocol: TCP
+        - containerPort: 9092
+          name: tcp-clients
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - /opt/kafka/kafka_readiness.sh
+          initialDelaySeconds: 15
+          timeoutSeconds: 5
+        volumeMounts:
+        - mountPath: /var/lib/kafka/data
+          name: data
+        - mountPath: /tmp
+          name: strimzi-tmp
+        - mountPath: /opt/kafka/custom-config/
+          name: kafka-metrics-and-logging
+        - mountPath: /var/opt/kafka
+          name: ready-files
+      hostname: concert-bank-kafka-dual-role-1
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      serviceAccountName: concert-bank-kafka-kafka
+      subdomain: concert-bank-kafka-kafka-brokers
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: data
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 500Mi
+        name: strimzi-tmp
+      - configMap:
+          name: concert-bank-kafka-dual-role-1
+        name: kafka-metrics-and-logging
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 1Ki
+        name: ready-files
+  - apiVersion: v1
+    kind: Pod
+    metadata:
+      annotations:
+        strimzi.io/clients-ca-cert-generation: "0"
+        strimzi.io/cluster-ca-cert-generation: "0"
+        strimzi.io/cluster-ca-key-generation: "0"
+        strimzi.io/configuration-hash: f5df3ec3
+        strimzi.io/kafka-version: 4.1.1
+        strimzi.io/revision: fd846882
+        strimzi.io/server-cert-hash: 189ae6cd78a24bf2bb79ba257485cd75c81bc7a4
+      labels:
+        app.kubernetes.io/instance: concert-bank-kafka
+        app.kubernetes.io/managed-by: strimzi-cluster-operator
+        app.kubernetes.io/name: kafka
+        app.kubernetes.io/part-of: strimzi-concert-bank-kafka
+        strimzi.io/broker-role: "true"
+        strimzi.io/cluster: concert-bank-kafka
+        strimzi.io/component-type: kafka
+        strimzi.io/controller: strimzipodset
+        strimzi.io/controller-name: concert-bank-kafka-dual-role
+        strimzi.io/controller-role: "true"
+        strimzi.io/kind: Kafka
+        strimzi.io/name: concert-bank-kafka-kafka
+        strimzi.io/pod-name: concert-bank-kafka-dual-role-2
+        strimzi.io/pool-name: dual-role
+      name: concert-bank-kafka-dual-role-2
+      namespace: demoapps-bank-anthos
+    spec:
+      containers:
+      - args:
+        - /opt/kafka/kafka_run.sh
+        env:
+        - name: KAFKA_JMX_EXPORTER_ENABLED
+          value: "false"
+        - name: STRIMZI_KAFKA_GC_LOG_ENABLED
+          value: "false"
+        - name: KAFKA_CLUSTER_NAME
+          value: concert-bank-kafka
+        - name: KAFKA_HEAP_OPTS
+          value: -Xms128M
+        image: quay.io/strimzi/kafka@sha256:015ca88119b94649725df6d9f233d5815db26f3bee37d17db0f2cbc80f4bd95b
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          exec:
+            command:
+            - /opt/kafka/kafka_liveness.sh
+          initialDelaySeconds: 15
+          timeoutSeconds: 5
+        name: kafka
+        ports:
+        - containerPort: 8443
+          name: tcp-kafkaagent
+          protocol: TCP
+        - containerPort: 9090
+          name: tcp-ctrlplane
+          protocol: TCP
+        - containerPort: 9091
+          name: tcp-replication
+          protocol: TCP
+        - containerPort: 9092
+          name: tcp-clients
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - /opt/kafka/kafka_readiness.sh
+          initialDelaySeconds: 15
+          timeoutSeconds: 5
+        volumeMounts:
+        - mountPath: /var/lib/kafka/data
+          name: data
+        - mountPath: /tmp
+          name: strimzi-tmp
+        - mountPath: /opt/kafka/custom-config/
+          name: kafka-metrics-and-logging
+        - mountPath: /var/opt/kafka
+          name: ready-files
+      hostname: concert-bank-kafka-dual-role-2
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      serviceAccountName: concert-bank-kafka-kafka
+      subdomain: concert-bank-kafka-kafka-brokers
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: data
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 500Mi
+        name: strimzi-tmp
+      - configMap:
+          name: concert-bank-kafka-dual-role-2
+        name: kafka-metrics-and-logging
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 1Ki
+        name: ready-files
+  selector:
+    matchLabels:
+      strimzi.io/cluster: concert-bank-kafka
+      strimzi.io/kind: Kafka
+      strimzi.io/name: concert-bank-kafka-kafka
+      strimzi.io/pool-name: dual-role
+status:
+  currentPods: 3
+  observedGeneration: 2
+  pods: 3
+  readyPods: 3

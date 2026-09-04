@@ -1,0 +1,466 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"application":"bank-of-anthos","environment":"development","team":"accounts","tier":"db"},"name":"accounts-db","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"name":"tcp","port":5432,"protocol":"TCP","targetPort":5432}],"selector":{"app":"accounts-db","application":"bank-of-anthos","environment":"development","team":"accounts","tier":"db"},"type":"ClusterIP"}}
+    creationTimestamp: "2026-02-09T17:41:45Z"
+    labels:
+      application: bank-of-anthos
+      environment: development
+      team: accounts
+      tier: db
+    name: accounts-db
+    namespace: demoapps-bank-anthos
+    resourceVersion: "36326222"
+    uid: 783046fb-16cf-4a64-99f2-4e4b5ebeb2fe
+  spec:
+    clusterIP: 172.30.90.253
+    clusterIPs:
+    - 172.30.90.253
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: tcp
+      port: 5432
+      protocol: TCP
+      targetPort: 5432
+    selector:
+      app: accounts-db
+      application: bank-of-anthos
+      environment: development
+      team: accounts
+      tier: db
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"application":"bank-of-anthos","environment":"development","team":"ledger","tier":"backend"},"name":"balancereader","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"name":"http","port":8080,"targetPort":8080}],"selector":{"app":"balancereader","application":"bank-of-anthos","environment":"development","team":"ledger","tier":"backend"},"type":"ClusterIP"}}
+    creationTimestamp: "2026-02-09T17:41:46Z"
+    labels:
+      application: bank-of-anthos
+      environment: development
+      team: ledger
+      tier: backend
+    name: balancereader
+    namespace: demoapps-bank-anthos
+    resourceVersion: "36326241"
+    uid: 761fc616-e392-4632-aebf-ce5a2ef79c97
+  spec:
+    clusterIP: 172.30.138.202
+    clusterIPs:
+    - 172.30.138.202
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: balancereader
+      application: bank-of-anthos
+      environment: development
+      team: ledger
+      tier: backend
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      strimzi.io/discovery: |-
+        [ {
+          "port" : 9092,
+          "tls" : false,
+          "protocol" : "kafka",
+          "auth" : "none"
+        } ]
+    creationTimestamp: "2026-02-19T01:53:20Z"
+    labels:
+      app.kubernetes.io/instance: concert-bank-kafka
+      app.kubernetes.io/managed-by: strimzi-cluster-operator
+      app.kubernetes.io/name: kafka
+      app.kubernetes.io/part-of: strimzi-concert-bank-kafka
+      strimzi.io/cluster: concert-bank-kafka
+      strimzi.io/component-type: kafka
+      strimzi.io/discovery: "true"
+      strimzi.io/kind: Kafka
+      strimzi.io/name: concert-bank-kafka-kafka
+    name: concert-bank-kafka-kafka-bootstrap
+    namespace: demoapps-bank-anthos
+    ownerReferences:
+    - apiVersion: kafka.strimzi.io/v1beta2
+      blockOwnerDeletion: true
+      controller: false
+      kind: Kafka
+      name: concert-bank-kafka
+      uid: 899126b2-4314-41b7-9a96-dbf4b27da9be
+    resourceVersion: "40496273"
+    uid: 22b8ecf1-1d81-4ecf-84d8-425f7c7519af
+  spec:
+    clusterIP: 172.30.77.98
+    clusterIPs:
+    - 172.30.77.98
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: tcp-replication
+      port: 9091
+      protocol: TCP
+      targetPort: tcp-replication
+    - name: tcp-clients
+      port: 9092
+      protocol: TCP
+      targetPort: tcp-clients
+    selector:
+      strimzi.io/broker-role: "true"
+      strimzi.io/cluster: concert-bank-kafka
+      strimzi.io/kind: Kafka
+      strimzi.io/name: concert-bank-kafka-kafka
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2026-02-19T01:53:20Z"
+    labels:
+      app.kubernetes.io/instance: concert-bank-kafka
+      app.kubernetes.io/managed-by: strimzi-cluster-operator
+      app.kubernetes.io/name: kafka
+      app.kubernetes.io/part-of: strimzi-concert-bank-kafka
+      strimzi.io/cluster: concert-bank-kafka
+      strimzi.io/component-type: kafka
+      strimzi.io/kind: Kafka
+      strimzi.io/name: concert-bank-kafka-kafka
+    name: concert-bank-kafka-kafka-brokers
+    namespace: demoapps-bank-anthos
+    ownerReferences:
+    - apiVersion: kafka.strimzi.io/v1beta2
+      blockOwnerDeletion: true
+      controller: false
+      kind: Kafka
+      name: concert-bank-kafka
+      uid: 899126b2-4314-41b7-9a96-dbf4b27da9be
+    resourceVersion: "40496276"
+    uid: c2dc32bf-2d57-46b8-a2fc-8f221511f6d9
+  spec:
+    clusterIP: None
+    clusterIPs:
+    - None
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: tcp-ctrlplane
+      port: 9090
+      protocol: TCP
+      targetPort: tcp-ctrlplane
+    - name: tcp-replication
+      port: 9091
+      protocol: TCP
+      targetPort: tcp-replication
+    - name: tcp-kafkaagent
+      port: 8443
+      protocol: TCP
+      targetPort: tcp-kafkaagent
+    - name: tcp-clients
+      port: 9092
+      protocol: TCP
+      targetPort: tcp-clients
+    publishNotReadyAddresses: true
+    selector:
+      strimzi.io/cluster: concert-bank-kafka
+      strimzi.io/kind: Kafka
+      strimzi.io/name: concert-bank-kafka-kafka
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"application":"bank-of-anthos","environment":"development","team":"accounts","tier":"backend"},"name":"contacts","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"name":"http","port":8080,"targetPort":8080}],"selector":{"app":"contacts","application":"bank-of-anthos","environment":"development","team":"accounts","tier":"backend"},"type":"ClusterIP"}}
+    creationTimestamp: "2026-02-09T17:41:48Z"
+    labels:
+      application: bank-of-anthos
+      environment: development
+      team: accounts
+      tier: backend
+    name: contacts
+    namespace: demoapps-bank-anthos
+    resourceVersion: "36326279"
+    uid: b82c51ee-2d1d-4ef9-90b5-8d394185ff51
+  spec:
+    clusterIP: 172.30.46.241
+    clusterIPs:
+    - 172.30.46.241
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: contacts
+      application: bank-of-anthos
+      environment: development
+      team: accounts
+      tier: backend
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"application":"bank-of-anthos","environment":"development","team":"frontend","tier":"web"},"name":"frontend","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"name":"http","port":80,"targetPort":8080}],"selector":{"app":"frontend","application":"bank-of-anthos","environment":"development","team":"frontend","tier":"web"},"type":"ClusterIP"}}
+    creationTimestamp: "2026-02-09T17:41:49Z"
+    labels:
+      application: bank-of-anthos
+      environment: development
+      team: frontend
+      tier: web
+    name: frontend
+    namespace: demoapps-bank-anthos
+    resourceVersion: "36326308"
+    uid: 3f88d4bb-079b-4dbd-b22d-5a6221f96e81
+  spec:
+    clusterIP: 172.30.225.0
+    clusterIPs:
+    - 172.30.225.0
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: frontend
+      application: bank-of-anthos
+      environment: development
+      team: frontend
+      tier: web
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"application":"bank-of-anthos","environment":"development","team":"ledger","tier":"db"},"name":"ledger-db","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"name":"tcp","port":5432,"targetPort":5432}],"selector":{"app":"ledger-db","application":"bank-of-anthos","environment":"development","team":"ledger","tier":"db"},"type":"ClusterIP"}}
+    creationTimestamp: "2026-02-09T17:41:50Z"
+    labels:
+      application: bank-of-anthos
+      environment: development
+      team: ledger
+      tier: db
+    name: ledger-db
+    namespace: demoapps-bank-anthos
+    resourceVersion: "36326336"
+    uid: d2302176-910b-4237-ae0d-397253ba28e0
+  spec:
+    clusterIP: 172.30.75.35
+    clusterIPs:
+    - 172.30.75.35
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: tcp
+      port: 5432
+      protocol: TCP
+      targetPort: 5432
+    selector:
+      app: ledger-db
+      application: bank-of-anthos
+      environment: development
+      team: ledger
+      tier: db
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"application":"bank-of-anthos","environment":"development","team":"ledger","tier":"backend"},"name":"ledgerwriter","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"name":"http","port":8080,"targetPort":8080}],"selector":{"app":"ledgerwriter","application":"bank-of-anthos","environment":"development","team":"ledger","tier":"backend"},"type":"ClusterIP"}}
+    creationTimestamp: "2026-02-09T17:41:51Z"
+    labels:
+      application: bank-of-anthos
+      environment: development
+      team: ledger
+      tier: backend
+    name: ledgerwriter
+    namespace: demoapps-bank-anthos
+    resourceVersion: "36326354"
+    uid: fa4cb504-bc25-4baf-b053-403776606e41
+  spec:
+    clusterIP: 172.30.192.89
+    clusterIPs:
+    - 172.30.192.89
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: ledgerwriter
+      application: bank-of-anthos
+      environment: development
+      team: ledger
+      tier: backend
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"redis","application":"bank-of-anthos"},"name":"redis","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"port":6379,"targetPort":6379}],"selector":{"app":"redis"}}}
+    creationTimestamp: "2026-02-19T01:56:08Z"
+    labels:
+      app: redis
+      application: bank-of-anthos
+    name: redis
+    namespace: demoapps-bank-anthos
+    resourceVersion: "40497343"
+    uid: acc95c8b-6405-41e1-95fc-83a31e05c501
+  spec:
+    clusterIP: 172.30.104.108
+    clusterIPs:
+    - 172.30.104.108
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 6379
+      protocol: TCP
+      targetPort: 6379
+    selector:
+      app: redis
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"application":"bank-of-anthos","environment":"development","team":"ledger","tier":"backend"},"name":"transactionhistory","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"name":"http","port":8080,"targetPort":8080}],"selector":{"app":"transactionhistory","application":"bank-of-anthos","environment":"development","team":"ledger","tier":"backend"},"type":"ClusterIP"}}
+    creationTimestamp: "2026-02-09T17:41:52Z"
+    labels:
+      application: bank-of-anthos
+      environment: development
+      team: ledger
+      tier: backend
+    name: transactionhistory
+    namespace: demoapps-bank-anthos
+    resourceVersion: "36326400"
+    uid: c949a517-abe1-479b-8b96-09038e3798bf
+  spec:
+    clusterIP: 172.30.31.17
+    clusterIPs:
+    - 172.30.31.17
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: transactionhistory
+      application: bank-of-anthos
+      environment: development
+      team: ledger
+      tier: backend
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"application":"bank-of-anthos","environment":"development","team":"accounts","tier":"backend"},"name":"userservice","namespace":"demoapps-bank-anthos"},"spec":{"ports":[{"name":"http","port":8080,"targetPort":8080}],"selector":{"app":"userservice","application":"bank-of-anthos","environment":"development","team":"accounts","tier":"backend"},"type":"ClusterIP"}}
+    creationTimestamp: "2026-02-09T17:41:53Z"
+    labels:
+      application: bank-of-anthos
+      environment: development
+      team: accounts
+      tier: backend
+    name: userservice
+    namespace: demoapps-bank-anthos
+    resourceVersion: "36326429"
+    uid: 3c9c29b1-e444-43a0-a675-c35d0d5ab9df
+  spec:
+    clusterIP: 172.30.56.96
+    clusterIPs:
+    - 172.30.56.96
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: userservice
+      application: bank-of-anthos
+      environment: development
+      team: accounts
+      tier: backend
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""

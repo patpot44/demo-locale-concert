@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestResult
+  xmlns="http://checklists.nist.gov/xccdf/1.2"
+  id="xccdf_techcorp_testresult_20260827"
+  start-time="2026-08-27T08:00:00"
+  end-time="2026-08-27T08:05:00"
+  version="1.23">
+
+  <benchmark href="ssg-k8s-ds.xml"/>
+
+  <title>CIS Kubernetes v1.23 scan — prod-eu-west-1</title>
+
+  <identity authenticated="false" privileged="false">k8s-scanner</identity>
+
+  <profile idref="ssg-k8s-ds.xml.content_k8s-cis-1.23"/>
+
+  <target>prod-eu-west-1</target>
+
+  <target-address>10.0.1.0</target-address>
+
+  <target-facts>
+    <fact name="urn:xccdf:fact:asset:identifier:host_name" type="string">prod-eu-west-1</fact>
+  </target-facts>
+
+  <rule-result idref="xccdf_techcorp_rule_KSV001" severity="medium" time="2026-08-27T08:01:00" weight="1.0">
+    <result>fail</result>
+    <message severity="info">Container erp-backend should set securityContext.allowPrivilegeEscalation to false</message>
+  </rule-result>
+
+  <rule-result idref="xccdf_techcorp_rule_KSV003" severity="low" time="2026-08-27T08:01:00" weight="1.0">
+    <result>fail</result>
+    <message severity="info">Container erp-backend should add ALL to securityContext.capabilities.drop</message>
+  </rule-result>
+
+  <rule-result idref="xccdf_techcorp_rule_KSV012" severity="medium" time="2026-08-27T08:01:00" weight="1.0">
+    <result>fail</result>
+    <message severity="info">Container erp-backend should set securityContext.runAsNonRoot to true</message>
+  </rule-result>
+
+  <rule-result idref="xccdf_techcorp_rule_KSV014" severity="low" time="2026-08-27T08:02:00" weight="1.0">
+    <result>fail</result>
+    <message severity="info">Container erp-backend should set securityContext.readOnlyRootFilesystem to true</message>
+  </rule-result>
+
+  <rule-result idref="xccdf_techcorp_rule_KSV016" severity="low" time="2026-08-27T08:02:00" weight="1.0">
+    <result>fail</result>
+    <message severity="info">Container erp-backend should set resources.requests.memory</message>
+  </rule-result>
+
+  <rule-result idref="xccdf_techcorp_rule_KSV018" severity="low" time="2026-08-27T08:02:00" weight="1.0">
+    <result>fail</result>
+    <message severity="info">Container erp-backend should set resources.limits.memory</message>
+  </rule-result>
+
+  <score system="urn:xccdf:scoring:default" maximum="100">66.67</score>
+
+</TestResult>

@@ -1,0 +1,4774 @@
+{
+  "component-definition": {
+    "uuid": "051b50fd-6e9c-4dc0-847d-c2e4aa4cbae8",
+    "metadata": {
+      "title": "OSCO",
+      "last-modified": "2024-10-18T12:50:30+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2"
+    },
+    "components": [
+      {
+        "uuid": "86859db5-7e57-4856-a38b-a214b264b3e8",
+        "type": "validation",
+        "title": "OSCO",
+        "description": "OSCO",
+        "props": [
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.1",
+            "remarks": "rule_set_000"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_kube_apiserver",
+            "remarks": "rule_set_000"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the API server pod specification file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_000"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_000"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.2",
+            "remarks": "rule_set_001"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_kube_apiserver",
+            "remarks": "rule_set_001"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the API server pod specification file ownership is set to root:root",
+            "remarks": "rule_set_001"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_001"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.2",
+            "remarks": "rule_set_002"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_kube_apiserver",
+            "remarks": "rule_set_002"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the API server pod specification file ownership is set to root:root",
+            "remarks": "rule_set_002"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_002"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.3",
+            "remarks": "rule_set_003"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_kube_controller_manager",
+            "remarks": "rule_set_003"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the controller manager pod specification file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_003"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_003"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.4",
+            "remarks": "rule_set_004"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_kube_controller_manager",
+            "remarks": "rule_set_004"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the controller manager pod specification file ownership is set to root:root",
+            "remarks": "rule_set_004"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_004"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.4",
+            "remarks": "rule_set_005"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_kube_controller_manager",
+            "remarks": "rule_set_005"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the controller manager pod specification file ownership is set to root:root",
+            "remarks": "rule_set_005"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_005"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.5",
+            "remarks": "rule_set_006"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_scheduler",
+            "remarks": "rule_set_006"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the scheduler pod specification file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_006"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_006"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.6",
+            "remarks": "rule_set_007"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_kube_scheduler",
+            "remarks": "rule_set_007"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the scheduler pod specification file ownership is set to root:root",
+            "remarks": "rule_set_007"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_007"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.6",
+            "remarks": "rule_set_008"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_kube_scheduler",
+            "remarks": "rule_set_008"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the scheduler pod specification file ownership is set to root:root",
+            "remarks": "rule_set_008"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_008"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.7",
+            "remarks": "rule_set_009"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_etcd_member",
+            "remarks": "rule_set_009"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the etcd pod specification file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_009"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_009"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.8",
+            "remarks": "rule_set_010"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_etcd_member",
+            "remarks": "rule_set_010"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the etcd pod specification file ownership is set to root:root",
+            "remarks": "rule_set_010"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_010"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.8",
+            "remarks": "rule_set_011"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_etcd_member",
+            "remarks": "rule_set_011"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the etcd pod specification file ownership is set to root:root",
+            "remarks": "rule_set_011"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_011"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_012"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_cni_conf",
+            "remarks": "rule_set_012"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_012"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_012"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_013"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_multus_conf",
+            "remarks": "rule_set_013"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_013"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_013"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_014"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_ip_allocations",
+            "remarks": "rule_set_014"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_014"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_014"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_015"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_perms_openshift_sdn_cniserver_config",
+            "remarks": "rule_set_015"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_015"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_015"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_016"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_ovs_pid",
+            "remarks": "rule_set_016"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_016"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_016"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_017"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_ovs_conf_db",
+            "remarks": "rule_set_017"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_017"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_017"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_018"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_ovs_sys_id_conf",
+            "remarks": "rule_set_018"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_018"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_018"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_019"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_ovs_conf_db_lock",
+            "remarks": "rule_set_019"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_019"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_019"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_020"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_ovs_vswitchd_pid",
+            "remarks": "rule_set_020"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_020"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_020"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_021"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_ovsdb_server_pid",
+            "remarks": "rule_set_021"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_021"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_021"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_022"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_ovn_cni_server_sock",
+            "remarks": "rule_set_022"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_022"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_022"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_023"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_ovn_db_files",
+            "remarks": "rule_set_023"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_023"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_023"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_024"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_cni_conf",
+            "remarks": "rule_set_024"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_024"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_024"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_025"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_cni_conf",
+            "remarks": "rule_set_025"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_025"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_025"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_026"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_multus_conf",
+            "remarks": "rule_set_026"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_026"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_026"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_027"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_multus_conf",
+            "remarks": "rule_set_027"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_027"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_027"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_028"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_ip_allocations",
+            "remarks": "rule_set_028"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_028"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_028"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_029"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_ip_allocations",
+            "remarks": "rule_set_029"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_029"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_029"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_030"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_openshift_sdn_cniserver_config",
+            "remarks": "rule_set_030"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_030"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_030"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_031"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_openshift_sdn_cniserver_config",
+            "remarks": "rule_set_031"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_031"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_031"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_032"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_ovs_pid",
+            "remarks": "rule_set_032"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_032"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_032"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_033"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_ovs_pid",
+            "remarks": "rule_set_033"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_033"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_033"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_034"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_ovs_conf_db",
+            "remarks": "rule_set_034"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_034"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_034"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_035"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_ovs_conf_db",
+            "remarks": "rule_set_035"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_035"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_035"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_036"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_ovs_sys_id_conf",
+            "remarks": "rule_set_036"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_036"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_036"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_037"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_ovs_sys_id_conf",
+            "remarks": "rule_set_037"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_037"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_037"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_038"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_ovs_conf_db_lock",
+            "remarks": "rule_set_038"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_038"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_038"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_039"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_ovs_conf_db_lock",
+            "remarks": "rule_set_039"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_039"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_039"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_040"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_ovs_vswitchd_pid",
+            "remarks": "rule_set_040"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_040"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_040"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_041"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_ovs_vswitchd_pid",
+            "remarks": "rule_set_041"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_041"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_041"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_042"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_ovsdb_server_pid",
+            "remarks": "rule_set_042"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_042"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_042"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_043"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_ovsdb_server_pid",
+            "remarks": "rule_set_043"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_043"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_043"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_044"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_ovn_cni_server_sock",
+            "remarks": "rule_set_044"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_044"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_044"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_045"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_ovn_cni_server_sock",
+            "remarks": "rule_set_045"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_045"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_045"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_046"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_ovn_db_files",
+            "remarks": "rule_set_046"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_046"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_046"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_047"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_ovn_db_files",
+            "remarks": "rule_set_047"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Container Network Interface file ownership is set to root:root",
+            "remarks": "rule_set_047"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_047"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.11",
+            "remarks": "rule_set_048"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_etcd_data_dir",
+            "remarks": "rule_set_048"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the etcd data directory permissions are set to 700 or more restrictive",
+            "remarks": "rule_set_048"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_048"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.11",
+            "remarks": "rule_set_049"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_etcd_data_files",
+            "remarks": "rule_set_049"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the etcd data directory permissions are set to 700 or more restrictive",
+            "remarks": "rule_set_049"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_049"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.12",
+            "remarks": "rule_set_050"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_etcd_data_dir",
+            "remarks": "rule_set_050"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the etcd data directory ownership is set to etcd:etcd",
+            "remarks": "rule_set_050"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_050"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.12",
+            "remarks": "rule_set_051"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_etcd_data_dir",
+            "remarks": "rule_set_051"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the etcd data directory ownership is set to etcd:etcd",
+            "remarks": "rule_set_051"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_051"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.12",
+            "remarks": "rule_set_052"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_etcd_data_files",
+            "remarks": "rule_set_052"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the etcd data directory ownership is set to etcd:etcd",
+            "remarks": "rule_set_052"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_052"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.12",
+            "remarks": "rule_set_053"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_etcd_data_files",
+            "remarks": "rule_set_053"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the etcd data directory ownership is set to etcd:etcd",
+            "remarks": "rule_set_053"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_053"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.13",
+            "remarks": "rule_set_054"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_master_admin_kubeconfigs",
+            "remarks": "rule_set_054"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubeconfig file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_054"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_054"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.14",
+            "remarks": "rule_set_055"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_master_admin_kubeconfigs",
+            "remarks": "rule_set_055"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubeconfig file ownership is set to root:root",
+            "remarks": "rule_set_055"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_055"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.14",
+            "remarks": "rule_set_056"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_master_admin_kubeconfigs",
+            "remarks": "rule_set_056"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubeconfig file ownership is set to root:root",
+            "remarks": "rule_set_056"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_056"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.15",
+            "remarks": "rule_set_057"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_scheduler_kubeconfig",
+            "remarks": "rule_set_057"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Scheduler kubeconfig file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_057"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_057"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.16",
+            "remarks": "rule_set_058"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_scheduler_kubeconfig",
+            "remarks": "rule_set_058"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Scheduler kubeconfig file ownership is set to root:root",
+            "remarks": "rule_set_058"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_058"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.16",
+            "remarks": "rule_set_059"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_scheduler_kubeconfig",
+            "remarks": "rule_set_059"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Scheduler kubeconfig file ownership is set to root:root",
+            "remarks": "rule_set_059"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_059"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.17",
+            "remarks": "rule_set_060"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_controller_manager_kubeconfig",
+            "remarks": "rule_set_060"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Controller Manager kubeconfig file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_060"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_060"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.18",
+            "remarks": "rule_set_061"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_controller_manager_kubeconfig",
+            "remarks": "rule_set_061"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Controller Manager kubeconfig file ownership is set to root:root",
+            "remarks": "rule_set_061"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_061"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.18",
+            "remarks": "rule_set_062"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_controller_manager_kubeconfig",
+            "remarks": "rule_set_062"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Controller Manager kubeconfig file ownership is set to root:root",
+            "remarks": "rule_set_062"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_062"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.19",
+            "remarks": "rule_set_063"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_openshift_pki_key_files",
+            "remarks": "rule_set_063"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the OpenShift PKI directory and file ownership is set to root:root",
+            "remarks": "rule_set_063"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_063"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.19",
+            "remarks": "rule_set_064"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_openshift_pki_key_files",
+            "remarks": "rule_set_064"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the OpenShift PKI directory and file ownership is set to root:root",
+            "remarks": "rule_set_064"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_064"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.19",
+            "remarks": "rule_set_065"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_openshift_pki_cert_files",
+            "remarks": "rule_set_065"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the OpenShift PKI directory and file ownership is set to root:root",
+            "remarks": "rule_set_065"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_065"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.19",
+            "remarks": "rule_set_066"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_openshift_pki_cert_files",
+            "remarks": "rule_set_066"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the OpenShift PKI directory and file ownership is set to root:root",
+            "remarks": "rule_set_066"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_066"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.19",
+            "remarks": "rule_set_067"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_etcd_pki_cert_files",
+            "remarks": "rule_set_067"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the OpenShift PKI directory and file ownership is set to root:root",
+            "remarks": "rule_set_067"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_067"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.19",
+            "remarks": "rule_set_068"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_etcd_pki_cert_files",
+            "remarks": "rule_set_068"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the OpenShift PKI directory and file ownership is set to root:root",
+            "remarks": "rule_set_068"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_068"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.20",
+            "remarks": "rule_set_069"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_openshift_pki_cert_files",
+            "remarks": "rule_set_069"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the OpenShift PKI certificate file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_069"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_069"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.20",
+            "remarks": "rule_set_070"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_etcd_pki_cert_files",
+            "remarks": "rule_set_070"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the OpenShift PKI certificate file permissions are set to 600 or more restrictive",
+            "remarks": "rule_set_070"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_070"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.21",
+            "remarks": "rule_set_071"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_openshift_pki_key_files",
+            "remarks": "rule_set_071"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the OpenShift PKI key file permissions are set to 600",
+            "remarks": "rule_set_071"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_071"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.1",
+            "remarks": "rule_set_072"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_anonymous_auth",
+            "remarks": "rule_set_072"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check anonymous requests are authorized",
+            "remarks": "rule_set_072"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_072"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.2",
+            "remarks": "rule_set_073"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_basic_auth",
+            "remarks": "rule_set_073"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --basic-auth-file argument is not set",
+            "remarks": "rule_set_073"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_073"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.3",
+            "remarks": "rule_set_074"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_token_auth",
+            "remarks": "rule_set_074"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --token-auth-file parameter is not set",
+            "remarks": "rule_set_074"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_074"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.4",
+            "remarks": "rule_set_075"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_https_for_kubelet_conn",
+            "remarks": "rule_set_075"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Use https for kubelet connections",
+            "remarks": "rule_set_075"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_075"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.4",
+            "remarks": "rule_set_076"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_openshift_https_serving_cert",
+            "remarks": "rule_set_076"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Use https for kubelet connections",
+            "remarks": "rule_set_076"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_076"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.4",
+            "remarks": "rule_set_077"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_oauth_https_serving_cert",
+            "remarks": "rule_set_077"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Use https for kubelet connections",
+            "remarks": "rule_set_077"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_077"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.5",
+            "remarks": "rule_set_078"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_kubelet_client_cert",
+            "remarks": "rule_set_078"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet uses certificates to authenticate",
+            "remarks": "rule_set_078"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_078"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.5",
+            "remarks": "rule_set_079"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_kubelet_client_cert_pre_4_9",
+            "remarks": "rule_set_079"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet uses certificates to authenticate",
+            "remarks": "rule_set_079"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_079"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.5",
+            "remarks": "rule_set_080"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_kubelet_client_key",
+            "remarks": "rule_set_080"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet uses certificates to authenticate",
+            "remarks": "rule_set_080"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_080"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.5",
+            "remarks": "rule_set_081"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_kubelet_client_key_pre_4_9",
+            "remarks": "rule_set_081"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet uses certificates to authenticate",
+            "remarks": "rule_set_081"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_081"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.6",
+            "remarks": "rule_set_082"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_kubelet_certificate_authority",
+            "remarks": "rule_set_082"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Verify that the kubelet certificate authority is set as appropriate",
+            "remarks": "rule_set_082"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_082"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.7",
+            "remarks": "rule_set_083"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_auth_mode_no_aa",
+            "remarks": "rule_set_083"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --authorization-mode argument is not set to AlwaysAllow",
+            "remarks": "rule_set_083"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_083"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.8",
+            "remarks": "rule_set_084"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_auth_mode_rbac",
+            "remarks": "rule_set_084"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Verify that RBAC is enabled",
+            "remarks": "rule_set_084"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_084"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.10",
+            "remarks": "rule_set_085"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_admission_control_plugin_alwaysadmit",
+            "remarks": "rule_set_085"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the admission control plugin AlwaysAdmit is not set",
+            "remarks": "rule_set_085"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_085"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.11",
+            "remarks": "rule_set_086"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_admission_control_plugin_alwayspullimages",
+            "remarks": "rule_set_086"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the admission control plugin AlwaysPullImages is not set",
+            "remarks": "rule_set_086"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_086"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.12",
+            "remarks": "rule_set_087"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_admission_control_plugin_service_account",
+            "remarks": "rule_set_087"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the admission control plugin ServiceAccount is set",
+            "remarks": "rule_set_087"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_087"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.13",
+            "remarks": "rule_set_088"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_admission_control_plugin_namespacelifecycle",
+            "remarks": "rule_set_088"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the admission control plugin NamespaceLifecycle is set",
+            "remarks": "rule_set_088"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_088"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.14",
+            "remarks": "rule_set_089"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_admission_control_plugin_scc",
+            "remarks": "rule_set_089"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the admission control plugin SecurityContextConstraint is set",
+            "remarks": "rule_set_089"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_089"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.15",
+            "remarks": "rule_set_090"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_admission_control_plugin_noderestriction",
+            "remarks": "rule_set_090"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the admission control plugin NodeRestriction is set",
+            "remarks": "rule_set_090"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_090"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.16",
+            "remarks": "rule_set_091"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_insecure_bind_address",
+            "remarks": "rule_set_091"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --insecure-bind-address argument is not set",
+            "remarks": "rule_set_091"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_091"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.18",
+            "remarks": "rule_set_092"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_bind_address",
+            "remarks": "rule_set_092"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --secure-port argument is not set to 0",
+            "remarks": "rule_set_092"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_092"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.19",
+            "remarks": "rule_set_093"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_profiling_protected_by_rbac",
+            "remarks": "rule_set_093"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the healthz endpoint is protected by RBAC",
+            "remarks": "rule_set_093"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_093"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.20",
+            "remarks": "rule_set_094"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_audit_log_path",
+            "remarks": "rule_set_094"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --audit-log-path argument is set",
+            "remarks": "rule_set_094"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_094"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.20",
+            "remarks": "rule_set_095"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "openshift_api_server_audit_log_path",
+            "remarks": "rule_set_095"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --audit-log-path argument is set",
+            "remarks": "rule_set_095"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_095"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.21",
+            "remarks": "rule_set_096"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "audit_log_forwarding_enabled",
+            "remarks": "rule_set_096"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the audit logs are forwarded off the cluster for retention",
+            "remarks": "rule_set_096"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_096"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.21",
+            "remarks": "rule_set_097"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "audit_log_forwarding_webhook",
+            "remarks": "rule_set_097"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the audit logs are forwarded off the cluster for retention",
+            "remarks": "rule_set_097"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_097"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.22",
+            "remarks": "rule_set_098"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_audit_log_maxbackup",
+            "remarks": "rule_set_098"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the maximumRetainedFiles argument is set to 10 or as appropriate",
+            "remarks": "rule_set_098"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_098"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.22",
+            "remarks": "rule_set_099"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "ocp_api_server_audit_log_maxbackup",
+            "remarks": "rule_set_099"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the maximumRetainedFiles argument is set to 10 or as appropriate",
+            "remarks": "rule_set_099"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_099"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.23",
+            "remarks": "rule_set_100"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_audit_log_maxsize",
+            "remarks": "rule_set_100"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the maximumFileSizeMegabytes argument is set to 100",
+            "remarks": "rule_set_100"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_100"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.23",
+            "remarks": "rule_set_101"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "ocp_api_server_audit_log_maxsize",
+            "remarks": "rule_set_101"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the maximumFileSizeMegabytes argument is set to 100",
+            "remarks": "rule_set_101"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_101"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.24",
+            "remarks": "rule_set_102"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_request_timeout",
+            "remarks": "rule_set_102"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --request-timeout argument is set",
+            "remarks": "rule_set_102"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_102"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.25",
+            "remarks": "rule_set_103"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_service_account_lookup",
+            "remarks": "rule_set_103"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --service-account-lookup argument is set to true",
+            "remarks": "rule_set_103"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_103"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.26",
+            "remarks": "rule_set_104"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_service_account_public_key",
+            "remarks": "rule_set_104"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --service-account-key-file argument is set as appropriate",
+            "remarks": "rule_set_104"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_104"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.27",
+            "remarks": "rule_set_105"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_etcd_cert",
+            "remarks": "rule_set_105"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --etcd-certfile and --etcd-keyfile arguments are set as appropriate",
+            "remarks": "rule_set_105"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_105"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.27",
+            "remarks": "rule_set_106"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_etcd_key",
+            "remarks": "rule_set_106"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --etcd-certfile and --etcd-keyfile arguments are set as appropriate",
+            "remarks": "rule_set_106"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_106"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.28",
+            "remarks": "rule_set_107"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_tls_cert",
+            "remarks": "rule_set_107"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --tls-cert-file and --tls-private-key-file arguments are set as appropriate",
+            "remarks": "rule_set_107"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_107"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.28",
+            "remarks": "rule_set_108"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_tls_private_key",
+            "remarks": "rule_set_108"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --tls-cert-file and --tls-private-key-file arguments are set as appropriate",
+            "remarks": "rule_set_108"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_108"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.29",
+            "remarks": "rule_set_109"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_client_ca",
+            "remarks": "rule_set_109"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --client-ca-file argument is set as appropriate",
+            "remarks": "rule_set_109"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_109"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.30",
+            "remarks": "rule_set_110"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_etcd_ca",
+            "remarks": "rule_set_110"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --etcd-cafile argument is set as appropriate",
+            "remarks": "rule_set_110"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_110"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.31",
+            "remarks": "rule_set_111"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_encryption_provider_cipher",
+            "remarks": "rule_set_111"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check encryption providers are appropriately configured",
+            "remarks": "rule_set_111"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_111"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.32",
+            "remarks": "rule_set_112"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "api_server_tls_cipher_suites",
+            "remarks": "rule_set_112"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the API Server only makes use of Strong Cryptographic Ciphers",
+            "remarks": "rule_set_112"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_112"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.1",
+            "remarks": "rule_set_113"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "rbac_debug_role_protects_pprof",
+            "remarks": "rule_set_113"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check controller manager healthz endpoints are protected by RBAC",
+            "remarks": "rule_set_113"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_113"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.2",
+            "remarks": "rule_set_114"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "controller_use_service_account",
+            "remarks": "rule_set_114"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --use-service-account-credentials argument is set to true",
+            "remarks": "rule_set_114"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_114"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.3",
+            "remarks": "rule_set_115"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "controller_service_account_private_key",
+            "remarks": "rule_set_115"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --service-account-private-key-file argument is set as appropriate",
+            "remarks": "rule_set_115"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_115"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.4",
+            "remarks": "rule_set_116"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "controller_service_account_ca",
+            "remarks": "rule_set_116"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --root-ca-file argument is set as appropriate",
+            "remarks": "rule_set_116"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_116"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.5",
+            "remarks": "rule_set_117"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "controller_secure_port",
+            "remarks": "rule_set_117"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --bind-address argument is set to 127.0.0.1",
+            "remarks": "rule_set_117"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_117"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.5",
+            "remarks": "rule_set_118"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "controller_insecure_port_disabled",
+            "remarks": "rule_set_118"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --bind-address argument is set to 127.0.0.1",
+            "remarks": "rule_set_118"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_118"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.4.1",
+            "remarks": "rule_set_119"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scheduler_profiling_protected_by_rbac",
+            "remarks": "rule_set_119"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the healthz endpoints for the scheduler are protected by RBAC",
+            "remarks": "rule_set_119"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_119"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.4.2",
+            "remarks": "rule_set_120"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scheduler_service_protected_by_rbac",
+            "remarks": "rule_set_120"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Verify that the scheduler API service is protected by RBAC",
+            "remarks": "rule_set_120"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_120"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.1",
+            "remarks": "rule_set_121"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "etcd_cert_file",
+            "remarks": "rule_set_121"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --cert-file and --key-file arguments are set as appropriate",
+            "remarks": "rule_set_121"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_121"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.1",
+            "remarks": "rule_set_122"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "etcd_key_file",
+            "remarks": "rule_set_122"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --cert-file and --key-file arguments are set as appropriate",
+            "remarks": "rule_set_122"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_122"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.2",
+            "remarks": "rule_set_123"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "etcd_client_cert_auth",
+            "remarks": "rule_set_123"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --client-cert-auth argument is set to true",
+            "remarks": "rule_set_123"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_123"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.3",
+            "remarks": "rule_set_124"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "etcd_auto_tls",
+            "remarks": "rule_set_124"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --auto-tls argument is not set to true",
+            "remarks": "rule_set_124"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_124"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.4",
+            "remarks": "rule_set_125"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "etcd_peer_cert_file",
+            "remarks": "rule_set_125"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --peer-cert-file and --peer-key-file arguments are set as appropriate",
+            "remarks": "rule_set_125"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_125"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.4",
+            "remarks": "rule_set_126"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "etcd_peer_key_file",
+            "remarks": "rule_set_126"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --peer-cert-file and --peer-key-file arguments are set as appropriate",
+            "remarks": "rule_set_126"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_126"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.5",
+            "remarks": "rule_set_127"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "etcd_peer_client_cert_auth",
+            "remarks": "rule_set_127"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --peer-client-cert-auth argument is set to true",
+            "remarks": "rule_set_127"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_127"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.6",
+            "remarks": "rule_set_128"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "etcd_peer_auto_tls",
+            "remarks": "rule_set_128"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --peer-auto-tls argument is not set to true",
+            "remarks": "rule_set_128"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_128"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.7",
+            "remarks": "rule_set_129"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "etcd_unique_ca",
+            "remarks": "rule_set_129"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check a unique Certificate Authority is used for etcd",
+            "remarks": "rule_set_129"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_129"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-3.1.1",
+            "remarks": "rule_set_130"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "idp_is_configured",
+            "remarks": "rule_set_130"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Client certificate authentication should not be used for users",
+            "remarks": "rule_set_130"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_130"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-3.1.1",
+            "remarks": "rule_set_131"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubeadmin_removed",
+            "remarks": "rule_set_131"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Client certificate authentication should not be used for users",
+            "remarks": "rule_set_131"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_131"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-3.2.1",
+            "remarks": "rule_set_132"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "audit_logging_enabled",
+            "remarks": "rule_set_132"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check a minimal audit policy is created",
+            "remarks": "rule_set_132"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_132"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-3.2.2",
+            "remarks": "rule_set_133"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "audit_profile_set",
+            "remarks": "rule_set_133"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the audit policy covers key security concerns",
+            "remarks": "rule_set_133"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_133"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.1",
+            "remarks": "rule_set_134"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_worker_service",
+            "remarks": "rule_set_134"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet service file permissions are set to 644 or more restrictive",
+            "remarks": "rule_set_134"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_134"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.2",
+            "remarks": "rule_set_135"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_worker_service",
+            "remarks": "rule_set_135"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet service file ownership is set to root:root",
+            "remarks": "rule_set_135"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_135"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.2",
+            "remarks": "rule_set_136"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_worker_service",
+            "remarks": "rule_set_136"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet service file ownership is set to root:root",
+            "remarks": "rule_set_136"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_136"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.3",
+            "remarks": "rule_set_137"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_proxy_kubeconfig",
+            "remarks": "rule_set_137"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "If proxy kube proxy configuration file exists ensure permissions are set to 644 or more restrictive",
+            "remarks": "rule_set_137"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_137"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.4",
+            "remarks": "rule_set_138"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_proxy_kubeconfig",
+            "remarks": "rule_set_138"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "If proxy kubeconfig file exists ensure ownership is set to root:root",
+            "remarks": "rule_set_138"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_138"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.4",
+            "remarks": "rule_set_139"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_proxy_kubeconfig",
+            "remarks": "rule_set_139"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "If proxy kubeconfig file exists ensure ownership is set to root:root",
+            "remarks": "rule_set_139"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_139"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.5",
+            "remarks": "rule_set_140"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_kubelet_conf",
+            "remarks": "rule_set_140"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --kubeconfig kubelet.conf file permissions are set to 644 or more restrictive",
+            "remarks": "rule_set_140"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_140"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.6",
+            "remarks": "rule_set_141"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_kubelet_conf",
+            "remarks": "rule_set_141"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --kubeconfig kubelet.conf file ownership is set to root:root",
+            "remarks": "rule_set_141"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_141"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.6",
+            "remarks": "rule_set_142"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_kubelet_conf",
+            "remarks": "rule_set_142"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --kubeconfig kubelet.conf file ownership is set to root:root",
+            "remarks": "rule_set_142"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_142"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.6",
+            "remarks": "rule_set_143"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_kubelet",
+            "remarks": "rule_set_143"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --kubeconfig kubelet.conf file ownership is set to root:root",
+            "remarks": "rule_set_143"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_143"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.7",
+            "remarks": "rule_set_144"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_worker_ca",
+            "remarks": "rule_set_144"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the certificate authorities file permissions are set to 644 or more restrictive",
+            "remarks": "rule_set_144"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_144"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.8",
+            "remarks": "rule_set_145"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_worker_ca",
+            "remarks": "rule_set_145"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the client certificate authorities file ownership is set to root:root",
+            "remarks": "rule_set_145"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_145"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.8",
+            "remarks": "rule_set_146"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_worker_ca",
+            "remarks": "rule_set_146"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the client certificate authorities file ownership is set to root:root",
+            "remarks": "rule_set_146"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_146"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.9",
+            "remarks": "rule_set_147"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_permissions_worker_kubeconfig",
+            "remarks": "rule_set_147"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet --config configuration file has permissions set to 600 or more restrictive",
+            "remarks": "rule_set_147"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_147"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.10",
+            "remarks": "rule_set_148"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_owner_worker_kubeconfig",
+            "remarks": "rule_set_148"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet configuration file ownership is set to root:root",
+            "remarks": "rule_set_148"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_148"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.10",
+            "remarks": "rule_set_149"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "file_groupowner_worker_kubeconfig",
+            "remarks": "rule_set_149"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubelet configuration file ownership is set to root:root",
+            "remarks": "rule_set_149"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_149"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.1",
+            "remarks": "rule_set_150"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_eviction_thresholds_set_hard_memory_available",
+            "remarks": "rule_set_150"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Activate Garbage collection in OpenShift Container Platform 4, as appropriate",
+            "remarks": "rule_set_150"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_150"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.1",
+            "remarks": "rule_set_151"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_eviction_thresholds_set_hard_nodefs_available",
+            "remarks": "rule_set_151"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Activate Garbage collection in OpenShift Container Platform 4, as appropriate",
+            "remarks": "rule_set_151"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_151"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.1",
+            "remarks": "rule_set_152"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_eviction_thresholds_set_hard_nodefs_inodesfree",
+            "remarks": "rule_set_152"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Activate Garbage collection in OpenShift Container Platform 4, as appropriate",
+            "remarks": "rule_set_152"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_152"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.1",
+            "remarks": "rule_set_153"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_eviction_thresholds_set_hard_imagefs_available",
+            "remarks": "rule_set_153"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Activate Garbage collection in OpenShift Container Platform 4, as appropriate",
+            "remarks": "rule_set_153"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_153"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.2",
+            "remarks": "rule_set_154"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_anonymous_auth",
+            "remarks": "rule_set_154"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --anonymous-auth argument is set to false",
+            "remarks": "rule_set_154"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_154"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.3",
+            "remarks": "rule_set_155"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_authorization_mode",
+            "remarks": "rule_set_155"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --authorization-mode argument is not set to AlwaysAllow",
+            "remarks": "rule_set_155"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_155"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.4",
+            "remarks": "rule_set_156"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_configure_client_ca",
+            "remarks": "rule_set_156"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --client-ca-file argument is set as appropriate",
+            "remarks": "rule_set_156"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_156"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.5",
+            "remarks": "rule_set_157"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_disable_readonly_port",
+            "remarks": "rule_set_157"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Verify that the read only port is not used or is set to 0",
+            "remarks": "rule_set_157"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_157"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.6",
+            "remarks": "rule_set_158"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_enable_streaming_connections",
+            "remarks": "rule_set_158"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --streaming-connection-idle-timeout argument is not set to 0",
+            "remarks": "rule_set_158"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_158"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.7",
+            "remarks": "rule_set_159"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_enable_iptables_util_chains",
+            "remarks": "rule_set_159"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --make-iptables-util-chains argument is set to true",
+            "remarks": "rule_set_159"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_159"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.8",
+            "remarks": "rule_set_160"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_configure_event_creation",
+            "remarks": "rule_set_160"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubeAPIQPS [--event-qps] argument is set to 0 or a level which ensures appropriate event capture",
+            "remarks": "rule_set_160"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_160"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.8",
+            "remarks": "rule_set_161"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "var_event_record_qps=50",
+            "remarks": "rule_set_161"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the kubeAPIQPS [--event-qps] argument is set to 0 or a level which ensures appropriate event capture",
+            "remarks": "rule_set_161"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_161"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.9",
+            "remarks": "rule_set_162"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_configure_tls_cert",
+            "remarks": "rule_set_162"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --tls-cert-file and --tls-private-key-file arguments are set as appropriate",
+            "remarks": "rule_set_162"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_162"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.9",
+            "remarks": "rule_set_163"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_configure_tls_key",
+            "remarks": "rule_set_163"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --tls-cert-file and --tls-private-key-file arguments are set as appropriate",
+            "remarks": "rule_set_163"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_163"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.10",
+            "remarks": "rule_set_164"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_enable_client_cert_rotation",
+            "remarks": "rule_set_164"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --rotate-certificates argument is not set to false",
+            "remarks": "rule_set_164"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_164"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.10",
+            "remarks": "rule_set_165"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_enable_cert_rotation",
+            "remarks": "rule_set_165"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the --rotate-certificates argument is not set to false",
+            "remarks": "rule_set_165"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_165"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.11",
+            "remarks": "rule_set_166"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_enable_server_cert_rotation",
+            "remarks": "rule_set_166"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Verify that the RotateKubeletServerCertificate argument is set to true",
+            "remarks": "rule_set_166"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_166"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.12",
+            "remarks": "rule_set_167"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_configure_tls_cipher_suites",
+            "remarks": "rule_set_167"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Kubelet only makes use of Strong Cryptographic Ciphers",
+            "remarks": "rule_set_167"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_167"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.12",
+            "remarks": "rule_set_168"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "kubelet_configure_tls_cipher_suites_ingresscontroller",
+            "remarks": "rule_set_168"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the Kubelet only makes use of Strong Cryptographic Ciphers",
+            "remarks": "rule_set_168"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_168"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.1",
+            "remarks": "rule_set_169"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "rbac_limit_cluster_admin",
+            "remarks": "rule_set_169"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the cluster-admin role is only used where required",
+            "remarks": "rule_set_169"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_169"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.2",
+            "remarks": "rule_set_170"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "rbac_limit_secrets_access",
+            "remarks": "rule_set_170"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize access to secrets",
+            "remarks": "rule_set_170"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_170"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.3",
+            "remarks": "rule_set_171"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "rbac_wildcard_use",
+            "remarks": "rule_set_171"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize wildcard use in Roles and ClusterRoles",
+            "remarks": "rule_set_171"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_171"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.4",
+            "remarks": "rule_set_172"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "rbac_pod_creation_access",
+            "remarks": "rule_set_172"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize access to create pods",
+            "remarks": "rule_set_172"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_172"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.5",
+            "remarks": "rule_set_173"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "accounts_unique_service_account",
+            "remarks": "rule_set_173"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check default service accounts are not actively used.",
+            "remarks": "rule_set_173"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_173"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.6",
+            "remarks": "rule_set_174"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "accounts_restrict_service_account_tokens",
+            "remarks": "rule_set_174"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check Service Account Tokens are only mounted where necessary",
+            "remarks": "rule_set_174"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_174"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.1",
+            "remarks": "rule_set_175"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scc_limit_privileged_containers",
+            "remarks": "rule_set_175"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize the admission of privileged containers",
+            "remarks": "rule_set_175"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_175"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.2",
+            "remarks": "rule_set_176"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scc_limit_process_id_namespace",
+            "remarks": "rule_set_176"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize the admission of containers wishing to share the host process ID namespace",
+            "remarks": "rule_set_176"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_176"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.3",
+            "remarks": "rule_set_177"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scc_limit_ipc_namespace",
+            "remarks": "rule_set_177"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize the admission of containers wishing to share the host IPC namespace",
+            "remarks": "rule_set_177"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_177"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.4",
+            "remarks": "rule_set_178"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scc_limit_network_namespace",
+            "remarks": "rule_set_178"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize the admission of containers wishing to share the host network namespace",
+            "remarks": "rule_set_178"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_178"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.5",
+            "remarks": "rule_set_179"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scc_limit_privilege_escalation",
+            "remarks": "rule_set_179"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize the admission of containers with allowPrivilegeEscalation",
+            "remarks": "rule_set_179"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_179"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.6",
+            "remarks": "rule_set_180"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scc_limit_root_containers",
+            "remarks": "rule_set_180"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize the admission of root containers",
+            "remarks": "rule_set_180"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_180"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.7",
+            "remarks": "rule_set_181"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scc_limit_net_raw_capability",
+            "remarks": "rule_set_181"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize the admission of containers with the NET_RAW capability",
+            "remarks": "rule_set_181"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_181"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.8",
+            "remarks": "rule_set_182"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scc_limit_container_allowed_capabilities",
+            "remarks": "rule_set_182"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize the admission of containers with added capabilities",
+            "remarks": "rule_set_182"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_182"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.9",
+            "remarks": "rule_set_183"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "scc_drop_container_capabilities",
+            "remarks": "rule_set_183"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize the admission of containers with capabilities assigned",
+            "remarks": "rule_set_183"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_183"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.10",
+            "remarks": "rule_set_184"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "rbac_least_privilege",
+            "remarks": "rule_set_184"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Minimize access to privileged Security Context Constraints",
+            "remarks": "rule_set_184"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_184"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.3.1",
+            "remarks": "rule_set_185"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "configure_network_policies",
+            "remarks": "rule_set_185"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the CNI in use supports Network Policies",
+            "remarks": "rule_set_185"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_185"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.3.2",
+            "remarks": "rule_set_186"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "configure_network_policies_namespaces",
+            "remarks": "rule_set_186"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check all Namespaces have Network Policies defined",
+            "remarks": "rule_set_186"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_186"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.3.2",
+            "remarks": "rule_set_187"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "configure_network_policies_hypershift_hosted",
+            "remarks": "rule_set_187"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check all Namespaces have Network Policies defined",
+            "remarks": "rule_set_187"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_187"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.4.1",
+            "remarks": "rule_set_188"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "secrets_no_environment_variables",
+            "remarks": "rule_set_188"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Prefer using secrets as files over secrets as environment variables",
+            "remarks": "rule_set_188"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_188"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.4.2",
+            "remarks": "rule_set_189"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "secrets_consider_external_storage",
+            "remarks": "rule_set_189"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Consider external secret storage",
+            "remarks": "rule_set_189"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_189"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.5.1",
+            "remarks": "rule_set_190"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "ocp_allowed_registries",
+            "remarks": "rule_set_190"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure Image Provenance using image controller configuration parameters",
+            "remarks": "rule_set_190"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_190"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.5.1",
+            "remarks": "rule_set_191"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "ocp_allowed_registries_for_import",
+            "remarks": "rule_set_191"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure Image Provenance using image controller configuration parameters",
+            "remarks": "rule_set_191"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_191"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.5.1",
+            "remarks": "rule_set_192"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "ocp_insecure_registries",
+            "remarks": "rule_set_192"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure Image Provenance using image controller configuration parameters",
+            "remarks": "rule_set_192"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_192"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.5.1",
+            "remarks": "rule_set_193"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "ocp_insecure_allowed_registries_for_import",
+            "remarks": "rule_set_193"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure Image Provenance using image controller configuration parameters",
+            "remarks": "rule_set_193"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_193"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.1",
+            "remarks": "rule_set_194"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "general_namespaces_in_use",
+            "remarks": "rule_set_194"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Create administrative boundaries between resources using namespaces",
+            "remarks": "rule_set_194"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_194"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.2",
+            "remarks": "rule_set_195"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "general_default_seccomp_profile",
+            "remarks": "rule_set_195"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check the seccomp profile is set to docker/default in your pod definitions",
+            "remarks": "rule_set_195"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_195"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.3",
+            "remarks": "rule_set_196"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "general_apply_scc",
+            "remarks": "rule_set_196"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Apply Security Context to Your Pods and Containers",
+            "remarks": "rule_set_196"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_196"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.4",
+            "remarks": "rule_set_197"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "general_default_namespace_use",
+            "remarks": "rule_set_197"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "The default namespace should not be used",
+            "remarks": "rule_set_197"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "RedHat_OpenShift_Container_Platform_Benchmark",
+            "remarks": "rule_set_197"
+          }
+        ],
+        "control-implementations": []
+      }
+    ]
+  }
+}

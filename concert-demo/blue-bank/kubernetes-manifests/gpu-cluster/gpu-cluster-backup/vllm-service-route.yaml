@@ -1,0 +1,72 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"vllm-granite"},"name":"vllm-service","namespace":"bluebank"},"spec":{"ports":[{"name":"http","port":8000,"protocol":"TCP","targetPort":8000}],"selector":{"active":"true","app":"vllm-granite"},"type":"ClusterIP"}}
+    creationTimestamp: "2026-03-24T18:12:30Z"
+    labels:
+      app: vllm-granite
+    name: vllm-service
+    namespace: bluebank
+    resourceVersion: "270043"
+    uid: 828d0fcb-acd2-470b-a58f-52b97de0343c
+  spec:
+    clusterIP: 172.30.242.66
+    clusterIPs:
+    - 172.30.242.66
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 8000
+      protocol: TCP
+      targetPort: 8000
+    selector:
+      active: "true"
+      app: vllm-granite
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      haproxy.router.openshift.io/timeout: 300s
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"route.openshift.io/v1","kind":"Route","metadata":{"annotations":{},"name":"vllm-route","namespace":"bluebank"},"spec":{"port":{"targetPort":"http"},"tls":{"termination":"edge"},"to":{"kind":"Service","name":"vllm-service"}}}
+      openshift.io/host.generated: "true"
+    creationTimestamp: "2026-03-24T18:12:30Z"
+    name: vllm-route
+    namespace: bluebank
+    resourceVersion: "751264"
+    uid: 4123b861-6252-458b-9ec2-142c922e51a2
+  spec:
+    host: vllm-route-bluebank.apps.bluebank-demo-2.cp.fyre.ibm.com
+    port:
+      targetPort: http
+    tls:
+      termination: edge
+    to:
+      kind: Service
+      name: vllm-service
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2026-03-24T18:12:30Z"
+        status: "True"
+        type: Admitted
+      host: vllm-route-bluebank.apps.bluebank-demo-2.cp.fyre.ibm.com
+      routerCanonicalHostname: router-default.apps.bluebank-demo-2.cp.fyre.ibm.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""

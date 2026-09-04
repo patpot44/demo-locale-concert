@@ -1,0 +1,129 @@
+{
+  "bomFormat": "ConcertDef",
+  "specVersion": "1.0.2",
+  "metadata": {
+    "timestamp": "2025-07-14T08:00:00Z",
+    "type": "application",
+    "component": {
+      "name": "techcorp-erp",
+      "version": "3.4.1"
+    },
+    "business": {
+      "name": "TechCorp Industries",
+      "units": [
+        {
+          "name": "Digital Operations",
+          "email": "digital-ops@techcorp.com",
+          "phone": "+33-1-40-00-00-01"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "build:techcorp-erp",
+      "type": "build",
+      "name": "techcorp-erp",
+      "version": "3.4.1",
+      "components": [
+        {
+          "bom-ref": "container:registry.techcorp.com/erp/erp-backend",
+          "type": "container",
+          "name": "registry.techcorp.com/erp/erp-backend"
+        },
+        {
+          "bom-ref": "container:registry.techcorp.com/erp/erp-frontend",
+          "type": "container",
+          "name": "registry.techcorp.com/erp/erp-frontend"
+        },
+        {
+          "bom-ref": "container:registry.techcorp.com/erp/postgres",
+          "type": "container",
+          "name": "registry.techcorp.com/erp/postgres"
+        },
+        {
+          "bom-ref": "repository:coderepo:github:erp-core-api",
+          "type": "code",
+          "name": "erp-core-api",
+          "purl": "https://github.com/techcorp/erp-core-api"
+        },
+        {
+          "bom-ref": "repository:coderepo:github:erp-finance-module",
+          "type": "code",
+          "name": "erp-finance-module",
+          "purl": "https://github.com/techcorp/erp-finance-module"
+        },
+        {
+          "bom-ref": "repository:coderepo:gitlab:erp-hr-module",
+          "type": "code",
+          "name": "erp-hr-module",
+          "purl": "https://gitlab.techcorp.com/erp/erp-hr-module"
+        },
+        {
+          "bom-ref": "repository:coderepo:github:erp-web-app",
+          "type": "code",
+          "name": "erp-web-app",
+          "purl": "https://github.com/techcorp/erp-web-app"
+        },
+        {
+          "bom-ref": "repository:coderepo:gitlab:erp-db-migrations",
+          "type": "code",
+          "name": "erp-db-migrations",
+          "purl": "https://gitlab.techcorp.com/erp/erp-db-migrations"
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "bom-ref": "environment:prod-eu-west-1",
+      "type": "environment",
+      "name": "prod-eu-west-1",
+      "properties": [
+        { "name": "platform_type",      "value": "Other" },
+        { "name": "deployment_purpose", "value": "production" }
+      ]
+    },
+    {
+      "bom-ref": "environment:staging-eu-west-1",
+      "type": "environment",
+      "name": "staging-eu-west-1",
+      "properties": [
+        { "name": "platform_type",      "value": "Other" },
+        { "name": "deployment_purpose", "value": "staging" }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "appapi:techcorp-erp",
+      "name": "techcorp-erp",
+      "endpoints": ["/", "/api/v1"],
+      "properties": [
+        { "name": "network_exposure", "value": "private" }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "container:registry.techcorp.com/erp/erp-backend",
+      "dependsOn": [
+        "appapi:techcorp-erp",
+        "repository:coderepo:github:erp-core-api"
+      ]
+    },
+    {
+      "ref": "container:registry.techcorp.com/erp/erp-frontend",
+      "dependsOn": [
+        "appapi:techcorp-erp",
+        "repository:coderepo:github:erp-web-app"
+      ]
+    }
+  ],
+  "properties": [
+    { "name": "application_criticality",                 "value": "5" },
+    { "name": "application_data_assessment_impact_risk", "value": "4" },
+    { "name": "revenue",                                 "value": "3" }
+  ],
+  "tags": ["production", "erp", "critical"]
+}

@@ -1,0 +1,2806 @@
+{
+  "component-definition": {
+    "uuid": "4231148f-4f6d-4487-b9db-c45ce46eadb3",
+    "metadata": {
+      "title": "Trivy",
+      "last-modified": "2025-04-21T08:05:25+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.3"
+    },
+    "components": [
+      {
+        "uuid": "c3a77e20-de8e-4ee4-a071-962ea21349ef",
+        "type": "validation",
+        "title": "Trivy",
+        "description": "Trivy",
+        "props": [
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.1",
+            "remarks": "rule_set_000"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0048",
+            "remarks": "rule_set_000"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0048",
+            "remarks": "rule_set_000"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_000"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.2",
+            "remarks": "rule_set_001"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0049",
+            "remarks": "rule_set_001"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0049",
+            "remarks": "rule_set_001"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_001"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.3",
+            "remarks": "rule_set_002"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0050",
+            "remarks": "rule_set_002"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0050",
+            "remarks": "rule_set_002"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_002"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.4",
+            "remarks": "rule_set_003"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0051",
+            "remarks": "rule_set_003"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0051",
+            "remarks": "rule_set_003"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_003"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.5",
+            "remarks": "rule_set_004"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0052",
+            "remarks": "rule_set_004"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0052",
+            "remarks": "rule_set_004"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_004"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.6",
+            "remarks": "rule_set_005"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0053",
+            "remarks": "rule_set_005"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0053",
+            "remarks": "rule_set_005"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_005"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.7",
+            "remarks": "rule_set_006"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0054",
+            "remarks": "rule_set_006"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0054",
+            "remarks": "rule_set_006"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_006"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.8",
+            "remarks": "rule_set_007"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0055",
+            "remarks": "rule_set_007"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0055",
+            "remarks": "rule_set_007"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_007"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.9",
+            "remarks": "rule_set_008"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0056",
+            "remarks": "rule_set_008"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0056",
+            "remarks": "rule_set_008"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_008"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.10",
+            "remarks": "rule_set_009"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0057",
+            "remarks": "rule_set_009"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0057",
+            "remarks": "rule_set_009"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_009"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.11",
+            "remarks": "rule_set_010"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0058",
+            "remarks": "rule_set_010"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0058",
+            "remarks": "rule_set_010"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_010"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.12",
+            "remarks": "rule_set_011"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0059",
+            "remarks": "rule_set_011"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0059",
+            "remarks": "rule_set_011"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_011"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.13",
+            "remarks": "rule_set_012"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0060",
+            "remarks": "rule_set_012"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0060",
+            "remarks": "rule_set_012"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_012"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.14",
+            "remarks": "rule_set_013"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0061",
+            "remarks": "rule_set_013"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0061",
+            "remarks": "rule_set_013"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_013"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.15",
+            "remarks": "rule_set_014"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0062",
+            "remarks": "rule_set_014"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0062",
+            "remarks": "rule_set_014"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_014"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.16",
+            "remarks": "rule_set_015"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0063",
+            "remarks": "rule_set_015"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0063",
+            "remarks": "rule_set_015"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_015"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.17",
+            "remarks": "rule_set_016"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0064",
+            "remarks": "rule_set_016"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0064",
+            "remarks": "rule_set_016"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_016"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.18",
+            "remarks": "rule_set_017"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0065",
+            "remarks": "rule_set_017"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0065",
+            "remarks": "rule_set_017"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_017"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.19",
+            "remarks": "rule_set_018"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0066",
+            "remarks": "rule_set_018"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0066",
+            "remarks": "rule_set_018"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_018"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.20",
+            "remarks": "rule_set_019"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0068",
+            "remarks": "rule_set_019"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0068",
+            "remarks": "rule_set_019"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_019"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.1.21",
+            "remarks": "rule_set_020"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0067",
+            "remarks": "rule_set_020"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0067",
+            "remarks": "rule_set_020"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_020"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.1",
+            "remarks": "rule_set_021"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0001",
+            "remarks": "rule_set_021"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0001",
+            "remarks": "rule_set_021"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_021"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.2",
+            "remarks": "rule_set_022"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0002",
+            "remarks": "rule_set_022"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0002",
+            "remarks": "rule_set_022"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_022"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.3",
+            "remarks": "rule_set_023"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0003",
+            "remarks": "rule_set_023"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0003",
+            "remarks": "rule_set_023"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_023"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.4",
+            "remarks": "rule_set_024"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0004",
+            "remarks": "rule_set_024"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0004",
+            "remarks": "rule_set_024"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_024"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.5",
+            "remarks": "rule_set_025"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0005",
+            "remarks": "rule_set_025"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0005",
+            "remarks": "rule_set_025"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_025"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.6",
+            "remarks": "rule_set_026"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0006",
+            "remarks": "rule_set_026"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0006",
+            "remarks": "rule_set_026"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_026"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.7",
+            "remarks": "rule_set_027"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0007",
+            "remarks": "rule_set_027"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0007",
+            "remarks": "rule_set_027"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_027"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.8",
+            "remarks": "rule_set_028"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0008",
+            "remarks": "rule_set_028"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0008",
+            "remarks": "rule_set_028"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_028"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.9",
+            "remarks": "rule_set_029"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0009",
+            "remarks": "rule_set_029"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0009",
+            "remarks": "rule_set_029"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_029"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.10",
+            "remarks": "rule_set_030"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0010",
+            "remarks": "rule_set_030"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0010",
+            "remarks": "rule_set_030"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_030"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.11",
+            "remarks": "rule_set_031"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0011",
+            "remarks": "rule_set_031"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0011",
+            "remarks": "rule_set_031"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_031"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.12",
+            "remarks": "rule_set_032"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0012",
+            "remarks": "rule_set_032"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0012",
+            "remarks": "rule_set_032"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_032"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.13",
+            "remarks": "rule_set_033"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0013",
+            "remarks": "rule_set_033"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0013",
+            "remarks": "rule_set_033"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_033"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.14",
+            "remarks": "rule_set_034"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0014",
+            "remarks": "rule_set_034"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0014",
+            "remarks": "rule_set_034"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_034"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.15",
+            "remarks": "rule_set_035"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0015",
+            "remarks": "rule_set_035"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0015",
+            "remarks": "rule_set_035"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_035"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.16",
+            "remarks": "rule_set_036"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0016",
+            "remarks": "rule_set_036"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0016",
+            "remarks": "rule_set_036"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_036"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.17",
+            "remarks": "rule_set_037"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0017",
+            "remarks": "rule_set_037"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0017",
+            "remarks": "rule_set_037"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_037"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.18",
+            "remarks": "rule_set_038"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0018",
+            "remarks": "rule_set_038"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0018",
+            "remarks": "rule_set_038"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_038"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.19",
+            "remarks": "rule_set_039"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0019",
+            "remarks": "rule_set_039"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0019",
+            "remarks": "rule_set_039"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_039"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.20",
+            "remarks": "rule_set_040"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0020",
+            "remarks": "rule_set_040"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0020",
+            "remarks": "rule_set_040"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_040"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.21",
+            "remarks": "rule_set_041"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0021",
+            "remarks": "rule_set_041"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0021",
+            "remarks": "rule_set_041"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_041"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.22",
+            "remarks": "rule_set_042"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0022",
+            "remarks": "rule_set_042"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0022",
+            "remarks": "rule_set_042"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_042"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.24",
+            "remarks": "rule_set_043"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0024",
+            "remarks": "rule_set_043"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0024",
+            "remarks": "rule_set_043"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_043"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.25",
+            "remarks": "rule_set_044"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0025",
+            "remarks": "rule_set_044"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0025",
+            "remarks": "rule_set_044"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_044"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.26",
+            "remarks": "rule_set_045"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0026",
+            "remarks": "rule_set_045"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0026",
+            "remarks": "rule_set_045"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_045"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.27",
+            "remarks": "rule_set_046"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0027",
+            "remarks": "rule_set_046"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0027",
+            "remarks": "rule_set_046"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_046"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.28",
+            "remarks": "rule_set_047"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0028",
+            "remarks": "rule_set_047"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0028",
+            "remarks": "rule_set_047"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_047"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.29",
+            "remarks": "rule_set_048"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0029",
+            "remarks": "rule_set_048"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0029",
+            "remarks": "rule_set_048"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_048"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.2.30",
+            "remarks": "rule_set_049"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0030",
+            "remarks": "rule_set_049"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0030",
+            "remarks": "rule_set_049"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_049"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.1",
+            "remarks": "rule_set_050"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0033",
+            "remarks": "rule_set_050"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0033",
+            "remarks": "rule_set_050"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_050"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.3",
+            "remarks": "rule_set_051"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0035",
+            "remarks": "rule_set_051"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0035",
+            "remarks": "rule_set_051"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_051"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.4",
+            "remarks": "rule_set_052"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0036",
+            "remarks": "rule_set_052"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0036",
+            "remarks": "rule_set_052"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_052"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.5",
+            "remarks": "rule_set_053"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0037",
+            "remarks": "rule_set_053"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0037",
+            "remarks": "rule_set_053"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_053"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.6",
+            "remarks": "rule_set_054"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0038",
+            "remarks": "rule_set_054"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0038",
+            "remarks": "rule_set_054"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_054"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.3.7",
+            "remarks": "rule_set_055"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0039",
+            "remarks": "rule_set_055"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0039",
+            "remarks": "rule_set_055"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_055"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.4.1",
+            "remarks": "rule_set_056"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0034",
+            "remarks": "rule_set_056"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0034",
+            "remarks": "rule_set_056"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_056"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-1.4.2",
+            "remarks": "rule_set_057"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0041",
+            "remarks": "rule_set_057"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0041",
+            "remarks": "rule_set_057"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_057"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.1",
+            "remarks": "rule_set_058"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0042",
+            "remarks": "rule_set_058"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0042",
+            "remarks": "rule_set_058"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_058"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.2",
+            "remarks": "rule_set_059"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0043",
+            "remarks": "rule_set_059"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0043",
+            "remarks": "rule_set_059"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_059"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.3",
+            "remarks": "rule_set_060"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0044",
+            "remarks": "rule_set_060"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0044",
+            "remarks": "rule_set_060"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_060"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.4",
+            "remarks": "rule_set_061"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0045",
+            "remarks": "rule_set_061"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0045",
+            "remarks": "rule_set_061"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_061"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.5",
+            "remarks": "rule_set_062"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0046",
+            "remarks": "rule_set_062"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0046",
+            "remarks": "rule_set_062"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_062"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-2.6",
+            "remarks": "rule_set_063"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0047",
+            "remarks": "rule_set_063"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0047",
+            "remarks": "rule_set_063"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_063"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.1",
+            "remarks": "rule_set_064"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0069",
+            "remarks": "rule_set_064"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0069",
+            "remarks": "rule_set_064"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_064"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.2",
+            "remarks": "rule_set_065"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0070",
+            "remarks": "rule_set_065"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0070",
+            "remarks": "rule_set_065"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_065"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.3",
+            "remarks": "rule_set_066"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0071",
+            "remarks": "rule_set_066"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0071",
+            "remarks": "rule_set_066"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_066"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.4",
+            "remarks": "rule_set_067"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0072",
+            "remarks": "rule_set_067"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0072",
+            "remarks": "rule_set_067"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_067"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.5",
+            "remarks": "rule_set_068"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0073",
+            "remarks": "rule_set_068"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0073",
+            "remarks": "rule_set_068"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_068"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.6",
+            "remarks": "rule_set_069"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0074",
+            "remarks": "rule_set_069"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0074",
+            "remarks": "rule_set_069"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_069"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.7",
+            "remarks": "rule_set_070"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0075",
+            "remarks": "rule_set_070"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0075",
+            "remarks": "rule_set_070"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_070"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.8",
+            "remarks": "rule_set_071"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0076",
+            "remarks": "rule_set_071"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0076",
+            "remarks": "rule_set_071"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_071"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.9",
+            "remarks": "rule_set_072"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0077",
+            "remarks": "rule_set_072"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0077",
+            "remarks": "rule_set_072"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_072"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.1.10",
+            "remarks": "rule_set_073"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0078",
+            "remarks": "rule_set_073"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0078",
+            "remarks": "rule_set_073"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_073"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.1",
+            "remarks": "rule_set_074"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0079",
+            "remarks": "rule_set_074"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0079",
+            "remarks": "rule_set_074"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_074"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.2",
+            "remarks": "rule_set_075"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0080",
+            "remarks": "rule_set_075"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0080",
+            "remarks": "rule_set_075"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_075"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.3",
+            "remarks": "rule_set_076"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0081",
+            "remarks": "rule_set_076"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0081",
+            "remarks": "rule_set_076"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_076"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.4",
+            "remarks": "rule_set_077"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0082",
+            "remarks": "rule_set_077"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0082",
+            "remarks": "rule_set_077"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_077"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.5",
+            "remarks": "rule_set_078"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0085",
+            "remarks": "rule_set_078"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0085",
+            "remarks": "rule_set_078"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_078"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.6",
+            "remarks": "rule_set_079"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0083",
+            "remarks": "rule_set_079"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0083",
+            "remarks": "rule_set_079"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_079"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.7",
+            "remarks": "rule_set_080"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0084",
+            "remarks": "rule_set_080"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0084",
+            "remarks": "rule_set_080"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_080"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.8",
+            "remarks": "rule_set_081"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0086",
+            "remarks": "rule_set_081"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0086",
+            "remarks": "rule_set_081"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_081"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.9",
+            "remarks": "rule_set_082"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0087",
+            "remarks": "rule_set_082"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0087",
+            "remarks": "rule_set_082"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_082"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.10",
+            "remarks": "rule_set_083"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0088",
+            "remarks": "rule_set_083"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0088",
+            "remarks": "rule_set_083"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_083"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.10",
+            "remarks": "rule_set_084"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0089",
+            "remarks": "rule_set_084"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0089",
+            "remarks": "rule_set_084"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_084"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.11",
+            "remarks": "rule_set_085"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0090",
+            "remarks": "rule_set_085"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0090",
+            "remarks": "rule_set_085"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_085"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.12",
+            "remarks": "rule_set_086"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0091",
+            "remarks": "rule_set_086"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0091",
+            "remarks": "rule_set_086"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_086"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-4.2.13",
+            "remarks": "rule_set_087"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0092",
+            "remarks": "rule_set_087"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KCV-0092",
+            "remarks": "rule_set_087"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_087"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.1",
+            "remarks": "rule_set_088"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0111",
+            "remarks": "rule_set_088"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0111",
+            "remarks": "rule_set_088"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_088"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.2",
+            "remarks": "rule_set_089"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0041",
+            "remarks": "rule_set_089"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0041",
+            "remarks": "rule_set_089"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_089"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.3",
+            "remarks": "rule_set_090"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0044",
+            "remarks": "rule_set_090"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0044",
+            "remarks": "rule_set_090"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_090"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.3",
+            "remarks": "rule_set_091"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0045",
+            "remarks": "rule_set_091"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0045",
+            "remarks": "rule_set_091"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_091"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.3",
+            "remarks": "rule_set_092"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0046",
+            "remarks": "rule_set_092"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0046",
+            "remarks": "rule_set_092"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_092"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.6",
+            "remarks": "rule_set_093"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0036",
+            "remarks": "rule_set_093"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0036",
+            "remarks": "rule_set_093"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_093"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.8",
+            "remarks": "rule_set_094"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0043",
+            "remarks": "rule_set_094"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0043",
+            "remarks": "rule_set_094"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_094"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.2",
+            "remarks": "rule_set_095"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0017",
+            "remarks": "rule_set_095"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0017",
+            "remarks": "rule_set_095"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_095"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.3",
+            "remarks": "rule_set_096"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0010",
+            "remarks": "rule_set_096"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0010",
+            "remarks": "rule_set_096"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_096"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.4",
+            "remarks": "rule_set_097"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0008",
+            "remarks": "rule_set_097"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0008",
+            "remarks": "rule_set_097"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_097"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.5",
+            "remarks": "rule_set_098"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0009",
+            "remarks": "rule_set_098"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0009",
+            "remarks": "rule_set_098"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_098"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.6",
+            "remarks": "rule_set_099"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0001",
+            "remarks": "rule_set_099"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0001",
+            "remarks": "rule_set_099"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_099"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.7",
+            "remarks": "rule_set_100"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0012",
+            "remarks": "rule_set_100"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0012",
+            "remarks": "rule_set_100"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_100"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.8",
+            "remarks": "rule_set_101"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0022",
+            "remarks": "rule_set_101"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0022",
+            "remarks": "rule_set_101"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_101"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.9",
+            "remarks": "rule_set_102"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0004",
+            "remarks": "rule_set_102"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0004",
+            "remarks": "rule_set_102"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_102"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.10",
+            "remarks": "rule_set_103"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0003",
+            "remarks": "rule_set_103"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0003",
+            "remarks": "rule_set_103"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_103"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.11",
+            "remarks": "rule_set_104"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0103",
+            "remarks": "rule_set_104"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0103",
+            "remarks": "rule_set_104"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_104"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.12",
+            "remarks": "rule_set_105"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0023",
+            "remarks": "rule_set_105"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0023",
+            "remarks": "rule_set_105"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_105"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.13",
+            "remarks": "rule_set_106"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0024",
+            "remarks": "rule_set_106"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0024",
+            "remarks": "rule_set_106"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_106"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.3.2",
+            "remarks": "rule_set_107"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0038",
+            "remarks": "rule_set_107"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0038",
+            "remarks": "rule_set_107"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_107"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.2",
+            "remarks": "rule_set_108"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0104",
+            "remarks": "rule_set_108"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0104",
+            "remarks": "rule_set_108"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_108"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.3",
+            "remarks": "rule_set_109"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0021",
+            "remarks": "rule_set_109"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0021",
+            "remarks": "rule_set_109"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_109"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.3",
+            "remarks": "rule_set_110"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0020",
+            "remarks": "rule_set_110"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0020",
+            "remarks": "rule_set_110"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_110"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.3",
+            "remarks": "rule_set_111"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0005",
+            "remarks": "rule_set_111"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0005",
+            "remarks": "rule_set_111"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_111"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.3",
+            "remarks": "rule_set_112"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0025",
+            "remarks": "rule_set_112"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0025",
+            "remarks": "rule_set_112"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_112"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.3",
+            "remarks": "rule_set_113"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0104",
+            "remarks": "rule_set_113"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0104",
+            "remarks": "rule_set_113"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_113"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.3",
+            "remarks": "rule_set_114"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0030",
+            "remarks": "rule_set_114"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0030",
+            "remarks": "rule_set_114"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_114"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.7.4",
+            "remarks": "rule_set_115"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0110",
+            "remarks": "rule_set_115"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "AVD-KSV-0110",
+            "remarks": "rule_set_115"
+          },
+          {
+            "name": "Target_Component",
+            "ns": "https://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Kubernetes",
+            "remarks": "rule_set_115"
+          }
+        ],
+        "control-implementations": []
+      }
+    ]
+  }
+}

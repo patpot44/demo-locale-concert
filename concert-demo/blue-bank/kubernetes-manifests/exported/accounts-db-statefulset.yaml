@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"labels":{"application":"bank-of-anthos","environment":"development","team":"accounts","tier":"db"},"name":"accounts-db","namespace":"demoapps-bank-anthos"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"accounts-db","application":"bank-of-anthos","environment":"development","team":"accounts","tier":"db"}},"serviceName":"accounts-db","template":{"metadata":{"labels":{"app":"accounts-db","application":"bank-of-anthos","environment":"development","team":"accounts","tier":"db"}},"spec":{"containers":[{"envFrom":[{"configMapRef":{"name":"environment-config"}},{"configMapRef":{"name":"accounts-db-config"}},{"configMapRef":{"name":"demo-data-config"}}],"image":"us-central1-docker.pkg.dev/bank-of-anthos-ci/bank-of-anthos/accounts-db:v0.6.8@sha256:d1f7b4b42fbbad5b3f8c85c67a15f4e27cc9a054ae8bc2379e3f0319e313ce9d","name":"accounts-db","ports":[{"containerPort":5432}],"resources":{"limits":{"cpu":"250m","memory":"512Mi"},"requests":{"cpu":"100m","memory":"128Mi"}},"volumeMounts":[{"mountPath":"/var/lib/postgresql/data","name":"postgresdb","subPath":"postgres"}]}],"serviceAccount":"bank-of-anthos","serviceAccountName":"default","volumes":[{"emptyDir":{},"name":"postgresdb"}]}}}}
+  creationTimestamp: "2026-02-09T17:41:45Z"
+  generation: 1
+  labels:
+    application: bank-of-anthos
+    environment: development
+    team: accounts
+    tier: db
+  name: accounts-db
+  namespace: demoapps-bank-anthos
+  resourceVersion: "36326461"
+  uid: 9f9364da-eb7c-4159-90fc-cab5f09d8a1e
+spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: accounts-db
+      application: bank-of-anthos
+      environment: development
+      team: accounts
+      tier: db
+  serviceName: accounts-db
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: accounts-db
+        application: bank-of-anthos
+        environment: development
+        team: accounts
+        tier: db
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: environment-config
+        - configMapRef:
+            name: accounts-db-config
+        - configMapRef:
+            name: demo-data-config
+        image: us-central1-docker.pkg.dev/bank-of-anthos-ci/bank-of-anthos/accounts-db:v0.6.8@sha256:d1f7b4b42fbbad5b3f8c85c67a15f4e27cc9a054ae8bc2379e3f0319e313ce9d
+        imagePullPolicy: IfNotPresent
+        name: accounts-db
+        ports:
+        - containerPort: 5432
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 250m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgresdb
+          subPath: postgres
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: default
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: postgresdb
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+status:
+  availableReplicas: 1
+  collisionCount: 0
+  currentReplicas: 1
+  currentRevision: accounts-db-7dd6649cbb
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updateRevision: accounts-db-7dd6649cbb
+  updatedReplicas: 1

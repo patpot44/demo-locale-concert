@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: chat-loadgen
+  namespace: demoapps-bank-anthos
+  labels:
+    app: chat-loadgen
+spec:
+  host: chat-loadgen-demoapps-bank-anthos.apps.o1-968455.cp.fyre.ibm.com
+  to:
+    kind: Service
+    name: chat-loadgen
+    weight: 100
+  port:
+    targetPort: web
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
+
+# Made with Bob

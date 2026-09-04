@@ -1,0 +1,31 @@
+{
+  "components": [
+    {
+      "type": "certificate",
+      "ref": "certificate:1A2B3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4",
+      "serial_number": "1A2B3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4",
+      "properties": [
+        { "name": "subject",             "value": "CN=api.erp.techcorp.com, O=TechCorp Industries, C=FR" },
+        { "name": "issuer",              "value": "CN=GlobalSign RSA OV SSL CA 2018, O=GlobalSign nv-sa, C=BE" },
+        { "name": "validity_start_date", "value": "2026-08-30 00:00:00 +0000 UTC" },
+        { "name": "validity_end_date",   "value": "2027-08-30 23:59:59 +0000 UTC" },
+        { "name": "certificate_type",    "value": "pem" },
+        { "name": "owner",               "value": "security-ops@techcorp.com" },
+        { "name": "dns_names",           "value": "api.erp.techcorp.com,api-v2.erp.techcorp.com" },
+        { "name": "metadata",            "value": "{\"algorithm\": \"RSA-2048 + SHA-256\", \"auto_renew\": \"true\", \"risk_level\": \"Low\", \"status\": \"Valid\"}" }
+      ],
+      "access_points": [
+        { "name": "appapi:erp-api-gateway", "is_public": "true", "url": "https://api.erp.techcorp.com" }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "environment:prod-eu-west-1",
+      "depends_on": [ "certificate:1A2B3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4" ]
+    }
+  ]
+}
+
+
+

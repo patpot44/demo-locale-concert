@@ -1,0 +1,60 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "prod-eu-west-1",
+  "ArtifactType": "kubernetes",
+  "ClusterName": "prod-eu-west-1",
+  "ComplianceResults": [
+    {
+      "ID": "k8s-cis-1.23",
+      "Title": "CIS Kubernetes Benchmark v1.23",
+      "Description": "CIS Kubernetes Benchmark v1.23 compliance scan results",
+      "Version": "1.23",
+      "Results": [
+        {
+          "Target": "k8s-cis-1.23",
+          "Class": "config",
+          "Type": "kubernetes",
+          "MisconfSummary": {
+            "Successes": 38,
+            "Failures": 6,
+            "Exceptions": 0
+          },
+          "Misconfigurations": [
+            {
+              "Type": "Kubernetes Security Check",
+              "ID": "KSV001",
+              "AVDID": "AVD-KSV-0001",
+              "Title": "Process can elevate its own privileges",
+              "Description": "A program inside the container can elevate its own privileges and run as root, which might give the program control over the container and node.",
+              "Message": "Container 'erp-backend' of Deployment 'erp-backend' should set 'securityContext.allowPrivilegeEscalation' to false",
+              "Namespace": "builtin.kubernetes.KSV001",
+              "Query": "data.builtin.kubernetes.KSV001.deny",
+              "Resolution": "Set 'containers[].securityContext.allowPrivilegeEscalation' to 'false'.",
+              "Severity": "MEDIUM",
+              "PrimaryURL": "https://avd.aquasec.com/misconfig/ksv001",
+              "References": ["https://avd.aquasec.com/misconfig/ksv001"],
+              "Status": "FAIL",
+              "CauseMetadata": { "Provider": "Kubernetes", "Service": "general", "Code": { "Lines": [] } }
+            },
+            {
+              "Type": "Kubernetes Security Check",
+              "ID": "KSV012",
+              "AVDID": "AVD-KSV-0012",
+              "Title": "Runs as root user",
+              "Description": "Force the running image to run as a non-root user to ensure least privilege.",
+              "Message": "Container 'erp-backend' of Deployment 'erp-backend' should set 'securityContext.runAsNonRoot' to true",
+              "Namespace": "builtin.kubernetes.KSV012",
+              "Query": "data.builtin.kubernetes.KSV012.deny",
+              "Resolution": "Set 'containers[].securityContext.runAsNonRoot' to true.",
+              "Severity": "MEDIUM",
+              "PrimaryURL": "https://avd.aquasec.com/misconfig/ksv012",
+              "References": ["https://avd.aquasec.com/misconfig/ksv012"],
+              "Status": "FAIL",
+              "CauseMetadata": { "Provider": "Kubernetes", "Service": "general", "Code": { "Lines": [] } }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

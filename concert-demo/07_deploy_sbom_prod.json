@@ -1,0 +1,85 @@
+{
+  "bomFormat": "ConcertDef",
+  "specVersion": "1.0.2",
+  "metadata": {
+    "timestamp": "2025-07-14T08:12:00Z",
+    "type": "deploy",
+    "environment": "prod-eu-west-1",
+    "component": {
+      "name": "techcorp-erp",
+      "version": "3.4.1",
+      "deploy-number": "341"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "repository:coderepo:github:erp-core-api",
+      "type": "code",
+      "name": "erp-core-api",
+      "purl": "https://github.com/techcorp/erp-core-api",
+      "branch": "main"
+    }
+  ],
+  "runtime-components": [
+    {
+      "bom-ref": "runtime-components:kubernetes:erp-cluster-prod",
+      "name": "erp-cluster-prod",
+      "type": "kubernetes",
+      "api-server": "https://api.erp-prod.techcorp.com:6443",
+      "properties": [
+        { "name": "platform",         "value": "onprem" },
+        { "name": "cluster_platform", "value": "kubernetes" },
+        { "name": "cluster_region",   "value": "eu-west-1" },
+        { "name": "cluster_name",     "value": "erp-cluster-prod" }
+      ],
+      "components": [
+        {
+          "type": "namespace",
+          "name": "prod-eu-west-1",
+          "components": [
+            {
+              "bom-ref": "container:registry.techcorp.com/erp/erp-backend:3.4.1",
+              "type": "container",
+              "name": "registry.techcorp.com/erp/erp-backend",
+              "uri": "registry.techcorp.com/erp/erp-backend:3.4.1@sha256:a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+              "tag": "3.4.1",
+              "digest": "sha256:a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"
+            },
+            {
+              "bom-ref": "container:registry.techcorp.com/erp/erp-frontend:3.4.1",
+              "type": "container",
+              "name": "registry.techcorp.com/erp/erp-frontend",
+              "uri": "registry.techcorp.com/erp/erp-frontend:3.4.1@sha256:b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+              "tag": "3.4.1",
+              "digest": "sha256:b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3"
+            },
+            {
+              "bom-ref": "container:registry.techcorp.com/erp/postgres:15.4",
+              "type": "container",
+              "name": "registry.techcorp.com/erp/postgres",
+              "uri": "registry.techcorp.com/erp/postgres:15.4@sha256:c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+              "tag": "15.4",
+              "digest": "sha256:c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "appapi:techcorp-erp",
+      "name": "techcorp-erp",
+      "properties": [
+        { "name": "base_url",          "value": "https://erp.techcorp.com" },
+        { "name": "network_exposure",  "value": "private" }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "container:registry.techcorp.com/erp/erp-backend:3.4.1",
+      "dependsOn": ["appapi:techcorp-erp"]
+    }
+  ]
+}

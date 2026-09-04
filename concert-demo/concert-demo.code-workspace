@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "techcorp",
+			"path": "../../../../../../../../../Users/PatrickPothier/demo/techcorp"
+		}
+	],
+	"settings": {
+		"ibm.concert.secureCoder.provisionWorkspaceMcp": true
+	}
+}

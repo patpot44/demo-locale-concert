@@ -1,0 +1,706 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      k8s.ovn.org/pod-networks: '{"default":{"ip_addresses":["10.254.21.139/22"],"mac_address":"0a:58:0a:fe:15:8b","gateway_ips":["10.254.20.1"],"routes":[{"dest":"10.254.0.0/16","nextHop":"10.254.20.1"},{"dest":"172.30.0.0/16","nextHop":"10.254.20.1"},{"dest":"100.64.0.0/16","nextHop":"10.254.20.1"}],"ip_address":"10.254.21.139/22","gateway_ip":"10.254.20.1"}}'
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "ovn-kubernetes",
+            "interface": "eth0",
+            "ips": [
+                "10.254.21.139"
+            ],
+            "mac": "0a:58:0a:fe:15:8b",
+            "default": true,
+            "dns": {}
+        }]
+      openshift.io/scc: restricted-v2
+      seccomp.security.alpha.kubernetes.io/pod: runtime/default
+    creationTimestamp: "2026-04-02T05:38:45Z"
+    generateName: langfuse-95955c78c-
+    labels:
+      app: langfuse
+      pod-template-hash: 95955c78c
+    name: langfuse-95955c78c-44qsr
+    namespace: langfuse
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: langfuse-95955c78c
+      uid: 1e110fc0-f4f9-4fc4-93fe-92387f7a527e
+    resourceVersion: "4416556"
+    uid: 787ff8a4-40a6-4ec9-8526-fec914a04aef
+  spec:
+    containers:
+    - env:
+      - name: DATABASE_URL
+        value: postgresql://langfuse:langfuse123@langfuse-db:5432/langfuse
+      - name: NEXTAUTH_SECRET
+        value: mysecretkey123changeme
+      - name: NEXTAUTH_URL
+        value: https://langfuse-langfuse.apps.bluebank-demo-2.cp.fyre.ibm.com
+      - name: SALT
+        value: mysalt123changeme
+      image: ghcr.io/langfuse/langfuse:2
+      imagePullPolicy: IfNotPresent
+      name: langfuse
+      ports:
+      - containerPort: 3000
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /api/public/health
+          port: 3000
+          scheme: HTTP
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        runAsNonRoot: true
+        runAsUser: 1000720000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-9k5dt
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    imagePullSecrets:
+    - name: default-dockercfg-lsq45
+    nodeName: worker2.bluebank-demo-2.cp.fyre.ibm.com
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000720000
+      seLinuxOptions:
+        level: s0:c27,c9
+      seccompProfile:
+        type: RuntimeDefault
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-9k5dt
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+        - configMap:
+            items:
+            - key: service-ca.crt
+              path: service-ca.crt
+            name: openshift-service-ca.crt
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-04-02T05:38:45Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-04-02T05:40:25Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-04-02T05:40:25Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-04-02T05:38:45Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: cri-o://afe2e397c46503da487dda49ad8794c5b05034c838673b4796ab74f1103a01fa
+      image: ghcr.io/langfuse/langfuse:2
+      imageID: ghcr.io/langfuse/langfuse@sha256:85c278dcab96c15db94191a5c1664f85aba2d7fb6771a00e99681c902c4b7015
+      lastState: {}
+      name: langfuse
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-04-02T05:39:26Z"
+    hostIP: 10.17.122.201
+    phase: Running
+    podIP: 10.254.21.139
+    podIPs:
+    - ip: 10.254.21.139
+    qosClass: BestEffort
+    startTime: "2026-04-02T05:38:45Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      k8s.ovn.org/pod-networks: '{"default":{"ip_addresses":["10.254.21.138/22"],"mac_address":"0a:58:0a:fe:15:8a","gateway_ips":["10.254.20.1"],"routes":[{"dest":"10.254.0.0/16","nextHop":"10.254.20.1"},{"dest":"172.30.0.0/16","nextHop":"10.254.20.1"},{"dest":"100.64.0.0/16","nextHop":"10.254.20.1"}],"ip_address":"10.254.21.138/22","gateway_ip":"10.254.20.1"}}'
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "ovn-kubernetes",
+            "interface": "eth0",
+            "ips": [
+                "10.254.21.138"
+            ],
+            "mac": "0a:58:0a:fe:15:8a",
+            "default": true,
+            "dns": {}
+        }]
+      openshift.io/scc: restricted-v2
+      seccomp.security.alpha.kubernetes.io/pod: runtime/default
+    creationTimestamp: "2026-04-02T05:38:45Z"
+    generateName: langfuse-db-649569ddbf-
+    labels:
+      app: langfuse-db
+      pod-template-hash: 649569ddbf
+    name: langfuse-db-649569ddbf-k7rsq
+    namespace: langfuse
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: langfuse-db-649569ddbf
+      uid: 516165ae-9360-420f-b9c2-673d9722542c
+    resourceVersion: "4416224"
+    uid: 15d31a21-da98-4bc5-ab88-e892efe11ae4
+  spec:
+    containers:
+    - env:
+      - name: POSTGRESQL_DATABASE
+        value: langfuse
+      - name: POSTGRESQL_USER
+        value: langfuse
+      - name: POSTGRESQL_PASSWORD
+        value: langfuse123
+      image: registry.redhat.io/rhel9/postgresql-15:latest
+      imagePullPolicy: Always
+      name: postgres
+      ports:
+      - containerPort: 5432
+        protocol: TCP
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        runAsNonRoot: true
+        runAsUser: 1000720000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-m8hqk
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    imagePullSecrets:
+    - name: default-dockercfg-lsq45
+    nodeName: worker2.bluebank-demo-2.cp.fyre.ibm.com
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000720000
+      seLinuxOptions:
+        level: s0:c27,c9
+      seccompProfile:
+        type: RuntimeDefault
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-m8hqk
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+        - configMap:
+            items:
+            - key: service-ca.crt
+              path: service-ca.crt
+            name: openshift-service-ca.crt
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-04-02T05:38:45Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-04-02T05:39:26Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-04-02T05:39:26Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-04-02T05:38:45Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: cri-o://307a51ac1e8a6db0ee5bc479a0866a5421f7d72b12dfb8349011e1350272b4fc
+      image: registry.redhat.io/rhel9/postgresql-15:latest
+      imageID: registry.redhat.io/rhel9/postgresql-15@sha256:0c558d6e0145693b34b2c2f9797a436a7d54ba490c8cf69bdbb9d206bfd59191
+      lastState: {}
+      name: postgres
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-04-02T05:39:26Z"
+    hostIP: 10.17.122.201
+    phase: Running
+    podIP: 10.254.21.138
+    podIPs:
+    - ip: 10.254.21.138
+    qosClass: BestEffort
+    startTime: "2026-04-02T05:38:45Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"langfuse","namespace":"langfuse"},"spec":{"ports":[{"port":3000,"targetPort":3000}],"selector":{"app":"langfuse"}}}
+    creationTimestamp: "2026-04-02T05:37:43Z"
+    name: langfuse
+    namespace: langfuse
+    resourceVersion: "4415512"
+    uid: 99354725-7419-4727-97dd-f7ca5a01db0e
+  spec:
+    clusterIP: 172.30.231.240
+    clusterIPs:
+    - 172.30.231.240
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: 3000
+    selector:
+      app: langfuse
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"langfuse-db","namespace":"langfuse"},"spec":{"ports":[{"port":5432,"targetPort":5432}],"selector":{"app":"langfuse-db"}}}
+    creationTimestamp: "2026-04-02T05:37:42Z"
+    name: langfuse-db
+    namespace: langfuse
+    resourceVersion: "4415489"
+    uid: 1d30b301-db7c-408b-bc47-18dff700681e
+  spec:
+    clusterIP: 172.30.89.91
+    clusterIPs:
+    - 172.30.89.91
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 5432
+      protocol: TCP
+      targetPort: 5432
+    selector:
+      app: langfuse-db
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"langfuse","namespace":"langfuse"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"langfuse"}},"template":{"metadata":{"labels":{"app":"langfuse"}},"spec":{"containers":[{"env":[{"name":"DATABASE_URL","value":"postgresql://langfuse:langfuse123@langfuse-db:5432/langfuse"},{"name":"NEXTAUTH_SECRET","value":"mysecretkey123changeme"},{"name":"NEXTAUTH_URL","value":"https://langfuse-langfuse.apps.bluebank-demo-2.cp.fyre.ibm.com"},{"name":"SALT","value":"mysalt123changeme"}],"image":"ghcr.io/langfuse/langfuse:2","name":"langfuse","ports":[{"containerPort":3000}],"readinessProbe":{"httpGet":{"path":"/api/public/health","port":3000},"initialDelaySeconds":30,"periodSeconds":10}}]}}}}
+    creationTimestamp: "2026-04-02T05:38:45Z"
+    generation: 1
+    name: langfuse
+    namespace: langfuse
+    resourceVersion: "4416560"
+    uid: 15d592cc-80c3-4cff-befc-05dc17739cfa
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: langfuse
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: langfuse
+      spec:
+        containers:
+        - env:
+          - name: DATABASE_URL
+            value: postgresql://langfuse:langfuse123@langfuse-db:5432/langfuse
+          - name: NEXTAUTH_SECRET
+            value: mysecretkey123changeme
+          - name: NEXTAUTH_URL
+            value: https://langfuse-langfuse.apps.bluebank-demo-2.cp.fyre.ibm.com
+          - name: SALT
+            value: mysalt123changeme
+          image: ghcr.io/langfuse/langfuse:2
+          imagePullPolicy: IfNotPresent
+          name: langfuse
+          ports:
+          - containerPort: 3000
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /api/public/health
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: "2026-04-02T05:40:25Z"
+      lastUpdateTime: "2026-04-02T05:40:25Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2026-04-02T05:38:45Z"
+      lastUpdateTime: "2026-04-02T05:40:25Z"
+      message: ReplicaSet "langfuse-95955c78c" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"langfuse-db","namespace":"langfuse"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"langfuse-db"}},"template":{"metadata":{"labels":{"app":"langfuse-db"}},"spec":{"containers":[{"env":[{"name":"POSTGRESQL_DATABASE","value":"langfuse"},{"name":"POSTGRESQL_USER","value":"langfuse"},{"name":"POSTGRESQL_PASSWORD","value":"langfuse123"}],"image":"registry.redhat.io/rhel9/postgresql-15:latest","name":"postgres","ports":[{"containerPort":5432}]}]}}}}
+    creationTimestamp: "2026-04-02T05:38:45Z"
+    generation: 1
+    name: langfuse-db
+    namespace: langfuse
+    resourceVersion: "4416228"
+    uid: 4f221cb9-8380-4fe2-b37b-e43acecbb771
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: langfuse-db
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: langfuse-db
+      spec:
+        containers:
+        - env:
+          - name: POSTGRESQL_DATABASE
+            value: langfuse
+          - name: POSTGRESQL_USER
+            value: langfuse
+          - name: POSTGRESQL_PASSWORD
+            value: langfuse123
+          image: registry.redhat.io/rhel9/postgresql-15:latest
+          imagePullPolicy: Always
+          name: postgres
+          ports:
+          - containerPort: 5432
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: "2026-04-02T05:39:26Z"
+      lastUpdateTime: "2026-04-02T05:39:26Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2026-04-02T05:38:45Z"
+      lastUpdateTime: "2026-04-02T05:39:26Z"
+      message: ReplicaSet "langfuse-db-649569ddbf" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2026-04-02T05:38:45Z"
+    generation: 1
+    labels:
+      app: langfuse
+      pod-template-hash: 95955c78c
+    name: langfuse-95955c78c
+    namespace: langfuse
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: langfuse
+      uid: 15d592cc-80c3-4cff-befc-05dc17739cfa
+    resourceVersion: "4416559"
+    uid: 1e110fc0-f4f9-4fc4-93fe-92387f7a527e
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: langfuse
+        pod-template-hash: 95955c78c
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: langfuse
+          pod-template-hash: 95955c78c
+      spec:
+        containers:
+        - env:
+          - name: DATABASE_URL
+            value: postgresql://langfuse:langfuse123@langfuse-db:5432/langfuse
+          - name: NEXTAUTH_SECRET
+            value: mysecretkey123changeme
+          - name: NEXTAUTH_URL
+            value: https://langfuse-langfuse.apps.bluebank-demo-2.cp.fyre.ibm.com
+          - name: SALT
+            value: mysalt123changeme
+          image: ghcr.io/langfuse/langfuse:2
+          imagePullPolicy: IfNotPresent
+          name: langfuse
+          ports:
+          - containerPort: 3000
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /api/public/health
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2026-04-02T05:38:45Z"
+    generation: 1
+    labels:
+      app: langfuse-db
+      pod-template-hash: 649569ddbf
+    name: langfuse-db-649569ddbf
+    namespace: langfuse
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: langfuse-db
+      uid: 4f221cb9-8380-4fe2-b37b-e43acecbb771
+    resourceVersion: "4416227"
+    uid: 516165ae-9360-420f-b9c2-673d9722542c
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: langfuse-db
+        pod-template-hash: 649569ddbf
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: langfuse-db
+          pod-template-hash: 649569ddbf
+      spec:
+        containers:
+        - env:
+          - name: POSTGRESQL_DATABASE
+            value: langfuse
+          - name: POSTGRESQL_USER
+            value: langfuse
+          - name: POSTGRESQL_PASSWORD
+            value: langfuse123
+          image: registry.redhat.io/rhel9/postgresql-15:latest
+          imagePullPolicy: Always
+          name: postgres
+          ports:
+          - containerPort: 5432
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"route.openshift.io/v1","kind":"Route","metadata":{"annotations":{},"name":"langfuse","namespace":"langfuse"},"spec":{"port":{"targetPort":3000},"tls":{"termination":"edge"},"to":{"kind":"Service","name":"langfuse"}}}
+      openshift.io/host.generated: "true"
+    creationTimestamp: "2026-04-02T05:37:43Z"
+    name: langfuse
+    namespace: langfuse
+    resourceVersion: "4415520"
+    uid: 5b0594d7-0d8e-4f38-a280-23fd3fa3ee81
+  spec:
+    host: langfuse-langfuse.apps.bluebank-demo-2.cp.fyre.ibm.com
+    port:
+      targetPort: 3000
+    tls:
+      termination: edge
+    to:
+      kind: Service
+      name: langfuse
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2026-04-02T05:37:43Z"
+        status: "True"
+        type: Admitted
+      host: langfuse-langfuse.apps.bluebank-demo-2.cp.fyre.ibm.com
+      routerCanonicalHostname: router-default.apps.bluebank-demo-2.cp.fyre.ibm.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""

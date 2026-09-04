@@ -1,0 +1,396 @@
+{
+  "assessment-results": {
+    "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "metadata": {
+      "title": "CIS Kubernetes Benchmark v1.23 — techcorp-erp prod-eu-west-1",
+      "last-modified": "2026-08-27T08:05:00.000Z",
+      "version": "1.0",
+      "oscal-version": "1.1.2",
+      "environment-name": "prod-eu-west-1",
+      "profile-id": "k8s-cis-1.23",
+      "roles": [
+        {
+          "id": "assessor",
+          "title": "TechCorp Security Team"
+        }
+      ],
+      "parties": [
+        {
+          "uuid": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+          "type": "organization",
+          "name": "TechCorp Security Team"
+        }
+      ],
+      "responsible-parties": [
+        {
+          "role-id": "assessor",
+          "party-uuids": ["b2c3d4e5-f6a7-8901-bcde-f12345678901"]
+        }
+      ]
+    },
+    "import-ap": {
+      "href": "#"
+    },
+    "results": [
+      {
+        "uuid": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+        "title": "CIS Kubernetes v1.23 Assessment — prod-eu-west-1",
+        "description": "Compliance assessment of techcorp-erp against CIS Benchmark v1.23.",
+        "start": "2026-08-27T08:00:00.000Z",
+        "end": "2026-08-27T08:05:00.000Z",
+        "reviewed-controls": {
+          "control-selections": [
+            {
+              "include-controls": [
+                {"control-id": "id-1"},
+                {"control-id": "id-2"},
+                {"control-id": "id-3"},
+                {"control-id": "id-4"},
+                {"control-id": "id-5"},
+                {"control-id": "id-6"},
+                {"control-id": "id-7"},
+                {"control-id": "id-8"},
+                {"control-id": "id-9"},
+                {"control-id": "id-10"},
+                {"control-id": "id-11"},
+                {"control-id": "id-12"},
+                {"control-id": "id-13"},
+                {"control-id": "id-14"},
+                {"control-id": "id-15"},
+                {"control-id": "id-16"},
+                {"control-id": "id-17"},
+                {"control-id": "id-18"},
+                {"control-id": "id-19"}
+              ]
+            }
+          ]
+        },
+        "observations": [
+          {
+            "uuid": "obs-id1-0001-0000-0000-000000000001",
+            "title": "id-1 — Limit Ephemeral Storage Usage",
+            "description": "Container 'erp-backend' of Deployment 'erp-backend' uses ephemeral storage exceeding 2Gi limit.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:01:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend Deployment",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-1"},
+                  {"name": "severity", "value": "medium"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id2-0002-0000-0000-000000000002",
+            "title": "id-2 — Enforce Resource Requests and Limits",
+            "description": "Container 'erp-backend' of Deployment 'erp-backend' does not define CPU and memory requests/limits.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:01:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend Deployment",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-2"},
+                  {"name": "severity", "value": "high"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id3-0003-0000-0000-000000000003",
+            "title": "id-3 — Enforce Health Probes",
+            "description": "Deployment 'erp-frontend' is missing liveness and readiness probes.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:01:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-frontend Deployment",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-3"},
+                  {"name": "severity", "value": "medium"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id4-0004-0000-0000-000000000004",
+            "title": "id-4 — Ensure High Availability Through Multiple Replicas",
+            "description": "Deployment 'erp-worker' has only 1 replica, which does not meet HA requirements.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:01:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-worker Deployment",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-4"},
+                  {"name": "severity", "value": "high"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id5-0005-0000-0000-000000000005",
+            "title": "id-5 — Enforce Pod Disruption Budgets for Application Availability",
+            "description": "No PodDisruptionBudget defined for Deployment 'erp-backend'.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:02:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend",
+                "props": [
+                  {"name": "result", "value": "pass"},
+                  {"name": "control-id", "value": "id-5"},
+                  {"name": "severity", "value": "low"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id6-0006-0000-0000-000000000006",
+            "title": "id-6 — Ensure Distinct Liveness and Readiness Probes",
+            "description": "Deployment 'erp-backend' liveness and readiness probes use the same endpoint.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:02:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend",
+                "props": [
+                  {"name": "result", "value": "pass"},
+                  {"name": "control-id", "value": "id-6"},
+                  {"name": "severity", "value": "low"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id7-0007-0000-0000-000000000007",
+            "title": "id-7 — Configure Pod Disruption Budgets with Reasonable Values",
+            "description": "PDB for 'erp-backend' has maxUnavailable set to 100%.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:02:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend PDB",
+                "props": [
+                  {"name": "result", "value": "pass"},
+                  {"name": "control-id", "value": "id-7"},
+                  {"name": "severity", "value": "low"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id8-0008-0000-0000-000000000008",
+            "title": "id-8 — Maintain Sufficient Replicas to Support Disruptions",
+            "description": "Deployment 'erp-backend' has sufficient replicas to tolerate disruptions.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:02:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend",
+                "props": [
+                  {"name": "result", "value": "pass"},
+                  {"name": "control-id", "value": "id-8"},
+                  {"name": "severity", "value": "low"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id9-0009-0000-0000-000000000009",
+            "title": "id-9 — Enforce Read-Only Root File Systems",
+            "description": "Container 'erp-backend' should set 'securityContext.readOnlyRootFilesystem' to true.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:03:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-9"},
+                  {"name": "severity", "value": "medium"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id10-0010-0000-0000-00000000010",
+            "title": "id-10 — Ensure Pod Distribution Across Topology Domains",
+            "description": "Deployment 'erp-backend' has no topology spread constraints defined.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:03:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-10"},
+                  {"name": "severity", "value": "medium"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id11-0011-0000-0000-00000000011",
+            "title": "id-11 — Require Explicit Storage Class Declarations",
+            "description": "PVC 'erp-db-pvc' does not specify a storageClassName.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:03:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from PVC erp-db-pvc",
+                "props": [
+                  {"name": "result", "value": "pass"},
+                  {"name": "control-id", "value": "id-11"},
+                  {"name": "severity", "value": "low"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id12-0012-0000-0000-00000000012",
+            "title": "id-12 — Disallow Node Selector Usage",
+            "description": "Deployment 'erp-worker' uses nodeSelector which bypasses scheduling strategy.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:03:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-worker",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-12"},
+                  {"name": "severity", "value": "low"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id13-0013-0000-0000-00000000013",
+            "title": "id-13 — Restrict Use of External IPs in Services",
+            "description": "Service 'erp-api' specifies externalIPs which can bypass load balancer controls.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:04:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-api Service",
+                "props": [
+                  {"name": "result", "value": "pass"},
+                  {"name": "control-id", "value": "id-13"},
+                  {"name": "severity", "value": "low"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id14-0014-0000-0000-00000000014",
+            "title": "id-14 — Restrict Unsafe Sysctl Parameters",
+            "description": "Pod 'erp-backend' does not use unsafe sysctl parameters.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:04:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend",
+                "props": [
+                  {"name": "result", "value": "pass"},
+                  {"name": "control-id", "value": "id-14"},
+                  {"name": "severity", "value": "low"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id15-0015-0000-0000-00000000015",
+            "title": "id-15 — Eliminate Use of Wildcard Verbs in RBAC",
+            "description": "ClusterRole 'erp-admin' uses wildcard verbs ('*') which grants excessive permissions.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:04:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from ClusterRole erp-admin",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-15"},
+                  {"name": "severity", "value": "high"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id16-0016-0000-0000-00000000016",
+            "title": "id-16 — Validate Horizontal Pod Autoscaler Configuration",
+            "description": "HPA for 'erp-backend' has valid min/max replica settings.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:04:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from HPA erp-backend",
+                "props": [
+                  {"name": "result", "value": "pass"},
+                  {"name": "control-id", "value": "id-16"},
+                  {"name": "severity", "value": "low"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id17-0017-0000-0000-00000000017",
+            "title": "id-17 — Disallow Master and Infra Node Tolerations",
+            "description": "Deployment 'erp-worker' has tolerations targeting master nodes.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:04:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-worker",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-17"},
+                  {"name": "severity", "value": "medium"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id18-0018-0000-0000-00000000018",
+            "title": "id-18 — Require Immutable Image References",
+            "description": "Container 'erp-backend' uses 'latest' tag instead of a digest-pinned image.",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:05:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-backend",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-18"},
+                  {"name": "severity", "value": "medium"}
+                ]
+              }
+            ]
+          },
+          {
+            "uuid": "obs-id19-0019-0000-0000-00000000019",
+            "title": "id-19 — Restrict LoadBalancer Sources",
+            "description": "Service 'erp-api' LoadBalancer has no sourceRanges restriction (open to 0.0.0.0/0).",
+            "methods": ["TEST"],
+            "collected": "2026-08-27T08:05:00.000Z",
+            "relevant-evidence": [
+              {
+                "description": "Scanner output from erp-api Service",
+                "props": [
+                  {"name": "result", "value": "fail"},
+                  {"name": "control-id", "value": "id-19"},
+                  {"name": "severity", "value": "high"}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

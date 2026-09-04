@@ -1,0 +1,293 @@
+{
+  "components": [
+    {
+      "type": "certificate",
+      "ref": "certificate:1A2B3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4",
+      "serial_number": "1A2B3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4",
+      "properties": [
+        {
+          "name": "subject",
+          "value": "CN=api.erp.techcorp.com, O=TechCorp Industries, C=FR"
+        },
+        {
+          "name": "issuer",
+          "value": "CN=GlobalSign RSA OV SSL CA 2018, O=GlobalSign nv-sa, C=BE"
+        },
+        {
+          "name": "validity_start_date",
+          "value": "2024-07-14 00:00:00 +0000 UTC"
+        },
+        {
+          "name": "validity_end_date",
+          "value": "2025-07-21 23:59:59 +0000 UTC"
+        },
+        {
+          "name": "certificate_type",
+          "value": "pem"
+        },
+        {
+          "name": "owner",
+          "value": "security-ops@techcorp.com"
+        },
+        {
+          "name": "dns_names",
+          "value": "api.erp.techcorp.com,api-v2.erp.techcorp.com"
+        },
+        {
+          "name": "metadata",
+          "value": "{\"certificate_host\": \"erp-app-server-01.techcorp.com\", \"algorithm\": \"RSA-2048 + SHA-256\", \"auto_renew\": \"false\", \"risk_level\": \"Critical\", \"status\": \"Expiring Soon\"}"
+        }
+      ],
+      "access_points": [
+        {
+          "name": "appapi:erp-api-gateway",
+          "is_public": "true",
+          "url": "https://api.erp.techcorp.com"
+        }
+      ]
+    },
+    {
+      "type": "certificate",
+      "ref": "certificate:2B3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4D5",
+      "serial_number": "2B3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4D5",
+      "properties": [
+        {
+          "name": "subject",
+          "value": "CN=erp-db-client, OU=Database, O=TechCorp Industries, C=FR"
+        },
+        {
+          "name": "issuer",
+          "value": "CN=TechCorp Internal CA, O=TechCorp Industries, C=FR"
+        },
+        {
+          "name": "validity_start_date",
+          "value": "2024-01-15 00:00:00 +0000 UTC"
+        },
+        {
+          "name": "validity_end_date",
+          "value": "2025-07-29 23:59:59 +0000 UTC"
+        },
+        {
+          "name": "certificate_type",
+          "value": "pem"
+        },
+        {
+          "name": "owner",
+          "value": "infrastructure@techcorp.com"
+        },
+        {
+          "name": "dns_names",
+          "value": "erp-db-server-01.techcorp.com"
+        },
+        {
+          "name": "metadata",
+          "value": "{\"certificate_host\": \"erp-db-server-01.techcorp.com\", \"algorithm\": \"RSA-4096 + SHA-256\", \"auto_renew\": \"true\", \"risk_level\": \"High\", \"status\": \"Expiring Soon\"}"
+        }
+      ],
+      "access_points": [
+        {
+          "name": "appapi:erp-database",
+          "is_public": "false",
+          "url": "https://erp-db-server-01.techcorp.com:5432"
+        }
+      ]
+    },
+    {
+      "type": "certificate",
+      "ref": "certificate:3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4D5E6",
+      "serial_number": "3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4D5E6",
+      "properties": [
+        {
+          "name": "subject",
+          "value": "CN=snow-integration.techcorp.com, O=TechCorp Industries, C=FR"
+        },
+        {
+          "name": "issuer",
+          "value": "CN=DigiCert TLS RSA SHA256 2020 CA1, O=DigiCert Inc, C=US"
+        },
+        {
+          "name": "validity_start_date",
+          "value": "2025-01-10 00:00:00 +0000 UTC"
+        },
+        {
+          "name": "validity_end_date",
+          "value": "2026-01-10 23:59:59 +0000 UTC"
+        },
+        {
+          "name": "certificate_type",
+          "value": "pem"
+        },
+        {
+          "name": "owner",
+          "value": "infrastructure@techcorp.com"
+        },
+        {
+          "name": "dns_names",
+          "value": "snow-integration.techcorp.com"
+        },
+        {
+          "name": "metadata",
+          "value": "{\"certificate_host\": \"erp-app-server-02.techcorp.com\", \"algorithm\": \"RSA-2048 + SHA-256\", \"auto_renew\": \"true\", \"risk_level\": \"Low\", \"status\": \"Valid\"}"
+        }
+      ],
+      "access_points": [
+        {
+          "name": "appapi:erp-servicenow-integration",
+          "is_public": "false",
+          "url": "https://snow-integration.techcorp.com"
+        }
+      ]
+    },
+    {
+      "type": "certificate",
+      "ref": "certificate:4D5E6F7081092A3B4C5D6E7F8091A2B3C4D5E6F7",
+      "serial_number": "4D5E6F7081092A3B4C5D6E7F8091A2B3C4D5E6F7",
+      "properties": [
+        {
+          "name": "subject",
+          "value": "CN=webhook.erp.techcorp.com, O=TechCorp Industries, C=FR"
+        },
+        {
+          "name": "issuer",
+          "value": "CN=Let's Encrypt Authority X3, O=Let's Encrypt, C=US"
+        },
+        {
+          "name": "validity_start_date",
+          "value": "2025-05-15 00:00:00 +0000 UTC"
+        },
+        {
+          "name": "validity_end_date",
+          "value": "2025-08-13 23:59:59 +0000 UTC"
+        },
+        {
+          "name": "certificate_type",
+          "value": "pem"
+        },
+        {
+          "name": "owner",
+          "value": "devops@techcorp.com"
+        },
+        {
+          "name": "dns_names",
+          "value": "webhook.erp.techcorp.com"
+        },
+        {
+          "name": "metadata",
+          "value": "{\"certificate_host\": \"erp-app-server-01.techcorp.com\", \"algorithm\": \"ECDSA P-256 + SHA-256\", \"auto_renew\": \"true\", \"risk_level\": \"Medium\", \"status\": \"Auto-renew pending\"}"
+        }
+      ],
+      "access_points": [
+        {
+          "name": "appapi:erp-github-webhook",
+          "is_public": "true",
+          "url": "https://webhook.erp.techcorp.com"
+        }
+      ]
+    },
+    {
+      "type": "certificate",
+      "ref": "certificate:5E6F7081092A3B4C5D6E7F8091A2B3C4D5E6F708",
+      "serial_number": "5E6F7081092A3B4C5D6E7F8091A2B3C4D5E6F708",
+      "properties": [
+        {
+          "name": "subject",
+          "value": "CN=gemini-client.erp.techcorp.com, OU=AI-Integration, O=TechCorp Industries, C=FR"
+        },
+        {
+          "name": "issuer",
+          "value": "CN=TechCorp Internal CA, O=TechCorp Industries, C=FR"
+        },
+        {
+          "name": "validity_start_date",
+          "value": "2023-07-01 00:00:00 +0000 UTC"
+        },
+        {
+          "name": "validity_end_date",
+          "value": "2025-07-01 23:59:59 +0000 UTC"
+        },
+        {
+          "name": "certificate_type",
+          "value": "pem"
+        },
+        {
+          "name": "owner",
+          "value": "ai-integration@techcorp.com"
+        },
+        {
+          "name": "dns_names",
+          "value": "gemini-client.erp.techcorp.com"
+        },
+        {
+          "name": "metadata",
+          "value": "{\"certificate_host\": \"erp-app-server-02.techcorp.com\", \"algorithm\": \"RSA-2048 + SHA-1\", \"auto_renew\": \"false\", \"risk_level\": \"Critical\", \"status\": \"EXPIRED\"}"
+        }
+      ],
+      "access_points": [
+        {
+          "name": "appapi:erp-gemini-mtls",
+          "is_public": "false",
+          "url": "https://gemini-client.erp.techcorp.com"
+        }
+      ]
+    },
+    {
+      "type": "certificate",
+      "ref": "certificate:6F7081092A3B4C5D6E7F8091A2B3C4D5E6F70819",
+      "serial_number": "6F7081092A3B4C5D6E7F8091A2B3C4D5E6F70819",
+      "properties": [
+        {
+          "name": "subject",
+          "value": "CN=*.techcorp.com, O=TechCorp Industries, C=FR"
+        },
+        {
+          "name": "issuer",
+          "value": "CN=GlobalSign RSA OV SSL CA 2018, O=GlobalSign nv-sa, C=BE"
+        },
+        {
+          "name": "validity_start_date",
+          "value": "2024-07-01 00:00:00 +0000 UTC"
+        },
+        {
+          "name": "validity_end_date",
+          "value": "2026-07-01 23:59:59 +0000 UTC"
+        },
+        {
+          "name": "certificate_type",
+          "value": "pem"
+        },
+        {
+          "name": "owner",
+          "value": "infrastructure@techcorp.com"
+        },
+        {
+          "name": "dns_names",
+          "value": "*.techcorp.com,techcorp.com"
+        },
+        {
+          "name": "metadata",
+          "value": "{\"certificate_host\": \"erp-app-server-01.techcorp.com\", \"algorithm\": \"RSA-2048 + SHA-256\", \"auto_renew\": \"false\", \"risk_level\": \"Low\", \"status\": \"Valid\"}"
+        }
+      ],
+      "access_points": [
+        {
+          "name": "appapi:erp-frontend",
+          "is_public": "true",
+          "url": "https://erp.techcorp.com"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "environment:prod-eu-west-1",
+      "depends_on": [
+        "certificate:1A2B3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4",
+        "certificate:2B3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4D5",
+        "certificate:3C4D5E6F7081092A3B4C5D6E7F8091A2B3C4D5E6",
+        "certificate:4D5E6F7081092A3B4C5D6E7F8091A2B3C4D5E6F7",
+        "certificate:5E6F7081092A3B4C5D6E7F8091A2B3C4D5E6F708",
+        "certificate:6F7081092A3B4C5D6E7F8091A2B3C4D5E6F70819"
+      ]
+    }
+  ]
+}

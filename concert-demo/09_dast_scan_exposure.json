@@ -1,0 +1,255 @@
+{
+ "@programName": "ZAP",
+ "@version": "2.14.0",
+ "@generated": "Thu, 10 Jul 2025 14:32:00",
+ "site": [
+  {
+   "@name": "https://erp.techcorp.com",
+   "@host": "erp.techcorp.com",
+   "@port": "443",
+   "@ssl": "true",
+   "alerts": [
+    {
+     "pluginid": "10055",
+     "alertRef": "10055-4",
+     "alert": "CSP: Wildcard Directive",
+     "name": "CSP: Wildcard Directive",
+     "riskcode": "2",
+     "confidence": "3",
+     "riskdesc": "Medium (High)",
+     "desc": "Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. The CSP header contains a wildcard directive that allows loading resources from any origin.",
+     "instances": [
+      {
+       "uri": "https://erp.techcorp.com/api/v1/login",
+       "method": "GET",
+       "param": "Content-Security-Policy",
+       "attack": "",
+       "evidence": "default-src *; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';",
+       "otherinfo": "The following directives either allow wildcard sources or are not defined: default-src, connect-src"
+      },
+      {
+       "uri": "https://erp.techcorp.com/",
+       "method": "GET",
+       "param": "Content-Security-Policy",
+       "attack": "",
+       "evidence": "default-src *; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';",
+       "otherinfo": "The directive default-src uses a wildcard (*) allowing resources from any origin."
+      }
+     ],
+     "count": "2",
+     "solution": "Configurer le header Content-Security-Policy avec des sources explicites sur le serveur applicatif ERP. Remplacer default-src * par default-src 'self' et lister explicitement les domaines autorisés.",
+     "otherinfo": "The directive default-src uses a wildcard (*) allowing resources from any origin.",
+     "reference": "https://www.w3.org/TR/CSP/ https://content-security-policy.com/",
+     "cweid": "693",
+     "wascid": "15",
+     "sourceid": "7"
+    },
+    {
+     "pluginid": "10038",
+     "alertRef": "10038-1",
+     "alert": "Content Security Policy (CSP) Header Not Set",
+     "name": "Content Security Policy (CSP) Header Not Set",
+     "riskcode": "2",
+     "confidence": "3",
+     "riskdesc": "Medium (High)",
+     "desc": "Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. The CSP header is completely absent on several endpoints of the Finance module.",
+     "instances": [
+      {
+       "uri": "https://erp.techcorp.com/finance/dashboard",
+       "method": "GET",
+       "param": "",
+       "attack": "",
+       "evidence": "",
+       "otherinfo": "No Content-Security-Policy header found in the response."
+      },
+      {
+       "uri": "https://erp.techcorp.com/finance/reports",
+       "method": "GET",
+       "param": "",
+       "attack": "",
+       "evidence": "",
+       "otherinfo": "No Content-Security-Policy header found in the response."
+      }
+     ],
+     "count": "2",
+     "solution": "Ajouter le header Content-Security-Policy dans la configuration Nginx du module Finance. Exemple: Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';",
+     "otherinfo": "",
+     "reference": "https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html",
+     "cweid": "693",
+     "wascid": "15",
+     "sourceid": "15"
+    },
+    {
+     "pluginid": "10016",
+     "alertRef": "10016-1",
+     "alert": "HTTP Strict Transport Security (HSTS) Header Not Set",
+     "name": "HTTP Strict Transport Security (HSTS) Header Not Set",
+     "riskcode": "2",
+     "confidence": "3",
+     "riskdesc": "Medium (Medium)",
+     "desc": "HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections. The HR API endpoint does not set the HSTS header, allowing potential downgrade attacks to plain HTTP.",
+     "instances": [
+      {
+       "uri": "https://erp.techcorp.com/hr/api/employees",
+       "method": "GET",
+       "param": "Strict-Transport-Security",
+       "attack": "",
+       "evidence": "",
+       "otherinfo": "Strict-Transport-Security header is missing from the response."
+      },
+      {
+       "uri": "https://erp.techcorp.com/hr/api/payroll",
+       "method": "GET",
+       "param": "Strict-Transport-Security",
+       "attack": "",
+       "evidence": "",
+       "otherinfo": "Strict-Transport-Security header is missing from the response."
+      }
+     ],
+     "count": "2",
+     "solution": "Ajouter le header Strict-Transport-Security avec max-age >= 31536000 et includeSubDomains. Exemple: Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
+     "otherinfo": "Strict-Transport-Security header is missing.",
+     "reference": "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html",
+     "cweid": "319",
+     "wascid": "15",
+     "sourceid": "3"
+    },
+    {
+     "pluginid": "40025",
+     "alertRef": "40025",
+     "alert": "Proxy Disclosure",
+     "name": "Proxy Disclosure",
+     "riskcode": "2",
+     "confidence": "2",
+     "riskdesc": "Medium (Medium)",
+     "desc": "1 proxy server was detected or fingerprinted. This information helps a potential attacker determine targets for an attack against the application. The health-check endpoint reveals infrastructure details via response headers.",
+     "instances": [
+      {
+       "uri": "https://erp.techcorp.com/api/health",
+       "method": "TRACE",
+       "param": "",
+       "attack": "TRACE, OPTIONS methods with 'Max-Forwards' header",
+       "evidence": "Via: 1.1 nginx-proxy-prod-eu-west-1",
+       "otherinfo": "Using the TRACE and OPTIONS methods, the proxy server at nginx-proxy-prod-eu-west-1 was detected."
+      }
+     ],
+     "count": "1",
+     "solution": "Désactiver la méthode TRACE sur les proxies et supprimer les headers révélant l'infrastructure (Via, X-Forwarded-By, Server). Configurer le proxy Nginx pour masquer sa version et son identité.",
+     "otherinfo": "Proxy nginx-proxy-prod-eu-west-1 was fingerprinted.",
+     "reference": "https://httpd.apache.org/docs/current/mod/mod_headers.html",
+     "cweid": "200",
+     "wascid": "45",
+     "sourceid": "1"
+    },
+    {
+     "pluginid": "10021",
+     "alertRef": "10021-1",
+     "alert": "X-Content-Type-Options Header Missing",
+     "name": "X-Content-Type-Options Header Missing",
+     "riskcode": "1",
+     "confidence": "2",
+     "riskdesc": "Low (Medium)",
+     "desc": "The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing it to be interpreted and displayed as a content type other than the declared content type.",
+     "instances": [
+      {
+       "uri": "https://erp.techcorp.com/erp/static/assets",
+       "method": "GET",
+       "param": "X-Content-Type-Options",
+       "attack": "",
+       "evidence": "",
+       "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by this issue."
+      }
+     ],
+     "count": "1",
+     "solution": "Ajouter le header X-Content-Type-Options: nosniff dans la configuration du serveur web pour toutes les réponses statiques et dynamiques.",
+     "otherinfo": "",
+     "reference": "https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)",
+     "cweid": "116",
+     "wascid": "15",
+     "sourceid": "3"
+    },
+    {
+     "pluginid": "90027",
+     "alertRef": "90027-1",
+     "alert": "Cookie Without SameSite Attribute",
+     "name": "Cookie Without SameSite Attribute",
+     "riskcode": "2",
+     "confidence": "2",
+     "riskdesc": "Medium (High)",
+     "desc": "A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a cross-site request. The JSESSIONID session cookie is missing the SameSite attribute, making it vulnerable to CSRF cross-origin attacks.",
+     "instances": [
+      {
+       "uri": "https://erp.techcorp.com/auth/sso",
+       "method": "POST",
+       "param": "JSESSIONID",
+       "attack": "",
+       "evidence": "Set-Cookie: JSESSIONID=abc123def456; Path=/; Secure; HttpOnly",
+       "otherinfo": "The SameSite attribute is not set, defaulting to SameSite=None in some browsers."
+      }
+     ],
+     "count": "1",
+     "solution": "Ajouter l'attribut SameSite=Strict ou SameSite=Lax sur tous les cookies de session. Exemple: Set-Cookie: JSESSIONID=...; Path=/; Secure; HttpOnly; SameSite=Strict",
+     "otherinfo": "SameSite attribute is absent from JSESSIONID cookie.",
+     "reference": "https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site",
+     "cweid": "1275",
+     "wascid": "15",
+     "sourceid": "3"
+    },
+    {
+     "pluginid": "10045",
+     "alertRef": "10045-1",
+     "alert": "Source Code Disclosure - Debug Endpoint Exposed",
+     "name": "Source Code Disclosure - Debug Endpoint Exposed",
+     "riskcode": "3",
+     "confidence": "3",
+     "riskdesc": "High (High)",
+     "desc": "The debug trace endpoint is exposed in the production environment. Java stack traces are visible in HTTP 500 error responses, disclosing internal package names, class names, file paths, and potentially sensitive configuration details.",
+     "instances": [
+      {
+       "uri": "https://erp.techcorp.com/api/v1/debug/trace",
+       "method": "GET",
+       "param": "",
+       "attack": "",
+       "evidence": "java.lang.NullPointerException at com.techcorp.erp.service.InvoiceService.processPayment(InvoiceService.java:142)",
+       "otherinfo": "Full Java stack trace exposed including internal class paths and method names."
+      }
+     ],
+     "count": "1",
+     "solution": "Désactiver tous les endpoints /debug et /actuator en production via le profil Spring Boot. Configurer un gestionnaire d'erreurs générique qui retourne uniquement un message d'erreur sans stack trace.",
+     "otherinfo": "Stack trace reveals internal package structure: com.techcorp.erp.service",
+     "reference": "https://owasp.org/www-project-web-security-testing-guide/",
+     "cweid": "209",
+     "wascid": "13",
+     "sourceid": "1"
+    },
+    {
+     "pluginid": "10035",
+     "alertRef": "10035-1",
+     "alert": "Strict-Transport-Security Max-Age Too Low",
+     "name": "Strict-Transport-Security Max-Age Too Low",
+     "riskcode": "2",
+     "confidence": "2",
+     "riskdesc": "Medium (Medium)",
+     "desc": "The HSTS header is present but the max-age value is set to 86400 (1 day) which is below the recommended minimum of 31536000 (1 year). This reduces the effectiveness of the HSTS policy.",
+     "instances": [
+      {
+       "uri": "https://erp.techcorp.com/supply/api/orders",
+       "method": "GET",
+       "param": "Strict-Transport-Security",
+       "attack": "",
+       "evidence": "Strict-Transport-Security: max-age=86400",
+       "otherinfo": "Current max-age of 86400 is significantly below the recommended 31536000."
+      }
+     ],
+     "count": "1",
+     "solution": "Augmenter la valeur max-age à 31536000 secondes (1 an) et ajouter includeSubDomains. Exemple: Strict-Transport-Security: max-age=31536000; includeSubDomains",
+     "otherinfo": "max-age=86400 is below the recommended minimum of 31536000.",
+     "reference": "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html",
+     "cweid": "319",
+     "wascid": "15",
+     "sourceid": "3"
+    }
+   ]
+  }
+ ]
+}

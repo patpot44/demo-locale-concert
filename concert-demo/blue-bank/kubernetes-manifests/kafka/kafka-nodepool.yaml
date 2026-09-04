@@ -1,0 +1,45 @@
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaNodePool
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaNodePool","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"concert-bank-kafka"},"name":"dual-role","namespace":"demoapps-bank-anthos"},"spec":{"replicas":3,"roles":["controller","broker"],"storage":{"type":"ephemeral"}}}
+  creationTimestamp: "2026-02-19T01:53:17Z"
+  generation: 3
+  labels:
+    strimzi.io/cluster: concert-bank-kafka
+  name: dual-role
+  namespace: demoapps-bank-anthos
+  resourceVersion: "43757302"
+  uid: 6a592268-5ae8-445d-9cb9-620bf41569f4
+spec:
+  replicas: 3
+  roles:
+  - controller
+  - broker
+  storage:
+    type: ephemeral
+  template:
+    kafkaContainer:
+      volumeMounts:
+      - mountPath: /tmp
+        name: strimzi-tmp
+    pod:
+      volumes:
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 500Mi
+        name: strimzi-tmp
+status:
+  clusterId: kP3OnPFdRzaV-8kBqz08Fg
+  conditions: []
+  labelSelector: strimzi.io/cluster=concert-bank-kafka,strimzi.io/name=concert-bank-kafka-kafka,strimzi.io/kind=Kafka,strimzi.io/pool-name=dual-role
+  nodeIds:
+  - 0
+  - 1
+  - 2
+  observedGeneration: 3
+  replicas: 3
+  roles:
+  - controller
+  - broker

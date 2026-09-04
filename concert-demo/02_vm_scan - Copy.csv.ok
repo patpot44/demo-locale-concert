@@ -1,0 +1,16 @@
+CVE,Host IPAddress,Host Name,Package,Package Version,Package Path,severity,Score,hasFix,Fixed Version,Description
+CVE-2024-47176,10.10.1.50,erp-db-server-01.techcorp.com,cups-browsed,2.0.0-0.el8,,critical,9.9,Y,2.0.0-1.el8_9,CUPS cups-browsed Remote Code Execution via IPP — réseau non authentifié
+CVE-2024-6387,10.10.1.50,erp-db-server-01.techcorp.com,openssh-server,8.7p1-38.el9,,high,8.1,Y,8.7p1-38.el9_4.1,OpenSSH RegreSSHion — Remote Code Execution via race condition dans le handler SIGALRM
+CVE-2024-2961,10.10.1.50,erp-db-server-01.techcorp.com,glibc,2.28-236.el8,,high,8.8,Y,2.28-237.el8,glibc iconv Buffer Overflow — exploitation via conversion de charset malformée
+CVE-2024-24786,10.10.1.50,erp-db-server-01.techcorp.com,golang-google-protobuf,1.31.0-1.el8,,high,7.5,Y,1.33.0-1.el8,Go Protobuf Infinite Loop — déni de service via message protobuf malformé
+CVE-2024-0553,10.10.1.50,erp-db-server-01.techcorp.com,gnutls,3.6.16-7.el8,,high,7.4,Y,3.6.16-8.el8,GnuTLS Information Disclosure — fuite d'informations sur la connexion TLS
+CVE-2024-6387,10.10.1.51,erp-app-server-01.techcorp.com,openssh-server,8.7p1-38.el9,,high,8.1,Y,8.7p1-38.el9_4.1,OpenSSH RegreSSHion — Remote Code Execution via race condition dans le handler SIGALRM
+CVE-2023-44487,10.10.1.51,erp-app-server-01.techcorp.com,nginx,1.20.1-10.el8,,high,7.5,Y,1.20.1-14.el8,HTTP/2 Rapid Reset Attack — déni de service massif via réinitialisation de flux HTTP/2
+CVE-2024-32002,10.10.1.51,erp-app-server-01.techcorp.com,git,2.39.3-1.el8,,critical,9.0,Y,2.43.0-1.el8,Git Remote Code Execution — exploitation via sous-modules dans des systèmes de fichiers sensibles à la casse
+CVE-2023-52425,10.10.1.51,erp-app-server-01.techcorp.com,expat,2.4.7-1.el8,,high,7.5,Y,2.5.0-1.el8,libexpat XML Denial of Service — consommation CPU excessive via entités XML récursives
+CVE-2024-38063,10.10.1.52,erp-app-server-02.techcorp.com,tcpip.sys,10.0.20348.2458,,critical,9.8,Y,10.0.20348.2582,Windows TCP/IP Remote Code Execution — exploitation via paquets IPv6 spécialement conçus
+CVE-2024-4577,10.10.1.52,erp-app-server-02.techcorp.com,php,8.2.12,,critical,9.8,Y,8.3.8,PHP-CGI Remote Code Execution — injection d'arguments via encodage de caractères sur Windows
+CVE-2024-27316,10.10.1.52,erp-app-server-02.techcorp.com,Apache HTTP Server,2.4.57,,high,7.5,Y,2.4.59,Apache HTTP Request Smuggling — contournement de contrôles via en-têtes HTTP malformés
+CVE-2024-3094,10.10.2.50,erp-stg-server-01.techcorp.com,xz-libs,5.6.0-1.el8,,critical,10.0,Y,5.4.6-1.el8,XZ Utils Backdoor — code malveillant injecté dans la supply chain — exploitation via sshd lié à systemd
+CVE-2024-21626,10.10.2.50,erp-stg-server-01.techcorp.com,runc,1.1.9-1.el8,,high,8.6,Y,1.1.12-1.el8,runc Container Breakout — fuite hors du namespace container via descripteur de fichier
+CVE-2024-0553,10.10.2.50,erp-stg-server-01.techcorp.com,gnutls,3.6.16-7.el8,,high,7.4,Y,3.6.16-8.el8,GnuTLS Information Disclosure — fuite d'informations sur la connexion TLS

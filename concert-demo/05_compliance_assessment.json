@@ -1,0 +1,79 @@
+{
+  "results": {
+    "title": "Compliance Assessment — TechCorp ERP Production",
+    "start-time": "2025-07-14T02:00:00Z",
+    "end-time": "2025-07-14T04:30:00Z",
+    "reviewed-controls": {
+      "description": "Évaluation conformité CIS Benchmark RHEL 8, CIS Kubernetes 1.6, NIST SP 800-53 Rev5 — Environnement production TechCorp ERP",
+      "control-selections": [
+        {
+          "description": "CIS Red Hat Enterprise Linux 8 Benchmark v3.0.0",
+          "include-controls": [
+            { "control-id": "cis-rhel8-1.1.1", "title": "Ensure mounting of cramfs filesystems is disabled", "result": "pass", "severity": "Low", "remediation": "" },
+            { "control-id": "cis-rhel8-1.1.2", "title": "Ensure mounting of squashfs filesystems is disabled", "result": "pass", "severity": "Low", "remediation": "" },
+            { "control-id": "cis-rhel8-1.3.1", "title": "Ensure sudo is installed", "result": "pass", "severity": "Low", "remediation": "" },
+            { "control-id": "cis-rhel8-1.3.2", "title": "Ensure sudo commands use pty", "result": "fail", "severity": "Medium", "remediation": "Ajouter Defaults use_pty dans /etc/sudoers. Gemini AI recommande de corriger sous 7 jours.", "affected-hosts": ["erp-app-server-01.techcorp.com", "erp-db-server-01.techcorp.com"] },
+            { "control-id": "cis-rhel8-2.1.1", "title": "Ensure xinetd is not installed", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-rhel8-2.2.1", "title": "Ensure time synchronization is in use (chrony)", "result": "pass", "severity": "Low", "remediation": "" },
+            { "control-id": "cis-rhel8-3.1.1", "title": "Ensure IP forwarding is disabled", "result": "fail", "severity": "Medium", "remediation": "Définir net.ipv4.ip_forward = 0 dans sysctl.conf. Impact potentiel sur routage applicatif ERP.", "affected-hosts": ["erp-app-server-01.techcorp.com"] },
+            { "control-id": "cis-rhel8-3.3.1", "title": "Ensure source routed packets are not accepted", "result": "pass", "severity": "Medium", "remediation": "" },
+            { "control-id": "cis-rhel8-4.1.1", "title": "Ensure auditing is enabled (auditd)", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-rhel8-4.1.2", "title": "Ensure audit log storage size is configured", "result": "fail", "severity": "Medium", "remediation": "Définir max_log_file = 100 dans /etc/audit/auditd.conf. Risque de perte de logs d'audit.", "affected-hosts": ["erp-db-server-01.techcorp.com"] },
+            { "control-id": "cis-rhel8-5.1.1", "title": "Ensure cron daemon is enabled and running", "result": "pass", "severity": "Medium", "remediation": "" },
+            { "control-id": "cis-rhel8-5.2.4", "title": "Ensure SSH Protocol is set to 2", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-rhel8-5.2.6", "title": "Ensure SSH MaxAuthTries is set to 4 or less", "result": "fail", "severity": "Medium", "remediation": "Configurer MaxAuthTries 4 dans sshd_config. Réduction risque brute force.", "affected-hosts": ["erp-app-server-01.techcorp.com", "erp-app-server-02.techcorp.com"] },
+            { "control-id": "cis-rhel8-5.2.11", "title": "Ensure only approved MAC algorithms are used", "result": "fail", "severity": "High", "remediation": "Supprimer hmac-md5 et hmac-sha1 des MACs autorisés dans sshd_config. Gemini AI : risque cryptographique élevé.", "affected-hosts": ["erp-db-server-01.techcorp.com"] },
+            { "control-id": "cis-rhel8-5.3.1", "title": "Ensure password creation requirements are configured", "result": "pass", "severity": "Medium", "remediation": "" },
+            { "control-id": "cis-rhel8-5.4.1", "title": "Ensure password hashing algorithm is SHA-512", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-rhel8-6.1.1", "title": "Ensure permissions on /etc/passwd are configured", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-rhel8-6.2.1", "title": "Ensure accounts in /etc/passwd use shadowed passwords", "result": "pass", "severity": "High", "remediation": "" }
+          ]
+        },
+        {
+          "description": "CIS Kubernetes V1 Benchmark v1.6.1 — Cluster ERP Kubernetes",
+          "include-controls": [
+            { "control-id": "cis-k8s-1.1.1", "title": "Ensure API server pod spec file permissions are 600 or more restrictive", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-k8s-1.1.2", "title": "Ensure API server pod spec file ownership is root:root", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-k8s-1.2.1", "title": "Ensure anonymous-auth argument is set to false", "result": "fail", "severity": "Critical", "remediation": "Ajouter --anonymous-auth=false dans kube-apiserver.yaml. URGENT — accès anonyme désactivé immédiatement.", "affected-components": ["kube-apiserver"] },
+            { "control-id": "cis-k8s-1.2.6", "title": "Ensure AlwaysAdmit admission controller is not set", "result": "pass", "severity": "Critical", "remediation": "" },
+            { "control-id": "cis-k8s-1.2.10", "title": "Ensure admission control plugin EventRateLimit is set", "result": "fail", "severity": "Medium", "remediation": "Activer EventRateLimit dans les admission plugins.", "affected-components": ["kube-apiserver"] },
+            { "control-id": "cis-k8s-2.1", "title": "Ensure etcd is configured with TLS", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-k8s-3.1.1", "title": "Ensure client certificate authentication is not used for users", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-k8s-4.1.1", "title": "Ensure that the kubelet service file permissions are 600 or more restrictive", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-k8s-4.2.1", "title": "Ensure anonymous-auth kubelet argument is set to false", "result": "fail", "severity": "Critical", "remediation": "Définir anonymous-auth: false dans la configuration kubelet. Gemini AI : exposition critique API kubelet.", "affected-components": ["kubelet"] },
+            { "control-id": "cis-k8s-5.1.1", "title": "Ensure RBAC is enabled on cluster", "result": "pass", "severity": "High", "remediation": "" },
+            { "control-id": "cis-k8s-5.2.1", "title": "Minimize privileged containers", "result": "fail", "severity": "High", "remediation": "Conteneur erp-backend-worker tourne en privileged=true. Corriger le Deployment manifest.", "affected-components": ["erp-backend"] },
+            { "control-id": "cis-k8s-5.4.1", "title": "Prefer using secrets as files over env variables", "result": "fail", "severity": "Medium", "remediation": "Migrer les secrets injectés en variables d'environnement vers des volumes Secret montés.", "affected-components": ["erp-backend", "erp-frontend"] }
+          ]
+        }
+      ]
+    },
+    "metadata": {
+      "application": "techcorp-erp",
+      "version": "3.4.1",
+      "environment": "prod-eu-west-1",
+      "scanner": "OpenSCAP 1.3.9 + kube-bench 0.8.0",
+      "compliance-score": {
+        "total-controls": 30,
+        "passed": 20,
+        "failed": 10,
+        "score-percent": 66.7,
+        "trend": "degraded",
+        "previous-score-percent": 74.2,
+        "previous-scan": "2025-07-07T02:00:00Z"
+      },
+      "integrations-triggered": [
+        {
+          "system": "ServiceNow",
+          "action": "Création automatique tickets pour findings Critical et High",
+          "tickets": ["INC0045001", "INC0045002", "INC0045003"]
+        },
+        {
+          "system": "Google Gemini",
+          "action": "Analyse IA prioritisation — 3 findings marqués URGENT par IA",
+          "findings": ["cis-k8s-1.2.1", "cis-k8s-4.2.1", "cis-rhel8-5.2.11"]
+        }
+      ]
+    }
+  }
+}

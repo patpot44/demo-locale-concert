@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devfleet-loadgen
+  namespace: loadgen
+  labels:
+    app: devfleet-loadgen
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8089
+    targetPort: 8089
+    protocol: TCP
+    name: web
+  selector:
+    app: devfleet-loadgen
+
+# Made with Bob

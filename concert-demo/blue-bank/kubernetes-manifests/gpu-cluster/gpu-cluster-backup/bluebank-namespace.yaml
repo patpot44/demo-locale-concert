@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: ""
+    openshift.io/display-name: ""
+    openshift.io/requester: kube:admin
+    openshift.io/sa.scc.mcs: s0:c26,c25
+    openshift.io/sa.scc.supplemental-groups: 1000700000/10000
+    openshift.io/sa.scc.uid-range: 1000700000/10000
+  creationTimestamp: "2026-03-24T17:23:54Z"
+  labels:
+    kubernetes.io/metadata.name: bluebank
+    pod-security.kubernetes.io/audit: privileged
+    pod-security.kubernetes.io/audit-version: v1.24
+    pod-security.kubernetes.io/warn: privileged
+    pod-security.kubernetes.io/warn-version: v1.24
+  name: bluebank
+  resourceVersion: "255465"
+  uid: 12d6877a-fcf3-4f19-86dd-0427cfd28157
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

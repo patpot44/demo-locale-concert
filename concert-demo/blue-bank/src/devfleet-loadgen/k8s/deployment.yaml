@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devfleet-loadgen
+  namespace: loadgen
+  labels:
+    app: devfleet-loadgen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devfleet-loadgen
+  template:
+    metadata:
+      labels:
+        app: devfleet-loadgen
+    spec:
+      containers:
+      - name: locust
+        image: image-registry.openshift-image-registry.svc:5000/loadgen/devfleet-loadgen:latest
+        imagePullPolicy: Always
+        command:
+          - locust
+          - -f
+          - /app/locustfile.py
+          - --host
+          - $(VLLM_CODING_URL)
+        env:
+        - name: LOCUST_WEB_PORT
+          value: "8089"
+        - name: VLLM_CODING_URL
+          value: "https://vllm-coding-route-bluebank.apps.bluebank-demo-2.cp.fyre.ibm.com"
+        ports:
+        - containerPort: 8089
+          name: web
+          protocol: TCP
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8089
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8089
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+      restartPolicy: Always
+
+# Made with Bob

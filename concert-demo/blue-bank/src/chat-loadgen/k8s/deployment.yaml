@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-loadgen
+  namespace: demoapps-bank-anthos
+  labels:
+    app: chat-loadgen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-loadgen
+  template:
+    metadata:
+      labels:
+        app: chat-loadgen
+    spec:
+      containers:
+      - name: locust
+        image: image-registry.openshift-image-registry.svc:5000/demoapps-bank-anthos/chat-loadgen:latest
+        imagePullPolicy: Always
+        command:
+          - locust
+          - -f
+          - /locust/locustfile.py
+          - --host
+          - $(CHATBOT_URL)
+        env:
+        - name: LOCUST_WEB_PORT
+          value: "8090"
+        - name: TARGET_MODE
+          value: "chatbot"  # Change to "vllm-direct" for direct GPU testing
+        - name: CHATBOT_URL
+          value: "https://bank-chat-demoapps-bank-anthos.apps.o1-968455.cp.fyre.ibm.com"
+        - name: VLLM_URL
+          value: "https://vllm-route-bluebank.apps.bluebank-demo-2.cp.fyre.ibm.com"
+        ports:
+        - containerPort: 8090
+          name: web
+          protocol: TCP
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8090
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8090
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+        volumeMounts:
+        - name: locustfile
+          mountPath: /locust/locustfile.py
+          subPath: locustfile.py
+          readOnly: true
+      volumes:
+      - name: locustfile
+        configMap:
+          name: chat-loadgen-config
+      restartPolicy: Always
+
+# Made with Bob

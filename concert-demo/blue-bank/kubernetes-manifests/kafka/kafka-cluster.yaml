@@ -1,0 +1,65 @@
+apiVersion: kafka.strimzi.io/v1
+kind: Kafka
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"Kafka","metadata":{"annotations":{"strimzi.io/kraft":"enabled","strimzi.io/node-pools":"enabled"},"name":"concert-bank-kafka","namespace":"demoapps-bank-anthos"},"spec":{"entityOperator":{"topicOperator":{},"userOperator":{}},"kafka":{"config":{"offsets.topic.replication.factor":3,"transaction.state.log.min.isr":2,"transaction.state.log.replication.factor":3},"listeners":[{"name":"plain","port":9092,"tls":false,"type":"internal"}]}}}
+    strimzi.io/kraft: enabled
+    strimzi.io/node-pools: enabled
+    strimzi.io/pause-reconciliation: "true"
+  creationTimestamp: "2026-02-19T01:53:17Z"
+  generation: 4
+  name: concert-bank-kafka
+  namespace: demoapps-bank-anthos
+  resourceVersion: "43760732"
+  uid: 899126b2-4314-41b7-9a96-dbf4b27da9be
+spec:
+  entityOperator:
+    template:
+      pod:
+        volumes:
+        - name: strimzi-to-tmp
+          persistentVolumeClaim:
+            claimName: strimzi-to-tmp-pvc
+        - name: strimzi-uo-tmp
+          persistentVolumeClaim:
+            claimName: strimzi-to-tmp-pvc
+      topicOperatorContainer:
+        volumeMounts:
+        - mountPath: /tmp
+          name: strimzi-to-tmp
+          subPath: to-tmp
+      userOperatorContainer:
+        volumeMounts:
+        - mountPath: /tmp
+          name: strimzi-uo-tmp
+          subPath: uo-tmp
+    topicOperator: {}
+    userOperator: {}
+  kafka:
+    config:
+      offsets.topic.replication.factor: 3
+      transaction.state.log.min.isr: 2
+      transaction.state.log.replication.factor: 3
+    listeners:
+    - name: plain
+      port: 9092
+      tls: false
+      type: internal
+    template:
+      kafkaContainer:
+        volumeMounts:
+        - mountPath: /tmp
+          name: strimzi-tmp
+      pod:
+        volumes:
+        - emptyDir:
+            sizeLimit: 500Mi
+          name: strimzi-tmp
+status:
+  clusterId: kP3OnPFdRzaV-8kBqz08Fg
+  conditions:
+  - lastTransitionTime: "2026-02-25T17:11:43.802758839Z"
+    status: "True"
+    type: ReconciliationPaused
+  observedGeneration: 4

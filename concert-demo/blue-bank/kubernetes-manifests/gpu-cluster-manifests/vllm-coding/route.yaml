@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: vllm-coding-route
+  namespace: bluebank
+  labels:
+    app: vllm-coding
+spec:
+  to:
+    kind: Service
+    name: vllm-coding
+  port:
+    targetPort: http
+  tls:
+    termination: edge

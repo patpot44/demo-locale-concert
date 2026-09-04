@@ -1,0 +1,271 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:c3d4e5f6-a7b8-9012-cdef-123456789012",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-08-30T10:00:00+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.55.2"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "pkg:oci/erp-banking-svc@2.1.4",
+      "type": "container",
+      "name": "erp-banking-svc",
+      "version": "2.1.4",
+      "properties": [
+        {
+          "name": "erp-banking-svc",
+          "value": "2.1.4"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.63",
+      "type": "library",
+      "group": "org.apache.tomcat.embed",
+      "name": "tomcat-embed-core",
+      "version": "9.0.63",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.63",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.63",
+      "type": "library",
+      "group": "org.apache.tomcat.embed",
+      "name": "tomcat-embed-websocket",
+      "version": "9.0.63",
+      "purl": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.63",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.springframework.boot/spring-boot-starter-web@2.7.5",
+      "type": "library",
+      "group": "org.springframework.boot",
+      "name": "spring-boot-starter-web",
+      "version": "2.7.5",
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-starter-web@2.7.5",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.springframework.boot/spring-boot-actuator@2.7.5",
+      "type": "library",
+      "group": "org.springframework.boot",
+      "name": "spring-boot-actuator",
+      "version": "2.7.5",
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-actuator@2.7.5",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.13.4",
+      "type": "library",
+      "group": "com.fasterxml.jackson.core",
+      "name": "jackson-databind",
+      "version": "2.13.4",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.13.4",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.springframework.security/spring-security-core@5.7.5",
+      "type": "library",
+      "group": "org.springframework.security",
+      "name": "spring-security-core",
+      "version": "5.7.5",
+      "purl": "pkg:maven/org.springframework.security/spring-security-core@5.7.5",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.springframework.security/spring-security-web@5.7.5",
+      "type": "library",
+      "group": "org.springframework.security",
+      "name": "spring-security-web",
+      "version": "5.7.5",
+      "purl": "pkg:maven/org.springframework.security/spring-security-web@5.7.5",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/io.jsonwebtoken/jjwt-api@0.11.5",
+      "type": "library",
+      "group": "io.jsonwebtoken",
+      "name": "jjwt-api",
+      "version": "0.11.5",
+      "purl": "pkg:maven/io.jsonwebtoken/jjwt-api@0.11.5",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.postgresql/postgresql@42.5.0",
+      "type": "library",
+      "group": "org.postgresql",
+      "name": "postgresql",
+      "version": "42.5.0",
+      "purl": "pkg:maven/org.postgresql/postgresql@42.5.0",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.flywaydb/flyway-core@9.5.1",
+      "type": "library",
+      "group": "org.flywaydb",
+      "name": "flyway-core",
+      "version": "9.5.1",
+      "purl": "pkg:maven/org.flywaydb/flyway-core@9.5.1",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/commons-fileupload/commons-fileupload@1.4",
+      "type": "library",
+      "group": "commons-fileupload",
+      "name": "commons-fileupload",
+      "version": "1.4",
+      "purl": "pkg:maven/commons-fileupload/commons-fileupload@1.4",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.commons/commons-text@1.9",
+      "type": "library",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "version": "1.9",
+      "purl": "pkg:maven/org.apache.commons/commons-text@1.9",
+      "properties": [
+        { "name": "aquasecurity:trivy:PkgType", "value": "jar" }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:oci/transaction-banking-service@2.1.4",
+      "dependsOn": [
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.63",
+        "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@9.0.63",
+        "pkg:maven/org.springframework.boot/spring-boot-starter-web@2.7.5",
+        "pkg:maven/org.springframework.boot/spring-boot-actuator@2.7.5",
+        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.13.4",
+        "pkg:maven/org.springframework.security/spring-security-core@5.7.5",
+        "pkg:maven/org.springframework.security/spring-security-web@5.7.5",
+        "pkg:maven/io.jsonwebtoken/jjwt-api@0.11.5",
+        "pkg:maven/org.postgresql/postgresql@42.5.0",
+        "pkg:maven/org.flywaydb/flyway-core@9.5.1",
+        "pkg:maven/commons-fileupload/commons-fileupload@1.4",
+        "pkg:maven/org.apache.commons/commons-text@1.9"
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "CVE-2025-66614",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66614" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 9.1, "severity": "critical", "method": "CVSSv31" }],
+      "description": "Improper Certificate Validation in Apache Tomcat embed-core 9.0.63 — allows MITM attacks via crafted TLS handshake",
+      "affects": [{ "ref": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.63" }]
+    },
+    {
+      "id": "CVE-2026-43512",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43512" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 9.1, "severity": "critical", "method": "CVSSv31" }],
+      "description": "Improper Authentication in Apache Tomcat embed-core 9.0.63 — authentication bypass via malformed HTTP/2 request",
+      "affects": [{ "ref": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.63" }]
+    },
+    {
+      "id": "CVE-2025-24813",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24813" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 9.8, "severity": "critical", "method": "CVSSv31" }],
+      "description": "Uncaught Exception / Partial PUT RCE in Apache Tomcat 9.0.63 — allows remote code execution via partial PUT request",
+      "affects": [{ "ref": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.63" }]
+    },
+    {
+      "id": "CVE-2024-56337",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56337" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 9.8, "severity": "critical", "method": "CVSSv31" }],
+      "description": "Race condition / ReDoS in Apache Tomcat 9.0.63 — denial of service via concurrent partial PUT requests",
+      "affects": [{ "ref": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.63" }]
+    },
+    {
+      "id": "CVE-2023-46589",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46589" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 7.5, "severity": "high", "method": "CVSSv31" }],
+      "description": "HTTP Request Smuggling in Apache Tomcat embed-core — invalid content-length header handling",
+      "affects": [{ "ref": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.63" }]
+    },
+    {
+      "id": "CVE-2022-42004",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-42004" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 7.5, "severity": "high", "method": "CVSSv31" }],
+      "description": "Deeply nested JSON in FasterXML jackson-databind 2.13.4 — stack overflow / DoS",
+      "affects": [{ "ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.13.4" }]
+    },
+    {
+      "id": "CVE-2022-42003",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-42003" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 7.5, "severity": "high", "method": "CVSSv31" }],
+      "description": "Deeply nested Java type in FasterXML jackson-databind 2.13.4 — excessive resource consumption",
+      "affects": [{ "ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.13.4" }]
+    },
+    {
+      "id": "CVE-2022-41854",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-41854" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 6.5, "severity": "medium", "method": "CVSSv31" }],
+      "description": "Snakeyaml DoS via stack overflow — affects Spring Boot 2.7.5 transitive dependency",
+      "affects": [{ "ref": "pkg:maven/org.springframework.boot/spring-boot-starter-web@2.7.5" }]
+    },
+    {
+      "id": "CVE-2023-34034",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34034" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 9.1, "severity": "critical", "method": "CVSSv31" }],
+      "description": "Authentication bypass in Spring Security 5.7.5 — malformed HTTP/2 requests bypass authorization",
+      "affects": [{ "ref": "pkg:maven/org.springframework.security/spring-security-web@5.7.5" }]
+    },
+    {
+      "id": "CVE-2023-20883",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20883" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 7.5, "severity": "high", "method": "CVSSv31" }],
+      "description": "Spring Boot Actuator 2.7.5 — DoS via specially crafted Spring Expression Language (SpEL) request",
+      "affects": [{ "ref": "pkg:maven/org.springframework.boot/spring-boot-actuator@2.7.5" }]
+    },
+    {
+      "id": "CVE-2023-24998",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-24998" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 7.5, "severity": "high", "method": "CVSSv31" }],
+      "description": "Unlimited file parts in commons-fileupload 1.4 — DoS via resource exhaustion",
+      "affects": [{ "ref": "pkg:maven/commons-fileupload/commons-fileupload@1.4" }]
+    },
+    {
+      "id": "CVE-2022-41952",
+      "source": { "name": "NVD", "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-41952" },
+      "ratings": [{ "source": { "name": "NVD" }, "score": 5.3, "severity": "medium", "method": "CVSSv31" }],
+      "description": "ReDoS in commons-text 1.9 — StringLookup interpolation DoS via specially crafted input",
+      "affects": [{ "ref": "pkg:maven/org.apache.commons/commons-text@1.9" }]
+    }
+  ]
+}

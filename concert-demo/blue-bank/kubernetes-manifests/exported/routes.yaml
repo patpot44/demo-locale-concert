@@ -1,0 +1,39 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/host.generated: "true"
+    creationTimestamp: "2026-02-09T20:16:58Z"
+    labels:
+      application: bank-of-anthos
+      environment: development
+      team: frontend
+      tier: web
+    name: frontend
+    namespace: demoapps-bank-anthos
+    resourceVersion: "36376095"
+    uid: adc19ef0-adfb-47d4-ad85-20df5573580c
+  spec:
+    host: frontend-demoapps-bank-anthos.apps.o1-968455.cp.fyre.ibm.com
+    port:
+      targetPort: http
+    to:
+      kind: Service
+      name: frontend
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2026-02-09T20:16:58Z"
+        status: "True"
+        type: Admitted
+      host: frontend-demoapps-bank-anthos.apps.o1-968455.cp.fyre.ibm.com
+      routerCanonicalHostname: router-default.apps.o1-968455.cp.fyre.ibm.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""

@@ -1,0 +1,35 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: cp4d/nfs-client
+      volume.kubernetes.io/storage-provisioner: cp4d/nfs-client
+    creationTimestamp: "2026-02-25T15:43:10Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    name: strimzi-to-tmp-pvc
+    namespace: demoapps-bank-anthos
+    resourceVersion: "43729820"
+    uid: 30da1f59-7f58-4b98-b411-1465f4d38835
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 5Gi
+    storageClassName: managed-nfs-storage
+    volumeMode: Filesystem
+    volumeName: pvc-30da1f59-7f58-4b98-b411-1465f4d38835
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 5Gi
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""

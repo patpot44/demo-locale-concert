@@ -1,0 +1,16 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  creationTimestamp: "2026-03-24T17:28:43Z"
+  name: system:openshift:scc:privileged
+  namespace: bluebank
+  resourceVersion: "255464"
+  uid: ac50ecbe-1ee1-4198-9715-63bb7f3de377
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:scc:privileged
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: bluebank

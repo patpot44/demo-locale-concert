@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: devfleet-loadgen
+  namespace: loadgen
+  labels:
+    app: devfleet-loadgen
+spec:
+  host: devfleet-loadgen-loadgen.apps.bluebank-demo-2.cp.fyre.ibm.com
+  to:
+    kind: Service
+    name: devfleet-loadgen
+    weight: 100
+  port:
+    targetPort: web
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
+
+# Made with Bob

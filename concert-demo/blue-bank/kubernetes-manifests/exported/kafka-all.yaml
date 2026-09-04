@@ -1,0 +1,128 @@
+apiVersion: v1
+items:
+- apiVersion: kafka.strimzi.io/v1
+  kind: Kafka
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"Kafka","metadata":{"annotations":{"strimzi.io/kraft":"enabled","strimzi.io/node-pools":"enabled"},"name":"concert-bank-kafka","namespace":"demoapps-bank-anthos"},"spec":{"entityOperator":{"topicOperator":{},"userOperator":{}},"kafka":{"config":{"offsets.topic.replication.factor":3,"transaction.state.log.min.isr":2,"transaction.state.log.replication.factor":3},"listeners":[{"name":"plain","port":9092,"tls":false,"type":"internal"}]}}}
+      strimzi.io/kraft: enabled
+      strimzi.io/node-pools: enabled
+    creationTimestamp: "2026-02-19T01:53:17Z"
+    generation: 1
+    name: concert-bank-kafka
+    namespace: demoapps-bank-anthos
+    resourceVersion: "40496701"
+    uid: 899126b2-4314-41b7-9a96-dbf4b27da9be
+  spec:
+    entityOperator:
+      topicOperator: {}
+      userOperator: {}
+    kafka:
+      config:
+        offsets.topic.replication.factor: 3
+        transaction.state.log.min.isr: 2
+        transaction.state.log.replication.factor: 3
+      listeners:
+      - name: plain
+        port: 9092
+        tls: false
+        type: internal
+  status:
+    clusterId: kP3OnPFdRzaV-8kBqz08Fg
+    conditions:
+    - lastTransitionTime: "2026-02-19T01:53:20.054656429Z"
+      message: default.replication.factor option is not configured. It defaults to
+        1 which does not guarantee reliability and availability. You should configure
+        this option in .spec.kafka.config.
+      reason: KafkaDefaultReplicationFactor
+      status: "True"
+      type: Warning
+    - lastTransitionTime: "2026-02-19T01:53:20.054773411Z"
+      message: min.insync.replicas option is not configured. It defaults to 1 which
+        does not guarantee reliability and availability. You should configure this
+        option in .spec.kafka.config.
+      reason: KafkaMinInsyncReplicas
+      status: "True"
+      type: Warning
+    - lastTransitionTime: "2026-02-19T01:54:16.612815951Z"
+      status: "True"
+      type: Ready
+    kafkaMetadataVersion: 4.1-IV1
+    kafkaNodePools:
+    - name: dual-role
+    kafkaVersion: 4.1.1
+    listeners:
+    - addresses:
+      - host: concert-bank-kafka-kafka-bootstrap.demoapps-bank-anthos.svc
+        port: 9092
+      bootstrapServers: concert-bank-kafka-kafka-bootstrap.demoapps-bank-anthos.svc:9092
+      name: plain
+    observedGeneration: 1
+    operatorLastSuccessfulVersion: 0.50.0
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaNodePool
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaNodePool","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"concert-bank-kafka"},"name":"dual-role","namespace":"demoapps-bank-anthos"},"spec":{"replicas":3,"roles":["controller","broker"],"storage":{"type":"ephemeral"}}}
+    creationTimestamp: "2026-02-19T01:53:17Z"
+    generation: 1
+    labels:
+      strimzi.io/cluster: concert-bank-kafka
+    name: dual-role
+    namespace: demoapps-bank-anthos
+    resourceVersion: "40496269"
+    uid: 6a592268-5ae8-445d-9cb9-620bf41569f4
+  spec:
+    replicas: 3
+    roles:
+    - controller
+    - broker
+    storage:
+      type: ephemeral
+  status:
+    clusterId: kP3OnPFdRzaV-8kBqz08Fg
+    conditions: []
+    labelSelector: strimzi.io/cluster=concert-bank-kafka,strimzi.io/name=concert-bank-kafka-kafka,strimzi.io/kind=Kafka,strimzi.io/pool-name=dual-role
+    nodeIds:
+    - 0
+    - 1
+    - 2
+    observedGeneration: 1
+    replicas: 3
+    roles:
+    - controller
+    - broker
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{},"labels":{"strimzi.io/cluster":"concert-bank-kafka"},"name":"transactions","namespace":"demoapps-bank-anthos"},"spec":{"config":{"retention.ms":86400000},"partitions":2,"replicas":3}}
+    creationTimestamp: "2026-02-19T01:55:34Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      strimzi.io/cluster: concert-bank-kafka
+    name: transactions
+    namespace: demoapps-bank-anthos
+    resourceVersion: "40497148"
+    uid: 29e6528c-571f-44c9-8739-df7437991ee5
+  spec:
+    config:
+      retention.ms: 86400000
+    partitions: 2
+    replicas: 3
+  status:
+    conditions:
+    - lastTransitionTime: "2026-02-19T01:55:34.964365509Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: EKsA2lW-S2OSMwXcwK8URQ
+    topicName: transactions
+kind: List
+metadata:
+  resourceVersion: ""

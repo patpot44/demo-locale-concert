@@ -1,0 +1,10 @@
+# app-config.yaml — passé au toolkit
+application:
+  name: mon-app
+  version: "1.0.0"
+  repositories:
+    - url: https://github.ibm.com/concert-demoware/blue-bank
+      branch: main
+  images:
+    - name: blue-bank
+      tag: "1.0.0"

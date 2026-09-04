@@ -1,11 +1,8 @@
 {
 	"folders": [
 		{
-			"path": "."
-		},
-		{
-			"name": "techcorp",
-			"path": "../../../../../../../../../Users/PatrickPothier/demo/techcorp"
+			"name": "restaurant-pos-desktop-app",
+			"path": "restaurant-pos-desktop-app/restaurant-pos-desktop-app"
 		}
 	],
 	"settings": {

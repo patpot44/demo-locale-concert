@@ -1,0 +1,13 @@
+# concert/application.yaml
+apiVersion: concert/v1
+kind: Application
+metadata:
+  name: techcorp-erp
+  version: "3.4.1"
+spec:
+  repositories:
+    - url: https://github.com/techcorp/erp-core-api
+      branch: main
+  images:
+    - name: registry.techcorp.com/erp/erp-backend
+    - name: registry.techcorp.com/erp/erp-frontend

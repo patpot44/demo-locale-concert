@@ -87,7 +87,7 @@ watsonx:
 projectid = 7aa1b6d2-c471-4f38-9210-acbd2d76539b
 
 ```
-export WATSONX_API_KEY=ssyGuMlb_C4ckSHGAHR_LLM84hSy-nxWxHsNDkMkoKrU
+export WATSONX_API_KEY=ssyGuMlb_Watsonx_API_KEY_
 export WATSONX_API_PROJECT_ID=7aa1b6d2-c471-4f38-9210-acbd2d76539b
 export WATSONX_API_URL=https://eu-de.ml.cloud.ibm.com
 export CONCERT_NAMESPACE=ibm-concert
@@ -544,7 +544,7 @@ Saisissez directement les valeurs dans l'UI :
 
 ```bash
 CONCERT_HOST="https://172.22.147.223:12443"
-API_KEY="C_API_KEY aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM="
+API_KEY="C_API_KEY _API KEY___"
 INSTANCE_ID="04cb5e64-3135-4ec4-ab96-fb98c611620a"
 POSTURE_PLAN_ID="<id_du_posture_plan>"
 
@@ -737,7 +737,7 @@ foreach ($endpoint in @(
 
 
 ```
-$ Add-Type @" using System.Net; using System.Security.Cryptography.X509Certificates; public class TrustAllCerts4 : ICertificatePolicy { public bool CheckValidationResult(ServicePoint sp, X509Certificate cert, WebRequest req, int problem) { return true; } } "@ [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCerts4 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12 $baseUrl = "https://172.22.147.223:12443" $authHeader = "C_API_KEY aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=" # Tester plusieurs endpoints possibles pour compliance foreach ($endpoint in @( "/compliance/api/v1/profiles", "/compliance/api/v1/catalogs", "/compliance/api/v1/postures", "/concert/api/v1/profiles", "/concert/api/v1/catalogs", "/protect/api/v1/profiles", "/protect/api/v1/catalogs" )) { $req = [System.Net.HttpWebRequest]::Create("$baseUrl$endpoint") $req.Method = "GET" $req.Headers.Add("Authorization", $authHeader) $req.Headers.Add("InstanceID", "0000-0000-0000-0000") try { $resp = $req.GetResponse() $reader = New-Object System.IO.StreamReader($resp.GetResponseStream()) $body = $reader.ReadToEnd() Write-Host "=== $endpoint (OK) ===" Write-Host ($body | Select-Object -First 500) } catch [System.Net.WebException] { $code = $_.Exception.Response.StatusCode Write-Host "=== $endpoint => $code ===" } }
+$ Add-Type @" using System.Net; using System.Security.Cryptography.X509Certificates; public class TrustAllCerts4 : ICertificatePolicy { public bool CheckValidationResult(ServicePoint sp, X509Certificate cert, WebRequest req, int problem) { return true; } } "@ [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCerts4 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12 $baseUrl = "https://172.22.147.223:12443" $authHeader = "C_API_KEY _API_KEY" # Tester plusieurs endpoints possibles pour compliance foreach ($endpoint in @( "/compliance/api/v1/profiles", "/compliance/api/v1/catalogs", "/compliance/api/v1/postures", "/concert/api/v1/profiles", "/concert/api/v1/catalogs", "/protect/api/v1/profiles", "/protect/api/v1/catalogs" )) { $req = [System.Net.HttpWebRequest]::Create("$baseUrl$endpoint") $req.Method = "GET" $req.Headers.Add("Authorization", $authHeader) $req.Headers.Add("InstanceID", "0000-0000-0000-0000") try { $resp = $req.GetResponse() $reader = New-Object System.IO.StreamReader($resp.GetResponseStream()) $body = $reader.ReadToEnd() Write-Host "=== $endpoint (OK) ===" Write-Host ($body | Select-Object -First 500) } catch [System.Net.WebException] { $code = $_.Exception.Response.StatusCode Write-Host "=== $endpoint => $code ===" } }
 === /compliance/api/v1/profiles (OK) ===
 {"data":[{"uuid":"3dc9abe6-d107-48e0-b659-2f62992cca76","catalog_ids":["7f3a4a3f-70d7-48a8-b706-8aa3fb5230fb"],"catalog_names":["Kubernetes Catalog"],"title":"k8s-cis-1.23","description":"CIS Benchmark for Kubernetes v1.23","version":"1.23","last_updated_by":"ibmconcert","last_updated_on":1787811361,"sample_data_upload":false,"mapped_profile":false,"allow_manual_assessment":false,"is_default":false,"user_app_role":"admin","application_ids":["24944671-7b0d-4ceb-9fe4-fa7b7f5e18f6"]},{"uuid":"ada71c7d-5bf7-4b2a-b65d-24bbc988c70b","catalog_ids":["7f3a4a3f-70d7-48a8-b706-8aa3fb5230fb"],"catalog_names":["Kubernetes Catalog"],"title":"Kubernetes Profile","description":"A profile of compliance controls for assessing the security and configuration of Kubernetes and OpenShift platforms.","version":"1.0.0","last_updated_by":"system","last_updated_on":1787617392,"sample_data_upload":false,"mapped_profile":false,"allow_manual_assessment":false,"is_default":true,"user_app_role":"viewer"}],"pagination":{"total_count":2,"total_pages":1,"page_size":25,"page_number":1}}
 
@@ -771,7 +771,7 @@ Le problème est clair : notre fichier OSCAL utilise "profile-id": "k8s-cis-1.23
 ```
 $ Add-Type @" using System.Net; using System.Security.Cryptography.X509Certificates; public class TrustAllCerts4 : ICertificatePolicy { public bool CheckValidationResult(ServicePoint sp, X509Certificate cert, WebRequest req, int problem) { return true; } } "@ [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCerts4 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12 
 $baseUrl = "https://172.22.147.223:12443" 
-$authHeader = "C_API_KEY aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=" # Tester plusieurs endpoints possibles pour compliance 
+$authHeader = "C_API_KEY _API_KEY_" # Tester plusieurs endpoints possibles pour compliance 
 foreach ($endpoint in @( "/compliance/api/v1/profiles", "/compliance/api/v1/catalogs", "/compliance/api/v1/postures", "/concert/api/v1/profiles", "/concert/api/v1/catalogs", "/protect/api/v1/profiles", "/protect/api/v1/catalogs" )) 
 { $req = [System.Net.HttpWebRequest]::Create("$baseUrl$endpoint") $req.Method = "GET" $req.Headers.Add("Authorization", $authHeader) $req.Headers.Add("InstanceID", "0000-0000-0000-0000") try { $resp = $req.GetResponse() $reader = New-Object System.IO.StreamReader($resp.GetResponseStream()) $body = $reader.ReadToEnd() Write-Host "=== $endpoint (OK) ===" Write-Host ($body | Select-Object -First 500) } catch [System.Net.WebException] { $code = $_.Exception.Response.StatusCode Write-Host "=== $endpoint => $code ===" } }
 === /compliance/api/v1/profiles (OK) ===
@@ -932,7 +932,7 @@ curl -k -X PATCH \
 ```
 
 ```
-curl -sk -X PATCH 'https://172.22.147.223:12443/concert/core/api/v1/instance_settings' -H 'Authorization: C_API_KEY aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=' -H 'InstanceId: 0000-0000-0000-0000' -H 'Content-Type: application/json' -d '{\"instance_settings\": [{\"object_type\": \"secure_coder\", \"settings\": {\"enabled\": true, \"code_retention_minutes\": 60}}]}'
+curl -sk -X PATCH 'https://172.22.147.223:12443/concert/core/api/v1/instance_settings' -H 'Authorization: C_API_KEY _API_KEY_' -H 'InstanceId: 0000-0000-0000-0000' -H 'Content-Type: application/json' -d '{\"instance_settings\": [{\"object_type\": \"secure_coder\", \"settings\": {\"enabled\": true, \"code_retention_minutes\": 60}}]}'
 ```
 
 
@@ -940,7 +940,7 @@ curl -sk -X PATCH 'https://172.22.147.223:12443/concert/core/api/v1/instance_set
 ```
 curl -k -X PATCH \
   "https://172.22.147.223:12443/concert/core/api/v1/instance_settings" \
-  -H "Authorization: C_API_KEY aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=" \
+  -H "Authorization: C_API_KEY _API_KEY_" \
   -H "InstanceId: 0000-0000-0000-0000" \
   -H "Content-Type: application/json" \
   -d '{
@@ -959,7 +959,7 @@ curl -k -X PATCH \
 ```
 curl -k -X PATCH \
   "https://172.22.147.223:12443/concert/core/api/v1/instance_settings" \
-  -H "Authorization: C_API_KEY aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=" \
+  -H "Authorization: C_API_KEY _API_KEY_" \
   -H "InstanceId: 0000-0000-0000-0000" \
   -H "Content-Type: application/json" \
   -d '{
@@ -979,13 +979,13 @@ curl -k -X PATCH \
 ### pour verifier :
 
 ```
- wsl -d RHEL-10.1 bash -c "curl -sk 'https://172.22.147.223:12443/concert/core/api/v1/instance_settings' -H 'Authorization: C_API_KEY aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=' -H 'InstanceId: 0000-0000-0000-0000' | python3 -m json.tool 2>/dev/null"
+ wsl -d RHEL-10.1 bash -c "curl -sk 'https://172.22.147.223:12443/concert/core/api/v1/instance_settings' -H 'Authorization: C_API_KEY _API_KEY_' -H 'InstanceId: 0000-0000-0000-0000' | python3 -m json.tool 2>/dev/null"
 ```
 
 ```
 curl -sk \
   "https://172.22.147.223:12443/concert/core/api/v1/instance_settings" \
-  -H "Authorization: C_API_KEY aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=" \
+  -H "Authorization: C_API_KEY _API_KEY_" \
   -H "InstanceId: 0000-0000-0000-0000" 
 ```
 
@@ -1044,7 +1044,7 @@ Une fois installé, `Ctrl+Shift+P` → **"IBM Concert: Configure"** (ou cherchez
 | ----------- | ------------------------------------------------------------ |
 | Concert URL | `https://172.22.147.223:12443`                               |
 | Instance ID | `0000-0000-0000-0000`<br />~~4cf5faab-8d10-4e51-96ea-d653cd23d28c~~ (5) |
-| API Key     | `aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=` |
+| API Key     | `_API_KEY_` |
 
 (5) depuis correction script install vsix (node.js boucle, bobshell 2.0.0 )
 
@@ -1052,7 +1052,7 @@ commande utilisée pour obtenir instance id :
 
 ```
 curl -sk https://172.22.147.223:12443/concert/core/api/v1/instance_settings \
-  -H "Authorization: C_API_KEY aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=" \
+  -H "Authorization: C_API_KEY _API_KEY_" \
   -H "InstanceId: 0000-0000-0000-0000" \
   -v 2>&1 | grep "instance_"
 ```
@@ -1063,7 +1063,7 @@ Ou directement dans `settings.json` VS Code (`Ctrl+,` → "Open Settings JSON") 
 {
   "ibmConcert.serverUrl": "https://172.22.147.223:12443",
   "ibmConcert.instanceId": "0000-0000-0000-0000",
-  "ibmConcert.apiKey": "aWJtY29uY2VydDo0Y2Y1ZmFhYi04ZDEwLTRlNTEtOTZlYS1kNjUzY2QyM2QyOGM=",
+  "ibmConcert.apiKey": "_API_KEY_=",
   "ibmConcert.tlsVerify": false
 }
 ```
